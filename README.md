@@ -23,12 +23,12 @@ El servidor es una aplicación construida con Express que maneja las solicitudes
 # Cliente
 El cliente es una aplicación construida con Angular que proporciona una interfaz gráfica de usuario para que puedas interactuar con el sistema de gestión de tareas. Se comunica con el servidor a través de API RESTful.
 
-Instrucciones de instalación
-Clona este repositorio en tu equipo.
-Instala las dependencias con npm install.
-Inicia el servidor con npm run start:server.
-Inicia el cliente con npm run start:client.
-Accede a http://localhost:3000 en tu navegador para ver la aplicación en funcionamiento.
+# Instrucciones de instalación [WIP]
+- Clona este repositorio en tu equipo.
+- Instala las dependencias con npm install.
+- Inicia el servidor con npm run start:server.
+- Inicia el cliente con npm run start:client.
+- Accede a http://localhost:3000 en tu navegador para ver la aplicación en funcionamiento.
 
 Notas
 Este proyecto es solo una muestra y puede tener incongruencias y falta de documentación. Se recomienda leer el código y agregar comentarios para entender y personalizar el proyecto de acuerdo a tus necesidades.
