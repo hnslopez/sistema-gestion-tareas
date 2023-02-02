@@ -5,30 +5,37 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const app = express();
 const routes = require('./routes');
-const mongoose = require('./database'); 
+const i18n = require('./utils/i18n');
 
-// Use cors middleware to allow cross-origin requests
+// Conecta la base de datos
+require('./database'); 
+
+// Us Configuración basica de cors
 app.use(cors());
+
+// Configuración de i18n
+app.use(i18n.init);
 
 // Use morgan for request logging
 app.use(morgan("tiny"));
 
-// Use body-parser middleware to parse request bodies
+// Configuración de Body Parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Lista de rutas
+app.use(routes.mainRoutes);
+app.use('/api/task',routes.TaskRoutes);
 
-app.use(routes);
-
-app.post("/api/example", (req, res) => {
-  res.send({
-    success: true,
-    message: "Example route",
-    data: req.body
-  });
+// Middleware para manejar errores
+app.use((error, req, res, next) => {
+  const status = error.statusCode || 500;
+  const message = error.message;
+  res.status(status).json({ message: message });
 });
 
-// Start the server
+
+// Inicie el servidor
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);

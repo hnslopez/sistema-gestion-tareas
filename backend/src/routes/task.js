@@ -1,11 +1,12 @@
 /**
- * taskRoute.js - Rutas para tareas en Express
+ * task.js - Rutas para tareas en Express
  *
  * Este archivo contiene las rutas para las tareas en la aplicación de gestión de tareas.
  * Utiliza el modelo de tarea en Mongoose para interactuar con la base de datos.
  *
  * Las operaciones disponibles incluyen:
  *  - Obtener todas las tareas
+ *  - Obtener una tarea
  *  - Crear una nueva tarea
  *  - Actualizar una tarea
  *  - Eliminar una tarea
@@ -14,7 +15,8 @@
 const express = require("express");
 const router = express.Router();
 const Task = require("../models/Task");
-
+const i18n = require("i18n");
+const mongoose = require('mongoose');
 /**
  * Obtiene todas las tareas y las devuelve en un objeto JSON.
  *
@@ -31,6 +33,24 @@ router.get("/", async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 });
+
+/**
+ * Ver una tarea existente de la base de datos.
+ *
+ * GET /:id
+ *
+ * @param {String} req.params.id - ID de la tarea a mostrar
+ * @return {Object} La tarea en la base de datos
+ * @throws {Error} Si hay un error en la muestra de la tarea en la base de datos
+ */
+router.get("/:id", getTask, async (req, res) => {
+    try {
+        res.json(tasks);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
 
 /**
  * Crea una nueva tarea en la base de datos.
@@ -97,7 +117,7 @@ router.patch("/:id", getTask, async (req, res) => {
 router.delete("/:id", getTask, async (req, res) => {
     try {
         await res.task.remove();
-        res.json({ message: "Tarea eliminada" });
+        res.json({ message: i18n.__("task_deleted") });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -114,10 +134,16 @@ router.delete("/:id", getTask, async (req, res) => {
  */
 async function getTask(req, res, next) {
     let task;
+    let taskId = req.params.id;
+
+    if (!mongoose.Types.ObjectId.isValid(taskId)) {
+        return res.status(400).json({ message: i18n.__("invalid_task_id") });
+      }
+
     try {
-        task = await Task.findById(req.params.id);
+        task = await Task.findById(taskId);
         if (task == null) {
-            return res.status(404).json({ message: "No se encontró la tarea" });
+            return res.status(404).json({ message: i18n.__('task_not_found') });
         }
     } catch (err) {
         return res.status(500).json({ message: err.message });
@@ -126,5 +152,6 @@ async function getTask(req, res, next) {
     res.task = task;
     next();
 }
+
 
 module.exports = router;
