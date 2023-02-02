@@ -1,12 +1,11 @@
+require('dotenv').config()
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
-require('dotenv').config();
-
 const app = express();
 const routes = require('./routes');
-const mongoose = require('./database');
+const mongoose = require('./database'); 
 
 // Use cors middleware to allow cross-origin requests
 app.use(cors());

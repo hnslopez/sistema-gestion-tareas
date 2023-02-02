@@ -19,26 +19,24 @@ const taskSchema = new mongoose.Schema({
   status: {
     type: String,
     // Valor por defecto: "to do"
-    default: "to do",
+    default: TaskStatus.TO_DO,
     // Restringir los valores permitidos a "to do", "in progress" y "done"
     enum: TaskStatus
   },
   // Campo opcional de tipo Date para almacenar la fecha y hora de creación de la tarea
   createdAt: {
     type: Date,
-    // Valor por defecto: fecha y hora actual
     default: Date.now
   },
   // Campo opcional de tipo Date para almacenar la fecha y hora de actualización de la tarea
   updatedAt: {
     type: Date,
-    // Valor por defecto: fecha y hora actual
-    default: Date.now
+    default: Date.now 
   }
 });
 
 // Crear el modelo de tarea a partir del esquema
 const Task = mongoose.model("Task", taskSchema);
-
+   
 // Exportar el modelo de tarea
 module.exports = Task;

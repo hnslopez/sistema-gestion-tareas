@@ -1,10 +1,24 @@
+/**
+ * index.js - Rutas para tareas en Express (TO DO)
+ *
+ * Este archivo contiene la ruta principal para la aplicación de gestión de tareas.
+ *
+ * Las operaciones disponibles incluyen:
+ * 
+ */
+
 var express = require('express');
-const Task = require('../models/Task');
 var router = express.Router();
 
-/* GET home page. */
+/**
+ * Obtiene todas las tareas y las devuelve en un objeto JSON.
+ *
+ * GET /
+ *
+ * @return {String} Mensaje de funcionamiento correcto del API (TO DO)
+ */
 router.get('/', function(req, res, next) {
-  res.send('a');
+  res.send('Funciona');
 });
 
 module.exports = router;
