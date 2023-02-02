@@ -29,3 +29,6 @@ Instala las dependencias con npm install.
 Inicia el servidor con npm run start:server.
 Inicia el cliente con npm run start:client.
 Accede a http://localhost:3000 en tu navegador para ver la aplicación en funcionamiento.
+
+Notas
+Este proyecto es solo una muestra y puede tener incongruencias y falta de documentación. Se recomienda leer el código y agregar comentarios para entender y personalizar el proyecto de acuerdo a tus necesidades.
