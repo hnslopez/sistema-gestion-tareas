@@ -16,6 +16,33 @@ Angular como el framework frontend para crear una interfaz atractiva y fácil de
 
 # Arquitectura
 El proyecto está dividido en dos partes principales: el servidor y el cliente.
+```
+
+.
+├── models
+|   └── task.js # Modelo para tareas
+|   └── user.js # Modelo para usuarios
+├── middlewares
+|   └── authentication.js # Middleware de autenticación
+├── i18n
+|   ├── en.json # Archivo de idioma Inglés
+|   └── es.json # Archivo de idioma Español
+├── common
+|   ├── enums
+|   |   └── task.js # Enum de tareas
+|   ├── index.js # Archivo principal para exportación
+|   └── helpers
+|       └── encryption.js # Helpers para encriptación
+├── routes
+|   ├── auth.js # Rutas de autenticación
+|   └── task.js # Rutas de tareas
+|   └── user.js # Rutas de usuarios
+└── utils
+    └── jwt.js # Utilidades para el manejo de JWT
+    └── i18n.js # Utilidades para el manejo del sistema de i18n
+
+
+```
 
 # Servidor
 El servidor es una aplicación construida con Express que maneja las solicitudes HTTP y se comunica con MongoDB a través de Mongoose. También valida y manipula los datos antes de enviarlos o recibirlos.
