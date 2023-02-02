@@ -1,4 +1,4 @@
-# Sistema de Gestión de Tareas
+# Sistema de Gestión de Tareas [WIP]
 Este proyecto es una aplicación web para la gestión de tareas, construida con las siguientes tecnologías:
 
 Express como el framework de Node.js para crear el servidor y las API.
