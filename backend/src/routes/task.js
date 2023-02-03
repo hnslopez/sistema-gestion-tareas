@@ -15,7 +15,7 @@
 const express = require("express");
 const router = express.Router();
 const { Task } = require("../models");
-const i18n = require("i18n");
+const i18n = require("../utils/i18n");
 const mongoose = require('mongoose');
 /**
  * Obtiene todas las tareas y las devuelve en un objeto JSON.
@@ -69,8 +69,8 @@ router.post("/", async (req, res) => {
     });
 
     try {
-        const newTask = await task.save();
-        res.status(201).json(newTask);
+        await task.save();
+        res.status(201).json({message: i18n.__('tasks.created')});
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
@@ -98,10 +98,11 @@ router.patch("/:id", getTask, async (req, res) => {
         res.task.dueDate = req.body.dueDate;
     }
     try {
-        const updatedTask = await res.task.save();
-        res.json(updatedTask);
+        await res.task.save();
+        
+        res.status(201).json({message: i18n.__('tasks.updated')});
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        res.status(400).json({ message: i18n.__("errors.generic_error"), error: err });
     }
 });
 
@@ -137,13 +138,14 @@ async function getTask(req, res, next) {
     let taskId = req.params.id;
 
     if (!mongoose.Types.ObjectId.isValid(taskId)) {
-        return res.status(400).json({ message: i18n.__("error.task_not_found") });
+        return res.status(400).json({ message: req.__("errors.task_not_found",{}) });
       }
 
     try {
         task = await Task.findById(taskId);
         if (task == null) {
-            return res.status(404).json({ message: i18n.__('error.task_not_found') });
+            return res.status(404).json({ message: req.__("errors.task_not_found") });
+     
         }
     } catch (err) {
         return res.status(500).json({ message: err.message });

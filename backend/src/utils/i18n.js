@@ -4,6 +4,7 @@ i18n.configure({
     locales: ['en', 'es'],
     directory: __dirname + '/locales',
     defaultLocale: 'es',
+    objectNotation: true,
     queryParameter: 'lang',
     register: global
 });
