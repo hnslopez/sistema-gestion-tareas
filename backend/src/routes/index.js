@@ -9,7 +9,7 @@
  * Importación del archivo de rutas de una tarea.
  * @see {@link module:task.js}
  */
-const TaskRoutes = require("./task");
+const taskRoutes = require("./task");
 
 /**
  * Importación del archivo de rutas principales.
@@ -17,12 +17,19 @@ const TaskRoutes = require("./task");
  */
 const mainRoutes = require("./main");
 
+/**
+ * Importación del archivo de rutas principales.
+ * @see {@link module:user.js}
+ */
+const userRoutes = require("./user");
+
 
 /**
  * Exportación del archivo de rutas.
  * @type {object}
  */
 module.exports = {
-    TaskRoutes,
+    taskRoutes,
+    userRoutes,
     mainRoutes
 }

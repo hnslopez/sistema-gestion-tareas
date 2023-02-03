@@ -19,27 +19,37 @@ El proyecto está dividido en dos partes principales: el servidor y el cliente.
 ```
 
 .
-├── models
-|   └── task.js # Modelo para tareas
-|   └── user.js # Modelo para usuarios
-├── middlewares
-|   └── authentication.js # Middleware de autenticación
-├── i18n
-|   ├── en.json # Archivo de idioma Inglés
-|   └── es.json # Archivo de idioma Español
-├── common
+src
+└── common
 |   ├── enums
 |   |   └── task.js # Enum de tareas
-|   ├── index.js # Archivo principal para exportación
+|   |   └── index.js # Archivo principal para exportación
 |   └── helpers
 |       └── encryption.js # Helpers para encriptación
+|       └── index.js # Archivo principal para exportación
+├── controllers
+|   ├── index.js # Archivo principal para exportación
+|   ├── task.js # Controlador de tareas
+|   └── user.js # Controlador de usuarios
+├── middlewares
+|   └── authentication.js # Middleware de autenticación
+├── models
+|   ├── index.js # Archivo principal para exportación
+|   ├── task.js # Modelo para tareas
+|   └── user.js # Modelo para usuarios
 ├── routes
-|   ├── auth.js # Rutas de autenticación
-|   └── task.js # Rutas de tareas
-|   └── user.js # Rutas de usuarios
+|   └── index.js # Archivo principal para exportación de rutas
+|   ├── main.js # Rutas generales
+|   ├── task.js # Rutas de tareas
+|   ├── user.js # Rutas de usuarios
+|   └── auth.js # Rutas de autenticación
 └── utils
+    ├── locales
+    |   ├── en.json # Archivo de idioma Inglés
+    |   └── es.json # Archivo de idioma Español
     └── jwt.js # Utilidades para el manejo de JWT
     └── i18n.js # Utilidades para el manejo del sistema de i18n
+
 
 
 ```

@@ -1,8 +1,19 @@
 {
-    "task_created": "Task created",
-    "task_not_found": "Task not found",
-    "task_updated": "Task updated",
-    "task_deleted": "Task deleted",
-    "invalid_task_id":"Task invalid"
-}
-  
+    "tasks": {
+      "created": "Task has been created successfully.",
+      "updated": "Task has been updated successfully.",
+      "deleted": "Task has been deleted successfully.",
+      "list_title": "Task list"
+    },
+    "users": {
+      "created": "User has been created successfully.",
+      "updated": "User has been updated successfully.",
+      "deleted": "User has been deleted successfully.",
+      "list_title": "User list"
+    },
+    "errors": {
+      "task_not_found": "The specified task could not be found.",
+      "user_not_found": "The specified user could not be found.",
+      "generic_error": "A system error has occurred."
+    }
+  }

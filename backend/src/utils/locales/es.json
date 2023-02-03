@@ -1,8 +1,19 @@
 {
-    "task_created": "Tarea creada",
-    "task_not_found": "Tarea no encontrada",
-    "task_updated": "Tarea actualizada",
-    "task_deleted": "Tarea eliminada",
-    "invalid_task_id": "Tarea invalida"
+  "tasks": {
+    "created": "La tarea ha sido creada con éxito.",
+    "updated": "La tarea ha sido actualizada con éxito.",
+    "deleted": "La tarea ha sido eliminada con éxito.",
+    "list_title": "Lista de tareas"
+  },
+  "users": {
+    "created": "El usuario ha sido creado con éxito.",
+    "updated": "El usuario ha sido actualizado con éxito.",
+    "deleted": "El usuario ha sido eliminado con éxito.",
+    "list_title": "Lista de usuarios"
+  },
+  "errors": {
+    "task_not_found": "No se ha encontrado la tarea especificada.",
+    "user_not_found": "No se ha encontrado el usuario especificado.",
+    "generic_error": "Ha ocurrido un error en el sistema."
+  }
 }
-  

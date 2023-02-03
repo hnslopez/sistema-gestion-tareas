@@ -25,7 +25,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Lista de rutas
 app.use(routes.mainRoutes);
-app.use('/api/task',routes.TaskRoutes);
+app.use('/api/task',routes.taskRoutes);
+app.use('/api/user',routes.userRoutes);
 
 // Middleware para manejar errores
 app.use((error, req, res, next) => {
