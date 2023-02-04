@@ -17,6 +17,7 @@ const router = express.Router();
 const { Task } = require("../models");
 const i18n = require("../utils/i18n");
 const mongoose = require('mongoose');
+const { TaskStatus } = require("../common/enum");
 /**
  * Obtiene todas las tareas y las devuelve en un objeto JSON.
  *
@@ -45,7 +46,7 @@ router.get("/", async (req, res) => {
  */
 router.get("/:id", getTask, async (req, res) => {
     try {
-        res.json(tasks);
+        res.json(res.task);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -70,9 +71,10 @@ router.post("/", async (req, res) => {
 
     try {
         await task.save();
-        res.status(201).json({message: i18n.__('tasks.created')});
+        res.status(201).json({ message: i18n.__('tasks.created') });
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        res.status(400).json({ message: i18n.__("errors.generic_error"), error: err });
+
     }
 });
 
@@ -94,13 +96,22 @@ router.patch("/:id", getTask, async (req, res) => {
     if (req.body.description != null) {
         res.task.description = req.body.description;
     }
-    if (req.body.dueDate != null) {
-        res.task.dueDate = req.body.dueDate;
+
+    if (req.body.status != null && Object.values(TaskStatus).includes(req.body.status)) {
+        res.task.status = req.body.status;
     }
+s
+    //Valida si el contenido enviado dentro "status" es uno de los enum "TaskStatus" 
+    if (!(Object.values(TaskStatus).includes(req.body.status))) {
+        return res.status(400).json({ message: i18n.__("errors.status_not_valid")});
+    }
+
+        res.task.updatedAt = new Date();
+
     try {
         await res.task.save();
-        
-        res.status(201).json({message: i18n.__('tasks.updated')});
+
+        res.status(201).json({ message: i18n.__('tasks.updated') });
     } catch (err) {
         res.status(400).json({ message: i18n.__("errors.generic_error"), error: err });
     }
@@ -120,7 +131,8 @@ router.delete("/:id", getTask, async (req, res) => {
         await res.task.remove();
         res.json({ message: i18n.__("task.deleted") });
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        res.status(500).json({ message: i18n.__("errors.generic_error"), error: err });
+
     }
 });
 
@@ -138,17 +150,17 @@ async function getTask(req, res, next) {
     let taskId = req.params.id;
 
     if (!mongoose.Types.ObjectId.isValid(taskId)) {
-        return res.status(400).json({ message: req.__("errors.task_not_found",{}) });
-      }
+        return res.status(400).json({ message: req.__("errors.task_not_found", {}) });
+    }
 
     try {
         task = await Task.findById(taskId);
         if (task == null) {
             return res.status(404).json({ message: req.__("errors.task_not_found") });
-     
+
         }
     } catch (err) {
-        return res.status(500).json({ message: err.message });
+        return res.status(500).json({ message: i18n.__("errors.generic_error"), error: err });
     }
 
     res.task = task;

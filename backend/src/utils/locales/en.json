@@ -14,6 +14,7 @@
     "errors": {
       "task_not_found": "The specified task could not be found.",
       "user_not_found": "The specified user could not be found.",
-      "generic_error": "A system error has occurred."
+      "generic_error": "A system error has occurred.",
+      "status_not_valid":"The status is not valid."
     }
   }
