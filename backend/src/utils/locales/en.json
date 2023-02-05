@@ -15,6 +15,18 @@
       "task_not_found": "The specified task could not be found.",
       "user_not_found": "The specified user could not be found.",
       "generic_error": "A system error has occurred.",
-      "status_not_valid":"The status is not valid."
+      "status_not_valid":"The status is not valid.",
+      "missing_fields": "Required fields are missing.",
+      "invalid_credentials": "Invalid credentials, please try again.",
+      "invalid_email": "Invalid email address.",
+      "password_reset_error": "An error occurred while resetting the password.",
+      "password_mismatch": "Passwords do not match.",
+      "password_too_short": "Password must be at least 6 characters.",
+      "password_reset_email_error": "An error occurred while sending the password reset email.",
+      "password_reset_email_sent": "Password reset email sent, please check your inbox."
+    },
+    "success": {
+      "profile_updated": "Profile updated successfully.",
+      "password_reset_email_sent": "Password reset email sent, please check your inbox."
     }
   }

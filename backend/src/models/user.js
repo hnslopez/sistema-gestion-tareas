@@ -23,19 +23,20 @@ const userSchema = new mongoose.Schema({
     trim: true
   },
   // Campo requerido de tipo String para almacenar los tokens generados para el usuario
-  tokens: [{
+ /* tokens: [{
     token: {
       type: String,
       required: true
     }
   }]
+  */
 });
 
   // Antes de ingresar la contraseña del usuario a la base de datos, esta se encripta
 userSchema.pre("save", async function(next) {
   const user = this;
   if (user.isModified("password")) {
-    user.password = await Encryption.hash(user.password, 8);
+    user.password = await Encryption.encrypt(user.password);
   }
   next();
 });

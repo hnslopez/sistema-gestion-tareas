@@ -4,16 +4,15 @@ const { Encryption } = require('../common/helper')
 const UserController = {
   /**
    * Registrare un nuevo usuario
-   * @param {Object} req - La solicitud de Express
-   * @param {Object} res - La respuesta de Express
+   * @param {JSON} req - JSON con username, email y password
    * @returns {Object} - El usuario creado
    */
-  async register(req, res) {
-    const { name, email, password } = req.body;
+  async register(req) {
+    const { username, email, password } = req;
     const encryptedPassword = await Encryption.encrypt(password);
-    const user = new User({ name, email, password: encryptedPassword });
+    const user = new User({ username, email, password: encryptedPassword });
     const savedUser = await user.save();
-    return res.status(201).json(savedUser);
+    return savedUser;
   }
 }
 
