@@ -1,16 +1,17 @@
 /**
- * task.js - Rutas para usuarios en Express
- *
- * Este archivo contiene las rutas para los usuarios en la aplicación de gestión de tareas.
- * Utiliza el modelo de usuarios en Mongoose para interactuar con la base de datos.
- *
- * Las operaciones disponibles incluyen:
- *  - Crear un nuevo usuario
- *  - Obtener todos los usuarios
- *  - Obtener un usuario por id
- *  - Actualizar un usuario
- *  - Eliminar un usuario
- */
+
+userRoutes.js - Rutas para usuarios en Express
+Este archivo contiene las rutas para los usuarios en la aplicación.
+Utiliza el modelo de usuario en Mongoose para interactuar con la base de datos.
+Las operaciones disponibles incluyen:
+ *  - Ver un usuario existente
+ *  - Recuperar contraseña
+ *  - Cambiar contraseña
+ *  - Ver perfil
+ *  - Editar perfil
+ *  - Refrescar token de inicio de sesión
+ *  - Registrar usuario
+*/
 
 const express = require("express");
 const router = express.Router();

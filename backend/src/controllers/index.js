@@ -9,13 +9,13 @@
  * Importación del archivo del controlador de una tarea.
  * @see {@link module:task.js}
  */
-const TaskController = require("./task");
+const TaskController = require("./taskController");
 
 /**
  * Importación del archivo del controlador de un usuario.
  * @see {@link module:user.js}
  */
-const UserController = require("./user");
+const UserController = require("./userController");
 
 
 /**

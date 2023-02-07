@@ -1,5 +1,5 @@
 /**
- * tasks.js - Controlador para tareas en MongoDB
+ * tasksController.js - Controlador para tareas en MongoDB
  * Este archivo contiene la lógica para interactuar con la base de datos MongoDB para las tareas.
  * Incluye funciones para realizar operaciones CRUD en la base de datos.
  * Las operaciones disponibles incluyen:
