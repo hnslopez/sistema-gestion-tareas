@@ -42,13 +42,13 @@ const TaskController = {
     getTask: async (req, res, next) => {
 
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-            return res.status(400).json({ message: req.__("errors.task_not_found", {}) });
+            return res.status(400).json({ message: req.__("tasks.not_found", {}) });
         }
 
         try {
             const task = await Task.findById(req.params.id);
             if (!task) {
-                return res.status(404).json({ message: req.__("errors.task_not_found") });
+                return res.status(404).json({ message: req.__("tasks.not_found") });
             }
             res.task = task;
             next();
@@ -73,7 +73,7 @@ const TaskController = {
             await task.save();
             res.status(201).json({ message: i18n.__('tasks.created') });
         } catch (err) {
-            res.status(400).json({ message: i18n.__("errors.generic_error"), error: err });
+            res.status(400).json({ message: i18n.__("errors.generic"), error: err });
         }
     },
     /**
@@ -114,7 +114,7 @@ const TaskController = {
 
 
         } catch (err) {
-            res.status(400).json({ message: i18n.__("errors.generic_error"), error: err });
+            res.status(400).json({ message: i18n.__("errors.generic"), error: err });
         }
     },
     /**
@@ -129,7 +129,7 @@ const TaskController = {
             await res.task.remove();
             res.json({ message: i18n.__("task.deleted") });
         } catch (err) {
-            res.status(500).json({ message: i18n.__("errors.generic_error"), error: err });
+            res.status(500).json({ message: i18n.__("errors.generic"), error: err });
 
         }
     }

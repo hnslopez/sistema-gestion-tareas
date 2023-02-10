@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-// Definir el esquema del modelo de token
 const tokenSchema = new mongoose.Schema({
   // Campo requerido de tipo String para almacenar el token
   token: {
@@ -28,7 +27,18 @@ const tokenSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  // Campo requerido de tipo Date para almacenar la fecha de expiración del token
+  expiresAt: {
+    type: Date,
+    required: true,
+  },
+  // Campo opcional de tipo Boolean para indicar si el token ha sido revocado o no
+  revoked: {
+    type: Boolean,
+    default: false
+  }
 });
+
 
 
 const Token = mongoose.model("Token", tokenSchema);

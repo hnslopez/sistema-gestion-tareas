@@ -38,7 +38,7 @@ const UserController = {
       res.json({ message: i18n.__("users.created") });
     } catch (err) {
       console.log(err)
-      res.status(400).json({ message: i18n.__("errors.generic_error"), error: err });
+      res.status(400).json({ message: i18n.__("errors.generic"), error: err });
     }
 
   },
@@ -55,7 +55,7 @@ const UserController = {
       const users = await User.find();
       res.json(users);
     } catch (err) {
-      res.status(400).json({ message: i18n.__("errors.generic_error"), error: err });
+      res.status(400).json({ message: i18n.__("errors.generic"), error: err });
     }
 
   },
@@ -70,13 +70,13 @@ const UserController = {
   getUser: async (req, res, next) => {
 
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-      return res.status(400).json({ message: i18n.__("errors.user_not_found", {}) });
+      return res.status(400).json({ message: i18n.__("users.not_found", {}) });
     }
 
     try {
       const user = await User.findById(req.params.id);
       if (!user) {
-        return res.status(404).json({ message: i18n.__("errors.user_not_found") });
+        return res.status(404).json({ message: i18n.__("users.not_found") });
       }
       res.user = user;
       next();
@@ -95,12 +95,12 @@ const UserController = {
       delete req.body.password;
       const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
       if (!user) {
-        return res.status(404).json({ message: i18n.__("errors.user_not_found") });
+        return res.status(404).json({ message: i18n.__("users.not_found") });
       }
       res.json(user);
     } catch (err) {
       console.log(err)
-      res.status(400).json({ message: i18n.__("errors.generic_error"), error: err });
+      res.status(400).json({ message: i18n.__("errors.generic"), error: err });
     }
   },
    /**
@@ -113,11 +113,11 @@ const UserController = {
     try {
       const user = await User.findByIdAndDelete(req.params.id);
       if (!user) {
-        return res.status(404).json({ message: i18n.__("errors.user_not_found") });
+        return res.status(404).json({ message: i18n.__("users.not_found") });
       }
       res.json({ message: i18n.__("users.deleted") });
     } catch (err) {
-      res.status(400).json({ message: i18n.__("errors.generic_error"), error: err });
+      res.status(400).json({ message: i18n.__("errors.generic"), error: err });
     }
   },
   /** 
@@ -131,12 +131,12 @@ const UserController = {
     try {
       const user = await User.findOne({ email: req.body.email });
       if (!user) {
-        return res.status(404).json({ message: i18n.__("errors.user_not_found") });
+        return res.status(404).json({ message: i18n.__("users.not_found") });
       }
       // TODO: Enviar correo electrónico para restablecer la contraseña
       res.json({ message: i18n.__("success.forgot_password_email_sent") });
     } catch (err) {
-      res.status(400).json({ message: i18n.__("errors.generic_error"), error: err });
+      res.status(400).json({ message: i18n.__("errors.generic"), error: err });
     }
   },
 
@@ -151,14 +151,14 @@ const UserController = {
     try {
       const user = await User.findOne({ _id: req.user.id });
       if (!user) {
-        return res.status(404).json({ message: i18n.__("errors.user_not_found") });
+        return res.status(404).json({ message: i18n.__("users.not_found") });
       }
       user.password = await Encryption.encrypt(req.body.password);
 
       await user.save();
       res.json({ message: i18n.__("success.password_updated") });
     } catch (err) {
-      res.status(400).json({ message: i18n.__("errors.generic_error"), error: err });
+      res.status(400).json({ message: i18n.__("errors.generic"), error: err });
     }
   },
 
