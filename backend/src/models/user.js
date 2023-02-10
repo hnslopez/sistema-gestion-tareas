@@ -13,7 +13,8 @@ const userSchema = new mongoose.Schema({
   // Campo requerido de tipo String para almacenar la contraseña
   password: {
     type: String,
-    required: true
+    required: true,
+    select: false 
   },
   // Campo requerido de tipo String para almacenar el correo
   email: {
@@ -22,14 +23,7 @@ const userSchema = new mongoose.Schema({
     unique: true,
     trim: true
   },
-  // Campo requerido de tipo String para almacenar los tokens generados para el usuario
- /* tokens: [{
-    token: {
-      type: String,
-      required: true
-    }
-  }]
-  */
+
 });
 
   // Antes de ingresar la contraseña del usuario a la base de datos, esta se encripta

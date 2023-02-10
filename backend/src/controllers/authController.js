@@ -29,7 +29,7 @@ const authController = {
           const { userId } = req;
           const user = await User.findById(userId);
           if (!user) {
-            return res.send({ message: "User not found" });
+            return res.send({ message: "User not found" }); 
           }
     
           user.tokenVersion++;

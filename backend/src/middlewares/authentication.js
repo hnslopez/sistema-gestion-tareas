@@ -30,7 +30,7 @@ const localLogin = new LocalStrategy(
   { usernameField: "username" },
   async (username, password, done) => {
       try {
-          const user = await User.findOne({ username });
+          const user = await User.findOne({ username }).select('+password');;
           if (!user) return done(null, false, { message: i18n.__("errors.user_or_password_not_valid") });
           const isMatch = await Encryption.compare(password, user.password);
           if (!isMatch) return done(null, false, { message: i18n.__("errors.user_or_password_not_valid") });

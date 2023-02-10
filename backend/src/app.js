@@ -18,7 +18,7 @@ app.use(cors());
 app.use(i18n.init);
 
 // Use morgan for request logging
-app.use(morgan("morgan"));
+app.use(morgan("dev"));
 
 // inicialización de passport
 app.use(initialize);

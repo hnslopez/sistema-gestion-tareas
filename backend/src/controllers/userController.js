@@ -32,11 +32,8 @@ const UserController = {
       return res.status(400).json({ message: i18n.__("errors.missing_fields") });
     }
 
-    const encryptedPassword = await Encryption.encrypt(password);
-
-
     try {
-      const user = new User({ username, email, password: encryptedPassword });
+      const user = new User({ username, email, password });
       await user.save();
       res.json({ message: i18n.__("users.created") });
     } catch (err) {
