@@ -17,6 +17,11 @@ const Task = require("./task");
  */
 const User = require("./user");
 
+/**
+ * Importación del archivo del modelo de un token.
+ * @see {@link module:token.js}
+ */
+const Token = require("./token");
 
 /**
  * Exportación del archivo de rutas.
@@ -24,5 +29,6 @@ const User = require("./user");
  */
 module.exports = {
     Task,
-    User
+    User,
+    Token
 }

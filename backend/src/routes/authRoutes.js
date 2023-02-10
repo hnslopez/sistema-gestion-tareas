@@ -13,6 +13,8 @@ Las operaciones disponibles incluyen:
 */
 
 const express = require("express");
+const { authController } = require("../controllers");
+const { authenticateLocal } = require("../middlewares/authentication");
 const router = express.Router();
 
 
@@ -25,7 +27,7 @@ const router = express.Router();
  * @return {Boolean} Verdadero si el usuario está autenticado
  * @throws {Error} Si hay un error en la verificación del token
  */
-//router.get("/verify", authentication, AuthController.verifyToken);
+//router.get("/verify", authentication, authController.verifyToken);
 
 /**
  * Iniciar sesión de un usuario.
@@ -37,7 +39,7 @@ const router = express.Router();
  * @return {Object} Token de acceso y de actualización
  * @throws {Error} Si hay un error al iniciar sesión
  */
-router.post("/login", AuthController.login);
+router.post("/login",authenticateLocal,  authController.login);
 
 /**
  * Refrescar el token de un usuario.
@@ -48,7 +50,7 @@ router.post("/login", AuthController.login);
  * @return {Object} Nuevo token de acceso y de actualización
  * @throws {Error} Si hay un error al generar el nuevo token
  */
-//router.post("/refresh", authentication, AuthController.refreshToken);
+//router.post("/refresh", authentication, authController.refreshToken);
 
 
 module.exports = router;

@@ -23,7 +23,11 @@
 		"password_mismatch": "Las contraseñas no coinciden.",
 		"password_too_short": "La contraseña debe tener al menos 6 caracteres.",
 		"password_reset_email_error": "Ocurrió un error mientras se enviaba el correo electrónico para reiniciar la contraseña.",
-		"password_reset_email_sent": "El correo electrónico para reiniciar la contraseña fue enviado, por favor revise su bandeja de entrada."
+		"password_reset_email_sent": "El correo electrónico para reiniciar la contraseña fue enviado, por favor revise su bandeja de entrada.",
+		"access_denied": "Acceso denegado.",
+		"no_privileges": "Acceso denegado, no tiene los privilegios necesarios para realizar esta acción.",
+		"invalid_token": "Token inválido, por favor inicie sesión nuevamente.",
+		"user_or_password_not_valid": "Usuario y/o la contraseña no son validos."
 	},
 	"success": {
 		"profile_updated": "Perfil actualizado con éxito.",

@@ -6,6 +6,7 @@ const morgan = require("morgan");
 const app = express();
 const routes = require('./routes');
 const i18n = require('./utils/i18n');
+const { initialize } = require('./middlewares/authentication');
 
 // Conecta la base de datos
 require('./database'); 
@@ -17,7 +18,10 @@ app.use(cors());
 app.use(i18n.init);
 
 // Use morgan for request logging
-app.use(morgan("tiny"));
+app.use(morgan("morgan"));
+
+// inicialización de passport
+app.use(initialize);
 
 // Configuración de Body Parser
 app.use(bodyParser.json());
@@ -27,6 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(routes.mainRoutes);
 app.use('/api/task',routes.taskRoutes);
 app.use('/api/user',routes.userRoutes);
+app.use('/api/auth',routes.authRoutes);
 
 // Middleware para manejar errores
 app.use((error, req, res, next) => {

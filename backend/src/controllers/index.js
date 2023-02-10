@@ -7,22 +7,28 @@
 
 /**
  * Importación del archivo del controlador de una tarea.
- * @see {@link module:task.js}
+ * @see {@link module:taskController.js}
  */
-const TaskController = require("./taskController");
+const taskController = require("./taskController");
 
 /**
  * Importación del archivo del controlador de un usuario.
- * @see {@link module:user.js}
+ * @see {@link module:userController.js}
  */
-const UserController = require("./userController");
+const userController = require("./userController");
 
+/**
+ * Importación del archivo del controlador de autorización.
+ * @see {@link module:authController.js}
+ */
+const authController = require("./authController");
 
 /**
  * Exportación del archivo de rutas.
  * @type {object}
  */
 module.exports = {
-    TaskController,
-    UserController
+    taskController,
+    userController,
+    authController
 }

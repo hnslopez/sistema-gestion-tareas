@@ -14,7 +14,7 @@
 
 const express = require("express");
 const router = express.Router();
-const { TaskController } = require("../controllers");
+const { taskController } = require("../controllers");
 /**
  * Obtiene todas las tareas y las devuelve en un objeto JSON.
  *
@@ -23,7 +23,7 @@ const { TaskController } = require("../controllers");
  * @return {Array} Todas las tareas en la base de datos
  * @throws {Error} Si hay un error en la consulta a la base de datos
  */
-router.get("/", TaskController.getAllTasks);
+router.get("/", taskController.getAllTasks);
 
 /**
  * Ver una tarea existente de la base de datos.
@@ -34,7 +34,7 @@ router.get("/", TaskController.getAllTasks);
  * @return {Object} La tarea en la base de datos
  * @throws {Error} Si hay un error en la muestra de la tarea en la base de datos
  */
-router.get("/:id", TaskController.getTask,(req, res)=> res.json(res.task));
+router.get("/:id", taskController.getTask,(req, res)=> res.json(res.task));
 
 
 /**
@@ -46,7 +46,7 @@ router.get("/:id", TaskController.getTask,(req, res)=> res.json(res.task));
  * @return {Object} La nueva tarea creada en la base de datos
  * @throws {Error} Si hay un error en la creación de la nueva tarea en la base de datos
  */
-router.post("/", TaskController.createTask);
+router.post("/", taskController.createTask);
 
 /**
  * Actualiza una tarea existente en la base de datos.
@@ -58,7 +58,7 @@ router.post("/", TaskController.createTask);
  * @return {Object} La tarea actualizada en la base de datos
  * @throws {Error} Si hay un error en la actualización de la tarea en la base de datos
  */
-router.patch("/:id", TaskController.getTask, TaskController.updateTask);
+router.patch("/:id", taskController.getTask, taskController.updateTask);
 
 /**
  * Elimina una tarea existente de la base de datos.
@@ -69,7 +69,7 @@ router.patch("/:id", TaskController.getTask, TaskController.updateTask);
  * @return {Object} La tarea eliminada de la base de datos
  * @throws {Error} Si hay un error en la eliminación de la tarea en la base de datos
  */
-router.delete("/:id", TaskController.getTask, TaskController.deleteTask);
+router.delete("/:id", taskController.getTask, taskController.deleteTask);
 
 
 

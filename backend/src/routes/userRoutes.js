@@ -15,7 +15,7 @@ Las operaciones disponibles incluyen:
 
 const express = require("express");
 const router = express.Router();
-const { UserController } = require("../controllers");
+const { userController } = require("../controllers");
 
 /**
  * Obtiene todos los usuarios y las devuelve en un objeto JSON.
@@ -25,7 +25,7 @@ const { UserController } = require("../controllers");
  * @return {Array} Todos los usuarios en la base de datos
  * @throws {Error} Si hay un error en la consulta a la base de datos
  */
-router.get("/",  UserController.getAllUsers);
+router.get("/",  userController.getAllUsers);
 
 
 /**
@@ -37,7 +37,7 @@ router.get("/",  UserController.getAllUsers);
  * @return {Object} El usuario en la base de datos
  * @throws {Error} Si hay un error con el usuario en la base de datos
  */
-router.get("/:id", UserController.getUser, (req, res) => res.json(res.user));
+router.get("/:id", userController.getUser, (req, res) => res.json(res.user));
 
 
 /**
@@ -49,7 +49,7 @@ router.get("/:id", UserController.getUser, (req, res) => res.json(res.user));
  * @return {Object} El nuevo usuario creada en la base de datos
  * @throws {Error} Si hay un error en la creación del nuevo usuario en la base de datos
  */
-router.post('/register', UserController.register);
+router.post('/register', userController.register);
 
 /**
  * Actualiza un nuevo usuario existente en la base de datos.
@@ -61,7 +61,7 @@ router.post('/register', UserController.register);
  * @return {Object} El usuario actualizado en la base de datos
  * @throws {Error} Si hay un error en la actualización del usuario en la base de datos
  */
-router.patch("/:id", UserController.updateUser);
+router.patch("/:id", userController.updateUser);
 
 
 
@@ -74,7 +74,7 @@ router.patch("/:id", UserController.updateUser);
  * @return {Object} El usuario eliminada de la base de datos
  * @throws {Error} Si hay un error en la eliminación del usuario en la base de datos
  */
-router.delete("/:id", UserController.deleteUser);
+router.delete("/:id", userController.deleteUser);
 
 /**
  * Recuperar la contraseña de un usuario.
@@ -85,7 +85,7 @@ router.delete("/:id", UserController.deleteUser);
  * @return {Object} Mensaje de éxito o error
  * @throws {Error} Si hay un error al enviar el correo electrónico
  */
-router.post("/forgot-password",UserController.forgotPassword);
+router.post("/forgot-password",userController.forgotPassword);
 
 
 /**
@@ -98,7 +98,7 @@ router.post("/forgot-password",UserController.forgotPassword);
  * @return {Object} Mensaje de éxito o error
  * @throws {Error} Si hay un error al actualizar la contraseña en la base de datos
  */
-router.put("/change-password", UserController.changePassword);
+router.put("/change-password", userController.changePassword);
 
 
 module.exports = router;
