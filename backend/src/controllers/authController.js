@@ -88,23 +88,28 @@ const authController = {
     // Si el token no es válido, devolver un error 401
     if (!token) return res.status(401).send({ message: i18n.__('auth.invalid_token') });
   
+    // Verificar si el navegador y el dispositivo actual son los mismos que los almacenados en la base de datos
+    if (token.browser !== req.useragent.browser || token.deviceType !== (req.useragent.isMobile ? "mobile" : "desktop")) {
+      return res.status(401).send({ message: i18n.__('auth.invalid_device') });
+    }
+  
     // Crear un nuevo token de acceso
-    const { accessToken } = await signToken(token.user);
+    const newTokens = await signToken(token.user);
+    const accessToken = newTokens.accessToken;
   
     // Actualizar el token en la base de datos
-    token.token = refreshToken;
+    token.token = newTokens.refreshToken;
     token.createdAt = Date.now();
-    token.deviceType = req.useragent.isMobile ? "mobile" : "desktop";
-    token.browser = req.useragent.browser;
     await token.save();
   
     // Actualizar el token en la cookie
-    res.cookie("refreshToken", refreshToken, {
+    res.cookie("refreshToken", newTokens.refreshToken, {
       httpOnly: true,
     });
   
     return res.json({ accessToken });
   },
+  
 
 
 
