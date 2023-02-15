@@ -7,27 +7,15 @@ Las operaciones disponibles incluyen:
 
  *  - Inicio de sesión de usuario
  *  - Refresco de token de inicio de sesión
- *  - Verificación de token de inicio de sesión
  *  - Finalización de sesión de usuario
- *  - Protección de rutas requiriendo autenticación
 */
 
 const express = require("express");
 const { authController } = require("../controllers");
-const { authenticateLocal } = require("../middlewares/authentication");
+const { notAuthenticated } = require("../controllers/authController");
+const { authenticateLocal, authenticateJwt } = require("../middlewares/authentication");
 const router = express.Router();
 
-
-/**
- * Verificar si el usuario está autenticado.
- *
- * GET /verify
- *
- * @param {String} req.headers.authorization - Token de autorización
- * @return {Boolean} Verdadero si el usuario está autenticado
- * @throws {Error} Si hay un error en la verificación del token
- */
-//router.get("/verify", authentication, authController.verifyToken);
 
 /**
  * Iniciar sesión de un usuario.
@@ -39,7 +27,7 @@ const router = express.Router();
  * @return {Object} Token de acceso y de actualización
  * @throws {Error} Si hay un error al iniciar sesión
  */
-router.post("/login",authenticateLocal,  authController.login);
+router.post("/login", notAuthenticated , authenticateLocal, authController.login);
 
 /**
  * Refrescar el token de un usuario.
@@ -50,7 +38,17 @@ router.post("/login",authenticateLocal,  authController.login);
  * @return {Object} Nuevo token de acceso y de actualización
  * @throws {Error} Si hay un error al generar el nuevo token
  */
-//router.post("/refresh", authentication, authController.refreshToken);
+router.post("/refresh", authenticateJwt, authController.refreshToken);
 
+
+/**
+ * 
+ * Cerrar sesión del usuario.
+ * POST /logout
+ * @param {String} req.headers.authorization - Token de autorización
+ * @returns {Object} Objeto JSON con un mensaje de éxito
+ * @throws {Error} Si hay un error al procesar la solicitud de cierre de sesión
+*/
+router.post("/logout", authenticateJwt, authController.logout);
 
 module.exports = router;

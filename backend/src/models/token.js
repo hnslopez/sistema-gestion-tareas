@@ -17,16 +17,6 @@ const tokenSchema = new mongoose.Schema({
     required: true,
     default: Date.now
   },
-  // Campo requerido de tipo String para almacenar el tipo de dispositivo
-  deviceType: {
-    type: String,
-    required: true
-  },
-  // Campo requerido de tipo String para almacenar el navegador
-  browser: {
-    type: String,
-    required: true
-  },
   // Campo requerido de tipo Date para almacenar la fecha de expiración del token
   expiresAt: {
     type: Date,

@@ -97,7 +97,7 @@ const signToken = async (userId) => {
     const refreshToken = await jwt.sign({
       sub: userId,
     }, process.env.JWT_REFRESH_TOKEN_SECRET, {
-      expiresIn: process.env.JWT_REFRESH_TOKEN__TIME,
+      expiresIn: process.env.JWT_REFRESH_TOKEN_TIME,
     });
 
     return {

@@ -7,6 +7,7 @@ const app = express();
 const routes = require('./routes');
 const i18n = require('./utils/i18n');
 const { initialize } = require('./middlewares/authentication');
+const cookieParser = require('cookie-parser');
 
 // Conecta la base de datos
 require('./database'); 
@@ -22,6 +23,10 @@ app.use(morgan("dev"));
 
 // inicialización de passport
 app.use(initialize);
+
+// inicialización de cookieParse
+app.use(cookieParser());
+
 
 // Configuración de Body Parser
 app.use(bodyParser.json());

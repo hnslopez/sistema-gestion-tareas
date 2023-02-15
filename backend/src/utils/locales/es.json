@@ -1,11 +1,12 @@
 {
 	"auth": {
 	  "invalid_credentials": "Credenciales inválidas, por favor intente nuevamente.",
-	  "invalid_token": "Token inválido, por favor inicie sesión nuevamente.",
+	  "invalid_token": "Acceso denegado, por favor inicie sesión nuevamente.",
 	  "user_or_password_not_valid": "Usuario y/o la contraseña no son válidos.",
 	  "access_denied": "Acceso denegado.",
 	  "no_privileges": "Acceso denegado, no tiene los privilegios necesarios para realizar esta acción.",
-	  "logout": "Ha cerrado sesión con éxito."
+	  "logout": "Ha cerrado sesión con éxito.",
+	  "already_authenticated":"Ya se encuentra autenticado."
 	},
 	"tasks": {
 	  "created": "La tarea ha sido creada con éxito.",

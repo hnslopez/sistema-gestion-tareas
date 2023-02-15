@@ -14,7 +14,7 @@ Las operaciones disponibles incluyen:
 const { signToken } = require("../middlewares/authentication");
 const { Token } = require("../models");
 const i18n = require("i18n");
-
+const ms = require('ms');
 
 const authController = {
 
@@ -26,14 +26,12 @@ const authController = {
    */
   login: async (req, res) => {
     const { accessToken, refreshToken } = await signToken(req.user._id);
-    const expiresIn = process.env.JWT_ACCESS_TOKEN_TIME || '15m';
+    const expiresIn = ms(process.env.JWT_ACCESS_TOKEN_TIME || '15m');
     const expiresAt = new Date(Date.now() + expiresIn);
 
     const newToken = new Token({
       token: refreshToken,
       user: req.user._id,
-      deviceType: req.useragent.isMobile ? "mobile" : "desktop",
-      browser: req.useragent.browser,
       expiresAt,
     });
 
@@ -60,14 +58,14 @@ const authController = {
 
     const token = await Token.findOne({ token: refreshToken });
 
-    if (!token) return res.status(401).send({  message: i18n.__('auth.invalid_token')});
+    if (!token) return res.status(401).send({ message: i18n.__('auth.invalid_token') });
 
     token.revoked = true;
     await token.save();
 
     res.clearCookie("refreshToken");
 
-    return res.send({message: i18n.__('auth.logout')});
+    return res.send({ message: i18n.__('auth.logout') });
   },
 
   /**
@@ -78,39 +76,53 @@ const authController = {
   refreshToken: async (req, res) => {
     // Obtener el refreshToken de la cookie
     const { refreshToken } = req.cookies;
-  
+
     // Si no se encuentra el refreshToken, devolver un error 401
-    if (!refreshToken) return res.status(401).send({ message: i18n.__('auth.invalid_token')});
-  
+    if (!refreshToken) return res.status(401).send({ message: i18n.__('auth.invalid_token') });
+
     // Buscar el token en la base de datos
     const token = await Token.findOne({ token: refreshToken, revoked: false });
-  
+
     // Si el token no es válido, devolver un error 401
     if (!token) return res.status(401).send({ message: i18n.__('auth.invalid_token') });
-  
+    /*
     // Verificar si el navegador y el dispositivo actual son los mismos que los almacenados en la base de datos
     if (token.browser !== req.useragent.browser || token.deviceType !== (req.useragent.isMobile ? "mobile" : "desktop")) {
-      return res.status(401).send({ message: i18n.__('auth.invalid_device') });
+      return res.status(401).send({ message: i18n.__('auth.invalid_token') });
     }
-  
+  */
     // Crear un nuevo token de acceso
     const newTokens = await signToken(token.user);
     const accessToken = newTokens.accessToken;
-  
+
     // Actualizar el token en la base de datos
     token.token = newTokens.refreshToken;
     token.createdAt = Date.now();
     await token.save();
-  
+
     // Actualizar el token en la cookie
     res.cookie("refreshToken", newTokens.refreshToken, {
       httpOnly: true,
     });
-  
+
     return res.json({ accessToken });
   },
-  
 
+
+  /**
+   * Función para validar que un usuario no esté autenticado
+   * @param {Object} req - La solicitud de Express
+   * @param {Object} res - La respuesta de Express
+   * @throws {Error} Si el usuario ya está autenticado
+   */
+  notAuthenticated: (req, res, next) => {
+    if (req.cookies && req.cookies.refreshToken) {
+      const error = new Error(i18n.__("auth.already_authenticated"));
+      error.status = 401;
+      return next(error);
+    }
+    next();
+  }
 
 
 
