@@ -18,6 +18,7 @@ const { User } = require('../models')
 const { Encryption } = require('../common/helper')
 const i18n = require("i18n");
 const mongoose = require('mongoose');
+const { passwordRegex, usernameRegex, emailRegex } = require('../common/regex');
 
 const UserController = {
   /**
@@ -28,8 +29,15 @@ const UserController = {
   register: async (req, res) => {
     const { username, email, password } = req.body;
 
-    if (!username || !email || !password) {
-      return res.status(400).json({ message: i18n.__("errors.missing_fields") });
+    if (!usernameRegex.test(username)) {
+      return res.status(400).json({ message: i18n.__("auth.invalid_username") });
+    }
+
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ message: i18n.__("errors.invalid_email") });
+    }
+    if (!passwordRegex.test(password)) {
+      return res.status(400).json({ message: i18n.__("auth.invalid_password") });
     }
 
     try {
@@ -42,6 +50,7 @@ const UserController = {
     }
 
   },
+
 
   /**
 * Función para obtener una todos los usuarios
@@ -92,8 +101,12 @@ const UserController = {
   */
   updateUser: async (req, res) => {
     try {
+      const existingUser = await User.findOne({ email: req.body.email });
+      if (existingUser && existingUser._id.toString() !== req.user._id.toString()) {
+        return res.status(400).json({ message: i18n.__("users.email_already_registered") });
+      }
       delete req.body.password;
-      const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
+      const user = await User.findByIdAndUpdate(req.user._id, req.body, { new: true });
       if (!user) {
         return res.status(404).json({ message: i18n.__("users.not_found") });
       }
@@ -103,12 +116,12 @@ const UserController = {
       res.status(400).json({ message: i18n.__("errors.generic"), error: err });
     }
   },
-   /**
-   * Función para eliminar un usuario específico
-   * @param {Object} req - La solicitud de Express
-   * @param {Object} res - La respuesta de Express
-   * @throws {Error} Si hay un error en la consulta a la base de datos o si no se encuentra el usuario
-   */
+  /**
+  * Función para eliminar un usuario específico
+  * @param {Object} req - La solicitud de Express
+  * @param {Object} res - La respuesta de Express
+  * @throws {Error} Si hay un error en la consulta a la base de datos o si no se encuentra el usuario
+  */
   deleteUser: async (req, res) => {
     try {
       const user = await User.findByIdAndDelete(req.params.id);
@@ -141,26 +154,40 @@ const UserController = {
   },
 
   /**
-   * TODO: para utilizar se requiere login
    * Función para cambiar la contraseña de un usuario
    * @param {Object} req - La solicitud de Express
    * @param {Object} res - La respuesta de Express
    * @throws {Error} Si hay un error al actualizar la contraseña en la base de datos o si no se encuentra el usuario
    */
   changePassword: async (req, res) => {
+    const { currentPassword, newPassword } = req.body;
+
+    if (!passwordRegex.test(newPassword)) {
+      return res.status(400).json({ message: i18n.__("auth.invalid_password") });
+    }
+
     try {
-      const user = await User.findOne({ _id: req.user.id });
+      const user = await User.findOne({ _id: req.user._id }).select('+password');
+
       if (!user) {
         return res.status(404).json({ message: i18n.__("users.not_found") });
       }
-      user.password = await Encryption.encrypt(req.body.password);
 
+      const isMatch = await Encryption.compare(currentPassword, user.password);
+      if (!isMatch) {
+        return res.status(401).json({ message: i18n.__("auth.incorrect_password") });
+      }
+
+      user.password = newPassword;
       await user.save();
+
       res.json({ message: i18n.__("success.password_updated") });
     } catch (err) {
+      console.log(err)
       res.status(400).json({ message: i18n.__("errors.generic"), error: err });
     }
-  },
+  }
+
 
 }
 

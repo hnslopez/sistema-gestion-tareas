@@ -1,40 +1,43 @@
 {
 	"auth": {
-	  "invalid_credentials": "Credenciales inválidas, por favor intente nuevamente.",
-	  "invalid_token": "Acceso denegado, por favor inicie sesión nuevamente.",
-	  "user_or_password_not_valid": "Usuario y/o la contraseña no son válidos.",
-	  "access_denied": "Acceso denegado.",
-	  "no_privileges": "Acceso denegado, no tiene los privilegios necesarios para realizar esta acción.",
-	  "logout": "Ha cerrado sesión con éxito.",
-	  "already_authenticated":"Ya se encuentra autenticado."
+		"invalid_credentials": "Credenciales inválidas, por favor intente nuevamente.",
+		"invalid_token": "Acceso denegado, por favor inicie sesión nuevamente.",
+		"user_or_password_not_valid": "Usuario y/o la contraseña no son válidos.",
+		"access_denied": "Acceso denegado.",
+		"no_privileges": "Acceso denegado, no tiene los privilegios necesarios para realizar esta acción.",
+		"logout": "Ha cerrado sesión con éxito.",
+		"already_authenticated": "Ya se encuentra autenticado.",
+		"invalid_password": "La contraseña no es válidos.",
+		"invalid_username": "El Usuario no es valido"
 	},
 	"tasks": {
-	  "created": "La tarea ha sido creada con éxito.",
-	  "updated": "La tarea ha sido actualizada con éxito.",
-	  "deleted": "La tarea ha sido eliminada con éxito.",
-	  "list_title": "Lista de tareas",
-	  "not_found": "No se ha encontrado la tarea especificada."
+		"created": "La tarea ha sido creada con éxito.",
+		"updated": "La tarea ha sido actualizada con éxito.",
+		"deleted": "La tarea ha sido eliminada con éxito.",
+		"list_title": "Lista de tareas",
+		"not_found": "No se ha encontrado la tarea especificada."
 	},
 	"users": {
-	  "created": "El usuario ha sido creado con éxito.",
-	  "updated": "El usuario ha sido actualizado con éxito.",
-	  "deleted": "El usuario ha sido eliminado con éxito.",
-	  "list_title": "Lista de usuarios",
-	  "not_found": "No se ha encontrado el usuario especificado."
+		"created": "El usuario ha sido creado con éxito.",
+		"updated": "El usuario ha sido actualizado con éxito.",
+		"deleted": "El usuario ha sido eliminado con éxito.",
+		"list_title": "Lista de usuarios",
+		"not_found": "No se ha encontrado el usuario especificado.",
+		"email_already_registered": "El correo ya se encuentra registrado."
 	},
 	"errors": {
-	  "generic": "Ha ocurrido un error en el sistema.",
-	  "missing_fields": "Faltan campos requeridos.",
-	  "invalid_email": "Dirección de correo electrónico inválida.",
-	  "password_reset_error": "Ocurrió un error mientras se reiniciaba la contraseña.",
-	  "password_mismatch": "Las contraseñas no coinciden.",
-	  "password_too_short": "La contraseña debe tener al menos 6 caracteres.",
-	  "password_reset_email_error": "Ocurrió un error mientras se enviaba el correo electrónico para reiniciar la contraseña.",
-	  "status_not_valid":"El estado no es válido."
+		"generic": "Ha ocurrido un error en el sistema.",
+		"missing_fields": "Faltan campos requeridos.",
+		"invalid_email": "Dirección de correo electrónico inválida.",
+		"password_reset_error": "Ocurrió un error mientras se reiniciaba la contraseña.",
+		"password_mismatch": "Las contraseñas no coinciden.",
+		"password_too_short": "La contraseña debe tener al menos 6 caracteres.",
+		"password_reset_email_error": "Ocurrió un error mientras se enviaba el correo electrónico para reiniciar la contraseña.",
+		"status_not_valid": "El estado no es válido."
 	},
 	"success": {
-	  "profile_updated": "Perfil actualizado con éxito.",
-	  "password_reset_email_sent": "El correo electrónico para reiniciar la contraseña fue enviado, por favor revise su bandeja de entrada."
+		"profile_updated": "Perfil actualizado con éxito.",
+		"password_reset_email_sent": "El correo electrónico para reiniciar la contraseña fue enviado, por favor revise su bandeja de entrada.",
+		"password_updated": "La contraseña ha sido actualizada con éxito."
 	}
-  }
-  
+}
