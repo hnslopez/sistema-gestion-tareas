@@ -109,9 +109,22 @@ const signToken = async (userId) => {
   }
 };
 
+const authenticateJwt = (req, res, next) => {
+  passport.authenticate('jwt', { session: false }, (err, user, info) => {
+    if (err || !user) {
+      const error = new Error(i18n.__("auth.invalid_token"));
+      error.status = info.status || 401;
+      return next(error);
+    }
+
+    req.user = user;
+    return next();
+  })(req, res, next);
+};
+
 module.exports = {
   initialize: passport.initialize(),
-  authenticateJwt: passport.authenticate("jwt", { session: false }),
+  authenticateJwt: authenticateJwt,
   authenticateLocal: passport.authenticate("local", { session: false }),
   signToken
 };
