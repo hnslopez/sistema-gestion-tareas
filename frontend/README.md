@@ -8,6 +8,10 @@ fontend/
 │   ├── http/
 │   │   ├── http.interceptor.ts
 │   ├── models/
+│   ├── services/
+│   │   ├── api.service.ts
+│   │   ├── config.service.ts
+│   │   ├── index.ts
 │   ├── store/
 │   │   ├── actions/
 │   │   │   ├── tasks.actions.ts

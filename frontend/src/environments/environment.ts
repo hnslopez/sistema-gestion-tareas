@@ -2,8 +2,22 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
 export const environment = {
-  production: false
+  production: false,
+  appVersion: `dev`,
+
+  // Replace this with your server API URL
+  // We assigned it to empty string for the Fake API
+  apiUrl: 'http://localhost:3000/api/',
+
+  settings: {
+    auth: {
+      // keys to store tokens at local storage
+      accessTokenKey: 'DoPS3ZrQjM',
+      refreshTokenKey: 'nmlP8PW2nb',
+    },
+  },
 };
 
 /*
