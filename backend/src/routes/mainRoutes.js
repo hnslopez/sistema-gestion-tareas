@@ -8,6 +8,7 @@
  */
 
 var express = require('express');
+const i18n = require('../utils/i18n');
 var router = express.Router();
 
 /**
@@ -19,6 +20,24 @@ var router = express.Router();
  */
 router.get('/', function(req, res, next) {
   res.send('Funciona');
+});
+
+/**
+ * Configuración para ver el idioma en el que esta el frontend.
+ *
+ */
+router.use(i18n.setLang);
+
+/**
+ * Configura una cookie para probar el idioma.
+ *
+ * GET /
+ *
+ * @return {String} Mensaje de cookie establecida correctamente
+ */
+router.get('/set-cookie', (req, res) => {
+  res.cookie('lang', 'en', { maxAge: 900000, httpOnly: true });
+  res.send('Cookie establecida');
 });
 
 module.exports = router;

@@ -8,6 +8,7 @@ const routes = require('./routes');
 const i18n = require('./utils/i18n');
 const { initialize } = require('./middlewares/authentication');
 const cookieParser = require('cookie-parser');
+const { errorHandling, loggerMiddleware, rateLimiterMiddleware, routeErrorHandler } = require('./middlewares');
 
 // Conecta la base de datos
 require('./database'); 
@@ -38,13 +39,11 @@ app.use('/api/task',routes.taskRoutes);
 app.use('/api/user',routes.userRoutes);
 app.use('/api/auth',routes.authRoutes);
 
-// Middleware para manejar errores
-app.use((error, req, res, next) => {
-  const status = error.statusCode || 500;
-  const message = error.message;
-  res.status(status).json({ message: message });
-});
+// Middlewares
 
+app.use(rateLimiterMiddleware);
+app.use(routeErrorHandler);
+app.use(errorHandling); 
 
 // Inicie el servidor
 const port = process.env.PORT || 3000;

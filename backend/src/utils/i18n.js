@@ -9,4 +9,12 @@ i18n.configure({
     register: global
 });
 
+
+
 module.exports = i18n;
+
+module.exports.setLang = (req, res, next) => {
+  const locale = req.cookies.lang || i18n.getLocale();
+    i18n.setLocale(locale);
+    next();
+};
