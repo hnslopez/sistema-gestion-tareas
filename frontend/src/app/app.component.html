@@ -1,4 +1,37 @@
-<!-- NG-ZORRO -->
-<a href="https://github.com/NG-ZORRO/ng-zorro-antd" target="_blank" style="display: flex;align-items: center;justify-content: center;height: 100%;width: 100%;">
-  <img height="300" src="https://img.alicdn.com/tfs/TB1X.qJJgHqK1RjSZFgXXa7JXXa-89-131.svg">
-</a>
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Sistema de Gestión de Tareas</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/tareas">Tareas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/usuarios">Usuarios</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/registro">Registro</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- main content -->
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- footer -->
+<footer class="footer fixed-bottom bg-light py-3 sticky-footer text-center">
+  <div class="container">
+    <span class="text-muted">Sistema de Gestión de Tareas &copy; 2023</span>
+  </div>
+</footer>

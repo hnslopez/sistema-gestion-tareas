@@ -8,7 +8,7 @@ const routes = require('./routes');
 const i18n = require('./utils/i18n');
 const { initialize } = require('./middlewares/authentication');
 const cookieParser = require('cookie-parser');
-const { errorHandling, loggerMiddleware, rateLimiterMiddleware, routeErrorHandler } = require('./middlewares');
+const { errorHandling, rateLimiterMiddleware, routeErrorHandler } = require('./middlewares');
 
 // Conecta la base de datos
 require('./database'); 
@@ -40,7 +40,6 @@ app.use('/api/user',routes.userRoutes);
 app.use('/api/auth',routes.authRoutes);
 
 // Middlewares
-
 app.use(rateLimiterMiddleware);
 app.use(routeErrorHandler);
 app.use(errorHandling); 

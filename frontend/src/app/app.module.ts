@@ -10,12 +10,16 @@ import es from '@angular/common/locales/es';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './shared/footer/footer.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 registerLocaleData(es);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
