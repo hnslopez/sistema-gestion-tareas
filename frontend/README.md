@@ -1,54 +1,60 @@
 ```
 fontend/
 ├── core/
-│   ├── auth/
-│   │   ├── auth.interceptor.ts
-│   │   ├── auth.guard.ts
-│   │   ├── auth.service.ts
-│   ├── http/
-│   │   ├── http.interceptor.ts
-│   ├── models/
-│   ├── services/
-│   │   ├── api.service.ts
-│   │   ├── config.service.ts
-│   │   ├── index.ts
-│   ├── store/
-│   │   ├── actions/
-│   │   │   ├── tasks.actions.ts
-│   │   │   ├── auth.actions.ts
-│   │   ├── reducers/
-│   │   │   ├── tasks.reducer.ts
-│   │   │   ├── auth.reducer.ts
-│   │   ├── effects/
-│   │   │   ├── tasks.effects.ts
-│   │   │   ├── auth.effects.ts
+|   ├── auth/
+|   |   ├── auth.interceptor.ts # Interceptor para manejar la autenticación
+|   |   ├── auth.guard.ts # Guard para proteger rutas que requieren autenticación
+|   |   └── auth.service.ts # Servicio para manejar la autenticación
+|   ├── http/
+|   |   └── http.interceptor.ts # Interceptor para manejar las peticiones HTTP
+|   ├── models/
+|   |   └── task.model.ts # Modelo de tarea
+|   ├── services/
+|   |   ├── api.service.ts # Servicio para realizar peticiones HTTP al backend
+|   |   ├── config.service.ts # Servicio para manejar la configuración de la aplicación
+|   |   └── index.ts # Archivo principal para exportación de servicios
+|   ├── store/
+|   |   ├── actions/
+|   |   |   ├── tasks.actions.ts # Acciones para manejar tareas
+|   |   |   └── auth.actions.ts # Acciones para manejar la autenticación
+|   |   ├── reducers/
+|   |   |   ├── tasks.reducer.ts # Reductor para manejar tareas
+|   |   |   └── auth.reducer.ts # Reductor para manejar la autenticación
+|   |   └── effects/
+|   |       ├── tasks.effects.ts # Efectos para manejar tareas
+|   |       └── auth.effects.ts # Efectos para manejar la autenticación
+|   └── utils/
+|       ├── date.utils.ts # Utilidades para manejar fechas
+|       └── index.ts # Archivo principal para exportación de utilidades
 ├── shared/
-│   ├── components/
-│   │   ├── task-form/
-│   │   │   ├── task-form.component.ts
-│   │   │   ├── task-form.component.html
-│   │   │   ├── task-form.component.scss
-│   ├── directives/
-│   ├── pipes/
-├── features/
-│   ├── tasks/
-│   │   ├── components/
-│   │   │   ├── task-list/
-│   │   │   │   ├── task-list.component.ts
-│   │   │   │   ├── task-list.component.html
-│   │   │   │   ├── task-list.component.scss
-│   │   ├── services/
-│   │   │   ├── task.service.ts
-│   ├── auth/
-│   │   ├── components/
-│   │   │   ├── login/
-│   │   │   │   ├── login.component.ts
-│   │   │   │   ├── login.component.html
-│   │   │   │   ├── login.component.scss
-│   │   │   ├── register/
-│   │   │   │   ├── register.component.ts
-│   │   │   │   ├── register.component.html
-│   │   │   │   ├── register.component.scss
+|   └── components/
+|       └── task-form/
+|           ├── task-form.component.ts # Componente para mostrar el formulario de tarea
+|           ├── task-form.component.html # Plantilla del componente para mostrar el formulario de tarea
+|           └── task-form.component.scss # Estilos del componente para mostrar el formulario de tarea
+└── features/
+    ├── tasks/
+    |   ├── components/
+    |   |   └── task-list/
+    |   |       ├── task-list.component.ts # Componente para mostrar la lista de tareas
+    |   |       ├── task-list.component.html # Plantilla del componente para mostrar la lista de tareas
+    |   |       └── task-list.component.scss # Estilos del componente para mostrar la lista de tareas
+    |   └── services/
+    |       └── task.service.ts # Servicio para manejar tareas
+    └── auth/
+        ├── components/
+        |   ├── login/
+        |   |   ├── login.component.ts # Componente para mostrar el formulario de inicio de sesión
+        |   |   ├── login.component.html # Plantilla del componente para mostrar el formulario de inicio de sesión
+        |   |   └── login.component.scss # Estilos del componente para mostrar el formulario de inicio de sesión
+        |   └── register/
+        |       ├── register.component.ts # Componente para mostrar el formulario de registro
+        |       ├── register.component.html # Plantilla del componente para mostrar el formulario de registro
+        |       └── register.component.scss # Estilos del componente para mostrar el formulario de registro
+        └── services/
+            ├── auth.service.ts # Servicio para manejar la autenticación
+            └── index.ts # Archivo principal para exportación
+
 │   │   │   ├── reset-password/
 │   │   │   │   ├── reset-password.component.ts
 │   │   │   │   ├── reset-password.component.html
