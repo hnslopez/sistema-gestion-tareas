@@ -30,13 +30,25 @@
                 "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
                 "output": "/assets/"
               }
-            ],
+            ],     
             "styles": [
+              "src/styles.css",
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
-              "src/theme.less",
-              "src/styles.css"
+              {
+                "input": "src/assets/styles/default.less",
+                "bundleName": "default",
+                "inject": false
+              },
+              {
+                "input": "src/assets/styles/dark.less",
+                "bundleName": "dark",
+                "inject": false
+              }
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/assets/styles/themes"]
+            },       
             "scripts": []
           },
           "configurations": {

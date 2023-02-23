@@ -1,0 +1,35 @@
+{
+    "header": {
+        "title": "Sistema de Gestión de Tareas",
+        "nav": {
+            "home": "Inicio",
+            "tasks": "Tareas",
+            "settings": "Configuración"
+        }
+    },
+    "home": {
+        "welcome": "¡Bienvenido al Sistema de Gestión de Tareas!",
+        "description": "Este sistema te permitirá administrar y hacer un seguimiento de tus tareas de manera efectiva y eficiente. Comienza a agregar tareas para empezar."
+    },
+    "tasks": {
+        "title": "Lista de Tareas",
+        "add": "Agregar Tarea",
+        "edit": "Editar Tarea",
+        "delete": "Eliminar Tarea",
+        "completed": "Tarea completada",
+        "not_completed": "Tarea no completada",
+        "no_tasks": "No hay tareas agregadas todavía.",
+        "form": {
+            "name": "Nombre",
+            "description": "Descripción",
+            "due_date": "Fecha de Vencimiento",
+            "completed": "Completada"
+        }
+    },
+    "settings": {
+        "title": "Configuración",
+        "language": "Idioma",
+        "theme": "Tema",
+        "save": "Guardar"
+    }
+}

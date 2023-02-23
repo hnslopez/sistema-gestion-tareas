@@ -22,6 +22,9 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { AppInitializerProvider } from './app-initializer.service';
+import { IconsProviderModule } from './icon-provider.module';
 
 
 registerLocaleData(es);
@@ -56,9 +59,10 @@ registerLocaleData(es);
     NzButtonModule,
     NzDividerModule,
     NzSelectModule,
-
+    NzSwitchModule,
+    IconsProviderModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: es_ES }],
+  providers: [AppInitializerProvider,{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
