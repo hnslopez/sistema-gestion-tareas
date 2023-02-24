@@ -1,1 +1,15 @@
-<p>navbar works!</p>
+<nz-header>
+    <div class="app-header">
+      <span class="header-trigger" (click)="onToggleMenu()">
+        <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
+      </span>
+      <span class="header-trigger" (click)="toggleTheme()">
+        <i class="trigger" nz-icon nzType="skin" nzTheme="outline"></i>
+      </span>
+      <ul nz-menu nzMode="horizontal" class="navbar-menu">
+        <li nz-menu-item routerLink="/tasks">Tasks</li>
+        <li nz-menu-item routerLink="/login" class="float-right">Login/Register</li>
+      </ul>
+    </div>
+  </nz-header>
+  

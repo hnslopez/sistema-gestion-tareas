@@ -1,22 +1,48 @@
 import { Injectable } from '@angular/core';
 
+/**
+ * Tipos de temas disponibles.
+ */
 enum ThemeType {
-  dark = 'dark',
-  default = 'default',
+  Dark = 'dark',
+  Default = 'default',
 }
 
+/**
+ * Servicio encargado del manejo de temas.
+ */
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
-  currentTheme = ThemeType.default;
+  /**
+   * Tema actual.
+   */
+  private currentTheme: ThemeType = ThemeType.Default;
 
-  constructor() {}
-
-  private reverseTheme(theme: string): ThemeType {
-    return theme === ThemeType.dark ? ThemeType.default : ThemeType.dark;
+  /**
+   * Obtiene el tema actual desde localStorage.
+   */
+  constructor() {
+    const theme = localStorage.getItem('theme');
+    if (theme && Object.values(ThemeType).includes(theme as ThemeType)) {
+      this.currentTheme = theme as ThemeType;
+    }
   }
 
+  /**
+   * Obtiene el tipo de tema contrario al actual.
+   * @param theme Tema actual.
+   * @returns Tipo de tema contrario.
+   */
+  private reverseTheme(theme: ThemeType): ThemeType {
+    return theme === ThemeType.Dark ? ThemeType.Default : ThemeType.Dark;
+  }
+
+  /**
+   * Elimina el tipo de tema especificado de los elementos del DOM y del head.
+   * @param theme Tipo de tema a eliminar.
+   */
   private removeUnusedTheme(theme: ThemeType): void {
     document.documentElement.classList.remove(theme);
     const removedThemeStyle = document.getElementById(theme);
@@ -25,18 +51,11 @@ export class ThemeService {
     }
   }
 
-  private loadCss(href: string, id: string): Promise<Event> {
-    return new Promise((resolve, reject) => {
-      const style = document.createElement('link');
-      style.rel = 'stylesheet';
-      style.href = href;
-      style.id = id;
-      style.onload = resolve;
-      style.onerror = reject;
-      document.head.append(style);
-    });
-  }
-
+  /**
+   * Carga la hoja de estilos del tema actual y lo aplica al DOM.
+   * @param firstLoad Indica si es la primera carga.
+   * @returns Promesa que se resuelve al cargar la hoja de estilos.
+   */
   public loadTheme(firstLoad = true): Promise<Event> {
     const theme = this.currentTheme;
     if (firstLoad) {
@@ -49,6 +68,7 @@ export class ThemeService {
             document.documentElement.classList.add(theme);
           }
           this.removeUnusedTheme(this.reverseTheme(theme));
+          localStorage.setItem('theme', theme);
           resolve(e);
         },
         (e) => reject(e)
@@ -56,8 +76,30 @@ export class ThemeService {
     });
   }
 
+  /**
+   * Alterna el tema actual y carga la hoja de estilos correspondiente.
+   * @returns Promesa que se resuelve al cargar la hoja de estilos.
+   */
   public toggleTheme(): Promise<Event> {
     this.currentTheme = this.reverseTheme(this.currentTheme);
     return this.loadTheme(false);
+  }
+
+  /**
+   * Carga una hoja de estilos de forma asíncrona.
+   * @param href Ruta de la hoja de estilos.
+   * @param id Identificador único de la hoja de estilos.
+   * @returns Promesa que se resuelve al cargar la hoja de estilos.
+   */
+  private loadCss(href: string, id: string): Promise<Event> {
+    return new Promise((resolve, reject) => {
+      const style = document.createElement('link');
+      style.rel = 'stylesheet';
+      style.href = href;
+      style.id = id;
+      style.onload = resolve;
+      style.onerror = reject;
+      document.head.append(style);
+    });
   }
 }

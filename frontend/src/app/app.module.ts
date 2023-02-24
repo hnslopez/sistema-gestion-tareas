@@ -25,6 +25,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { AppInitializerProvider } from './app-initializer.service';
 import { IconsProviderModule } from './icon-provider.module';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
 
 registerLocaleData(es);
@@ -34,6 +35,7 @@ registerLocaleData(es);
     AppComponent,
     FooterComponent,
     NavbarComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

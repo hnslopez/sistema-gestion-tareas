@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
+import { ThemeService } from 'src/app/theme.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private themeService: ThemeService) { }
+
+  @Input() isCollapsed: boolean = false;
+  @Output() toggleCollapsed = new EventEmitter<boolean>();
 
   ngOnInit(): void {
   }
 
+  toggleTheme(): void {
+    this.themeService.toggleTheme().then();
+  }
+
+  onToggleMenu(): void {
+    this.isCollapsed = !this.isCollapsed;
+    this.toggleCollapsed.emit(this.isCollapsed);
+  }
 }

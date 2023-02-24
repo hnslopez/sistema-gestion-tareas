@@ -16,7 +16,7 @@ export class AppComponent {
   isDarkTheme = 'light';
   isCollapsed = false;
 
-  constructor(public translate: TranslateService, private themeService: ThemeService) {
+  constructor(public translate: TranslateService) {
   } 
 
   public switchLanguage(language: 'es' | 'en'): void {
@@ -24,11 +24,12 @@ export class AppComponent {
     this.translate.use(language);
   }
 
-
-
-
-  toggleTheme(): void {
-    this.themeService.toggleTheme().then();
+  onToggleSidebar(isCollapsed: boolean): void {
+    this.isCollapsed = isCollapsed;
   }
+  
+
+
+
 
 }
