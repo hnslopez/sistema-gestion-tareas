@@ -1,4 +1,4 @@
-import { Component, Renderer2 } from '@angular/core';
+import { Component, HostListener, Renderer2 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { ThemeService } from './theme.service';
@@ -15,9 +15,19 @@ export class AppComponent {
   theme$!: Observable<string>;
   isDarkTheme = 'light';
   isCollapsed = false;
+  isMobile = false;
 
   constructor(public translate: TranslateService) {
   } 
+
+  ngOnInit() {
+    this.onResize();
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.isMobile = window.innerWidth < 768;
+  }
 
   public switchLanguage(language: 'es' | 'en'): void {
     localStorage.setItem('locale', language);

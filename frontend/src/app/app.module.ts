@@ -9,8 +9,8 @@ import { registerLocaleData } from '@angular/common';
 import es from '@angular/common/locales/es';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FooterComponent } from './shared/footer/footer.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -25,7 +25,8 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { AppInitializerProvider } from './app-initializer.service';
 import { IconsProviderModule } from './icon-provider.module';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 
 
 registerLocaleData(es);
@@ -57,6 +58,7 @@ registerLocaleData(es);
     NzMenuModule,
     NzDropDownModule,
     NzGridModule,
+    NzDrawerModule,
     NzAvatarModule,
     NzButtonModule,
     NzDividerModule,

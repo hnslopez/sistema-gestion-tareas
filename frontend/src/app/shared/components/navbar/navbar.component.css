@@ -38,3 +38,14 @@
     padding: 24px;
     height: 100%;
 }
+
+.menu-container {
+    height: 100%;
+    padding: 24px;
+    background-color: #001529;
+  }
+  
+  .menu-container ul {
+    height: 100%;
+  }
+  
