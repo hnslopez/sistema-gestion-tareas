@@ -18,14 +18,14 @@ export class AppComponent {
   isMobile = true;
 
   constructor(public translate: TranslateService) {
-    let defaultLenguage = localStorage.getItem('locale') || 'es-CL';
+    let defaultLenguage = localStorage.getItem('locale') || 'es';
 
-    if (!['es-CL', 'en-US'].includes(defaultLenguage)) {
+    if (!['es', 'en'].includes(defaultLenguage)) {
       defaultLenguage = 'es-CL';
       localStorage.setItem('locale', defaultLenguage);
     }
 
-    translate.setDefaultLang(defaultLenguage || 'es-CL');
+    translate.setDefaultLang(defaultLenguage || 'es');
   }
 
   ngOnInit() {
