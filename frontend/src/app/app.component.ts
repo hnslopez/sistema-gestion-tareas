@@ -15,10 +15,18 @@ export class AppComponent {
   theme$!: Observable<string>;
   isDarkTheme = 'light';
   isCollapsed = false;
-  isMobile = false;
+  isMobile = true;
 
   constructor(public translate: TranslateService) {
-  } 
+    let defaultLenguage = localStorage.getItem('locale') || 'es-CL';
+
+    if (!['es-CL', 'en-US'].includes(defaultLenguage)) {
+      defaultLenguage = 'es-CL';
+      localStorage.setItem('locale', defaultLenguage);
+    }
+
+    translate.setDefaultLang(defaultLenguage || 'es-CL');
+  }
 
   ngOnInit() {
     this.onResize();
@@ -37,7 +45,7 @@ export class AppComponent {
   onToggleSidebar(isCollapsed: boolean): void {
     this.isCollapsed = isCollapsed;
   }
-  
+
 
 
 

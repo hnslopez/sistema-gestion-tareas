@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AppComponent } from 'src/app/app.component';
+import { ThemeService } from 'src/app/theme.service';
 
 @Component({
   selector: 'app-footer',
@@ -19,20 +20,24 @@ export class FooterComponent implements OnInit {
   ];
   selectedValue!: 'es-CL' | 'en-US';
 
-  //trackBy 
-  trackByValue(index: number, language:any):string{
-      return language.value;
-  }
-
-
-  languageChange(params:any) {
-    this.app.switchLanguage(params);
-  }
-
-  constructor(private sanitizer:DomSanitizer, private app: AppComponent) { 
+  constructor(private sanitizer:DomSanitizer, private app: AppComponent, private themeService: ThemeService) { 
     this.linkedin = sanitizer.bypassSecurityTrustUrl('https://www.linkedin.com/in/hnslopez/');
     this.github = sanitizer.bypassSecurityTrustUrl('https://github.com/hnslopez');
   }
+
+  //trackBy 
+  trackByValue(index: number, language:any):string{
+    return language.value;
+}
+
+toggleTheme(): void {
+  this.themeService.toggleTheme().then();
+}
+
+languageChange(params:any) {
+  this.app.switchLanguage(params);
+}
+
 
   ngOnInit(): void {
     const languageValue =  localStorage.getItem('locale') as 'es-CL';

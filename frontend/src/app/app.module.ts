@@ -27,6 +27,7 @@ import { AppInitializerProvider } from './app-initializer.service';
 import { IconsProviderModule } from './icon-provider.module';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
 
 registerLocaleData(es);
@@ -64,7 +65,8 @@ registerLocaleData(es);
     NzDividerModule,
     NzSelectModule,
     NzSwitchModule,
-    IconsProviderModule
+    IconsProviderModule,
+    NzCollapseModule
   ],
   providers: [AppInitializerProvider,{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent]
@@ -72,5 +74,5 @@ registerLocaleData(es);
 export class AppModule { }
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
