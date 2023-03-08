@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { MenuSection } from 'src/app/core/models/menu-section.model';
 import { menuItems } from '../../data/menu-items.data';
@@ -9,6 +9,10 @@ import { menuItems } from '../../data/menu-items.data';
 })
 export class SidebarComponent {
   @Input() isCollapsed = false;
+  @Input() isMobile = false;
+  @Output() isCollapsedChanged = new EventEmitter<boolean>();
+
+
   menuItems: MenuSection[] = [];
   currentPath!: string;
 
@@ -19,6 +23,11 @@ export class SidebarComponent {
         this.currentPath = event.url;
       }
     });
+  }
+
+  close(): void {
+    this.isCollapsed = this.isCollapsed;
+    this.isCollapsedChanged.emit(!this.isCollapsed);
   }
 
   private updateMenu() {

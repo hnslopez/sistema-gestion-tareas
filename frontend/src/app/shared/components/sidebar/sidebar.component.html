@@ -1,4 +1,5 @@
-<div class="sidebar-logo">
+
+<div class="sidebar-logo" >
   <a href="https://ng.ant.design/" target="_blank">
     <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
     <h1>Sistema de Gestión</h1>
@@ -21,3 +22,50 @@
     </li>
   </ng-container>
 </ul>
+
+<nz-drawer *ngIf="isMobile" [nzVisible]="!isCollapsed" [nzPlacement]="'left'" [nzWidth]="'256px'" [nzClosable]="false"  (nzOnClose)="close()" [nzBodyStyle]="{ padding: '0' }">
+  <ng-container *nzDrawerContent >
+    <div class="sidebar-logo">
+      <a href="https://ng.ant.design/" target="_blank">
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
+        <h1>Sistema de Gestión</h1>
+      </a>
+    </div>
+    <ul nz-menu nzMode="inline">
+      <ng-container *ngFor="let item of menuItems">
+        <li *ngIf="!item.children" nz-menu-item [nzSelected]="item.route === currentPath">
+          <a [routerLink]="item.route">{{ item.name }}</a>
+        </li>
+        <li *ngIf="item.children" nz-submenu [nzTitle]="item.name" [nzIcon]="item.icon" [nzOpen]="item.isOpen">
+          <ul>
+            <ng-container *ngFor="let child of item.children">
+              <li nz-menu-item [nzSelected]="child.route === currentPath" [routerLinkActive]="['active']">
+                <a [routerLink]="child.route">{{ child.name }}</a>
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+      </ng-container>
+    </ul>
+  </ng-container>
+</nz-drawer>
+
+<!---
+
+<div class="sidebar-container">
+  <div class="sidebar-logo">
+    <a href="https://ng.ant.design/" target="_blank">
+      <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
+      <h1>Sistema de Gestión</h1>
+    </a>
+  </div>
+  <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed" *ngIf="!isMobile">
+
+  </ul>
+  <nz-drawer *ngIf="isMobile" [nzVisible]="!isCollapsed" [nzPlacement]="'left'" [nzWidth]="'256px'" [nzClosable]="false"  (nzOnClose)="close()" >
+    <ul nz-menu [nzMode]="'inline'">
+    </ul>
+  </nz-drawer>
+</div>
+
+-->

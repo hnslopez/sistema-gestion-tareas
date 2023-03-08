@@ -28,6 +28,11 @@ export class AppComponent {
     translate.setDefaultLang(defaultLenguage || 'es');
   }
 
+  onIsCollapsedChanged(value: boolean) {
+    this.isCollapsed = value;
+  }
+  
+
   ngOnInit() {
     this.onResize();
   }
