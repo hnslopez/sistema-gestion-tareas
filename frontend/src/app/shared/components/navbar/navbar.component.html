@@ -1,125 +1,62 @@
 <nz-header>
-  <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid" style="justify-content: flex-start;">
-
-    <span class="header-trigger" class="navbar-toggler" (click)="toggleMobile()">
-      <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" nz-dropdown [nzDropdownMenu]="menu"></i>
-    </span>
-
-    <span class="header-trigger" (click)="onToggleMenu()">
-      <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
-    </span>
-    <ul nz-menu nzMode="horizontal"  nz-menu-collapse>
-      <li nz-menu-item nzSelected>
-        <span nz-icon nzType="mail"></span>
-        Inicio
+  <div class="nav-wrap">
+    <ul class="nav-left list-unstyled">
+      <li>
+        <span class="header-trigger" (click)="onToggleMenu()">
+          <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
+        </span>
       </li>
-      <li nz-menu-item>
-        <span nz-icon nzType="appstore"></span>
-        Tareas
+    </ul>
+    <ul class="nav nav-right list-unstyled d-flex ">
+      <li class="mx-3">
+        <nz-badge [nzCount]="1" nz-dropdown [nzDropdownMenu]="menuNotification" nzTrigger="click" (nzVisibleChange)="onDropdownVisibleChange($event)">
+          <span class="header-trigger" style="padding-right: 0;">
+            <i class="trigger" nz-icon nzType="bell" [nzTheme]="isCollapsedNotification ? 'fill': 'outline'"></i>
+          </span>
+        </nz-badge>
+        <nz-dropdown-menu #menuNotification="nzDropdownMenu" class="p-0">
+          <nz-card class="m-0" style="width:300px;" nzTitle="Card title">
+            <p>Card content</p>
+            <p>Card content</p>
+            <p>Card content</p>
+          </nz-card>
+        </nz-dropdown-menu>
       </li>
-      <li nz-menu-item>
-        <span nz-icon nzType="appstore"></span>
-        Ayuda
-      </li>
-      <li nz-menu-item>
-        <span nz-icon nzType="appstore"></span>
-        Ayuda
+      <li class="dropdown mx-3">
+        <a class="dropdown-toggle" nz-dropdown [nzDropdownMenu]="menu">
+          Nombre Usuario.
+        </a>
+        <nz-dropdown-menu #menu="nzDropdownMenu" class="p-0">
+          <ul nz-menu>
+            <li nz-menu-group nzTitle="Perfil">
+              <ul>
+                  <li nz-menu-item>Ver perfil</li>
+                  <li nz-menu-item>Editar perfil</li>
+                  <li nz-menu-item>Mi cuenta</li>
+                  <li nz-menu-item>Notificaciones</li>
+                  <li nz-menu-item>Actividad reciente</li>
+              </ul>
+           </li>
+           <li nz-menu-group nzTitle="Configuración">
+              <ul>
+                  <li nz-menu-item>Cambiar contraseña</li>
+                  <li nz-menu-item>Preferencias</li>
+                  <li nz-menu-item>Privacidad</li>
+                  <li nz-menu-item>Seguridad</li>
+              </ul>
+           </li>
+           <li nz-menu-divider></li>
+           <li nz-menu-group nzTitle="Ayuda">
+              <ul>
+                  <li nz-menu-item>Preguntas frecuentes</li>
+                  <li nz-menu-item>Documentación</li>
+              </ul>
+           </li>
+           <li nz-menu-divider></li>          
+           <li nz-menu-item>Cerrar sesión </li>          
+          </ul>
+        </nz-dropdown-menu>
       </li>
     </ul>
   </div>
-  <nz-dropdown-menu #menu="nzDropdownMenu">
-    <ul nz-menu nzSelectable>
-      <li nz-menu-item>1st menu item</li>
-      <li nz-menu-item>2nd menu item</li>
-      <li nz-menu-item>3rd menu item</li>
-      <li nz-menu-item>4th danger item</li>
-    </ul>
-  </nz-dropdown-menu>
-</nav>
 </nz-header>
-
-<!-- 
-
-<nav nz-menu class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <button nz-button nzType="primary" class="navbar-toggler" (click)="toggleMobile()">
-      <span nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
-    </button>
-    <a class="navbar-brand" href="#">ng-zorro</a>
-    <div class="collapse navbar-collapse" [ngClass]="{'show': isMobile}">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Components</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Design</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Resources</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Blog</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Language</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">GitHub</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Join us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
-        </li>
-      </ul>
-      <button class="navbar-toggler d-lg-none" type="button" (click)="onToggleMenu()">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <nz-collapse [nzBordered]="false" nzActive="!isMobile">
-        <ul nz-menu nzMode="inline" nzTheme="light" [nzInlineCollapsed]="isMobile" *nzCollapse>
-          <li nz-menu-item>
-            <a href="#">Components</a>
-          </li>
-          <li nz-menu-item>
-            <a href="#">Design</a>
-          </li>
-          <li nz-menu-item>
-            <a href="#">Resources</a>
-          </li>
-          <li nz-menu-item>
-            <a href="#">Blog</a>
-          </li>
-          <li nz-submenu>
-            <span title="Language">
-              <i nz-icon nzType="global"></i>
-              <span>Language</span>
-            </span>
-            <ul nz-menu>
-              <li nz-menu-item>
-                <a href="#">English</a>
-              </li>
-              <li nz-menu-item>
-                <a href="#">Español</a>
-              </li>
-            </ul>
-          </li>
-          <li nz-menu-item>
-            <a href="#">GitHub</a>
-          </li>
-          <li nz-menu-item>
-            <a href="#">Join us</a>
-          </li>
-          <li nz-menu-item>
-            <a href="#">Login</a>
-          </li>
-        </ul>
-      </nz-collapse>
-    </div>
-  </div>
-</nav> 
-
--->

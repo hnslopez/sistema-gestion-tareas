@@ -18,7 +18,7 @@ export class FooterComponent implements OnInit {
     {value:"es",name:'Español'},
     {value:"en", name:'English'}
   ];
-  selectedValue!: 'es-CL' | 'en-US';
+  selectedValue!: 'es' | 'en';
 
   constructor(private sanitizer:DomSanitizer, private app: AppComponent, private themeService: ThemeService) { 
     this.linkedin = sanitizer.bypassSecurityTrustUrl('https://www.linkedin.com/in/hnslopez/');
@@ -40,8 +40,8 @@ languageChange(params:any) {
 
 
   ngOnInit(): void {
-    const languageValue =  localStorage.getItem('locale') as 'es-CL';
-    this.selectedValue = languageValue || 'es-CL';
+    const languageValue =  localStorage.getItem('locale') as 'es';
+    this.selectedValue = languageValue || 'es';
     this.year = new Date().getFullYear();
   }
 
