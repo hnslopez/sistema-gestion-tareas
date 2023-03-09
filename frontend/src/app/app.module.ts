@@ -28,8 +28,9 @@ import { IconsProviderModule } from './icon-provider.module';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
-import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
 
 
 registerLocaleData(es);
@@ -70,7 +71,9 @@ registerLocaleData(es);
     IconsProviderModule,
     NzCollapseModule,
     NzBadgeModule,
-    NzCardModule
+    NzListModule,
+    NzCardModule,
+    
   ],
   providers: [AppInitializerProvider,{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent]

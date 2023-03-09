@@ -9,18 +9,39 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
-  isMobile = false;
+  @Input() isMobile = false;
   isCollapsedNotification = false;
-
+  data = [
+    {
+      title: 'Ant Design Title 1'
+    },
+    {
+      title: 'Ant Design Title 2'
+    },
+    {
+      title: 'Ant Design Title 3'
+    },
+    {
+      title: 'Ant Design Title 4'
+    },
+    {
+      title: 'Ant Design Title 4'
+    },
+    {
+      title: 'Ant Design Title 4'
+    },
+    {
+      title: 'Ant Design Title 4'
+    },
+    {
+      title: 'Ant Design Title 4'
+    }
+  ];
 
   @Input() isCollapsed: boolean = false;
   @Output() toggleCollapsed = new EventEmitter<boolean>();
 
   ngOnInit(): void {
-  }
-
-  toggleMobile(): void {
-    this.isMobile = !this.isMobile;
   }
 
   onToggleMenu(): void {
