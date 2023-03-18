@@ -9,19 +9,20 @@
     </ul>
     <ul class="nav nav-right list-unstyled d-flex ">
       <li class="mx-3">
-        <nz-badge [nzCount]="1" nz-dropdown [nzDropdownMenu]="menuNotification" [nzPlacement]="isMobile?'bottomCenter':'bottomRight'" nzTrigger="hover" (nzVisibleChange)="onDropdownVisibleChange($event)">
+        <nz-badge [nzCount]="1" nz-dropdown [nzDropdownMenu]="menuNotification"
+          [nzPlacement]="isMobile?'bottomCenter':'bottomRight'" nzTrigger="hover"
+          (nzVisibleChange)="onDropdownVisibleChange($event)">
           <span class="header-trigger" style="padding-right: 0;">
             <i class="trigger" nz-icon nzType="bell" [nzTheme]="isCollapsedNotification ? 'fill': 'outline'"></i>
           </span>
         </nz-badge>
-        <nz-dropdown-menu #menuNotification="nzDropdownMenu" class="p-0" >
-          <nz-card [nzBodyStyle]="{'overflow':'auto','max-height':'300px'}" style="width:350px;margin-left: 50px;" nzTitle="Notificaciones" [nzExtra]="extraTemplate">
-            <nz-list nzItemLayout="horizontal" [nzSize]	="'small'">
+        <nz-dropdown-menu #menuNotification="nzDropdownMenu" class="p-0">
+          <nz-card [nzBodyStyle]="{'overflow':'auto','max-height':'300px'}" style="width:350px;margin-left: 50px;"
+            nzTitle="Notificaciones" [nzExtra]="extraTemplate">
+            <nz-list nzItemLayout="horizontal" [nzSize]="'small'">
               <nz-list-item *ngFor="let item of data">
-                <nz-list-item-meta
-                  nzAvatar="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                  nzDescription="Ant Design, a design language for background applications, is refined by Ant UED Team"
-                >
+                <nz-list-item-meta nzAvatar="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                  nzDescription="Ant Design, a design language for background applications, is refined by Ant UED Team">
                   <nz-list-item-meta-title>
                     <a href="https://ng.ant.design">{{ item.title }}</a>
                   </nz-list-item-meta-title>
@@ -31,43 +32,43 @@
             </nz-list>
           </nz-card>
           <ng-template #extraTemplate>
-            <a nz-button  [routerLink]="''">Ver Todo</a>
+            <a nz-button [routerLink]="''">Ver Todo</a>
           </ng-template>
         </nz-dropdown-menu>
       </li>
-      
+
       <li class="dropdown mx-3">
         <a class="dropdown-toggle" nz-dropdown [nzDropdownMenu]="menu">
           Nombre Usuario.
         </a>
         <nz-dropdown-menu #menu="nzDropdownMenu" class="p-0">
           <ul nz-menu>
-            <li nz-menu-group nzTitle="Perfil">
+            <li nz-menu-group [nzTitle]="'header.user.dropdown.profile.title' | translate">
               <ul>
-                  <li nz-menu-item>Ver perfil</li>
-                  <li nz-menu-item>Editar perfil</li>
-                  <li nz-menu-item>Mi cuenta</li>
-                  <li nz-menu-item>Notificaciones</li>
-                  <li nz-menu-item>Actividad reciente</li>
+                <li nz-menu-item>{{'header.user.dropdown.profile.view' | translate}}</li>
+                <li nz-menu-item>{{'header.user.dropdown.profile.edit' | translate}}</li>
+                <li nz-menu-item>{{'header.user.dropdown.profile.myAccount' | translate}}</li>
+                <li nz-menu-item>{{'header.user.dropdown.profile.notifications' | translate}}</li>
+                <li nz-menu-item>{{'header.user.dropdown.profile.recentActivity' | translate}}</li>
               </ul>
-           </li>
-           <li nz-menu-group nzTitle="Configuración">
+            </li>
+            <li nz-menu-group [nzTitle]="'header.user.dropdown.settings.title' | translate">
               <ul>
-                  <li nz-menu-item>Cambiar contraseña</li>
-                  <li nz-menu-item>Preferencias</li>
-                  <li nz-menu-item>Privacidad</li>
-                  <li nz-menu-item>Seguridad</li>
+                <li nz-menu-item>{{'header.user.dropdown.settings.changePassword' | translate}}</li> 
+                <li nz-menu-item>{{'header.user.dropdown.settings.preferences' | translate}}</li>
+                <li nz-menu-item>{{'header.user.dropdown.settings.privacy' | translate}}</li>
+                <li nz-menu-item>{{'header.user.dropdown.settings.security' | translate}}</li>
               </ul>
-           </li>
-           <li nz-menu-divider></li>
-           <li nz-menu-group nzTitle="Ayuda">
+            </li>
+            <li nz-menu-divider></li>
+            <li nz-menu-group [nzTitle]="'header.user.dropdown.help.title' | translate">
               <ul>
-                  <li nz-menu-item>Preguntas frecuentes</li>
-                  <li nz-menu-item>Documentación</li>
+                <li nz-menu-item>{{'header.user.dropdown.help.faq' | translate}}</li>
+                <li nz-menu-item>{{'header.user.dropdown.help.documentation' | translate}}</li>
               </ul>
-           </li>
-           <li nz-menu-divider></li>          
-           <li nz-menu-item>Cerrar sesión </li>          
+            </li>
+            <li nz-menu-divider></li>
+            <li nz-menu-item>{{'header.user.dropdown.logout' | translate}}</li>
           </ul>
         </nz-dropdown-menu>
       </li>

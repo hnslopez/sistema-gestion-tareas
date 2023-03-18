@@ -1,10 +1,30 @@
 {
     "header": {
         "title": "Sistema de Gestión de Tareas",
-        "nav": {
-            "home": "Inicio",
-            "tasks": "Tareas",
-            "settings": "Configuración"
+        "user": {
+            "dropdown": {
+                "profile": {
+                    "title": "Perfil",
+                    "view": "Ver perfil",
+                    "edit": "Editar perfil",
+                    "myAccount": "Mi cuenta",
+                    "notifications": "Notificaciones",
+                    "recentActivity": "Actividad reciente"
+                },
+                "settings": {
+                    "title": "Configuración",
+                    "changePassword": "Cambiar contraseña",
+                    "preferences": "Preferencias",
+                    "privacy": "Privacidad",
+                    "security": "Seguridad"
+                },
+                "help": {
+                    "title": "Ayuda",
+                    "faq": "Preguntas frecuentes",
+                    "documentation": "Documentación"
+                },
+                "logout": "Cerrar sesión"
+            }
         }
     },
     "home": {

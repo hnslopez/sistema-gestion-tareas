@@ -1,35 +1,55 @@
 {
     "header": {
-    "title": "Task Management System",
-    "nav": {
-    "home": "Home",
-    "tasks": "Tasks",
-    "settings": "Settings"
-    }
+        "title": "Task Management System",
+        "user": {
+            "dropdown": {
+                "profile": {
+                    "title": "Profile",
+                    "view": "View Profile",
+                    "edit": "Edit Profile",
+                    "myAccount": "My Account",
+                    "notifications": "Notifications",
+                    "recentActivity": "Recent Activity"
+                },
+                "settings": {
+                    "title": "Settings",
+                    "changePassword": "Change Password",
+                    "preferences": "Preferences",
+                    "privacy": "Privacy",
+                    "security": "Security"
+                },
+                "help": {
+                    "title": "Help",
+                    "faq": "FAQ",
+                    "documentation": "Documentation"
+                },
+                "logout": "Logout"
+            }
+        }
     },
     "home": {
-    "welcome": "Welcome to the Task Management System!",
-    "description": "This system allows you to manage and keep track of your tasks effectively and efficiently. Start adding tasks to get started."
+        "welcome": "Welcome to the Task Management System!",
+        "description": "This system allows you to manage and keep track of your tasks effectively and efficiently. Start adding tasks to get started."
     },
     "tasks": {
-    "title": "Task List",
-    "add": "Add Task",
-    "edit": "Edit Task",
-    "delete": "Delete Task",
-    "completed": "Task completed",
-    "not_completed": "Task not completed",
-    "no_tasks": "No tasks added yet.",
-    "form": {
-    "name": "Name",
-    "description": "Description",
-    "due_date": "Due Date",
-    "completed": "Completed"
-    }
+        "title": "Task List",
+        "add": "Add Task",
+        "edit": "Edit Task",
+        "delete": "Delete Task",
+        "completed": "Task completed",
+        "not_completed": "Task not completed",
+        "no_tasks": "No tasks added yet.",
+        "form": {
+            "name": "Name",
+            "description": "Description",
+            "due_date": "Due Date",
+            "completed": "Completed"
+        }
     },
     "settings": {
-    "title": "Settings",
-    "language": "Language",
-    "theme": "Theme",
-    "save": "Save"
+        "title": "Settings",
+        "language": "Language",
+        "theme": "Theme",
+        "save": "Save"
     }
 }
