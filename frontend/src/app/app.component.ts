@@ -18,7 +18,7 @@ export class AppComponent {
     let defaultLenguage = localStorage.getItem('locale') || 'es';
 
     if (!['es', 'en'].includes(defaultLenguage)) {
-      defaultLenguage = 'es-CL';
+      defaultLenguage = 'es';
       localStorage.setItem('locale', defaultLenguage);
     }
 
