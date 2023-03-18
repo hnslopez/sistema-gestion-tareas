@@ -8,6 +8,7 @@
  */
 
 var express = require('express');
+const path = require('path');
 const i18n = require('../utils/i18n');
 var router = express.Router();
 
@@ -18,8 +19,8 @@ var router = express.Router();
  *
  * @return {String} Mensaje de funcionamiento correcto del API (TO DO)
  */
-router.get('/', function(req, res, next) {
-  res.send('Funciona');
+router.get('/*', function(req, res, next) {
+  res.sendFile(path.join(__dirname, '../dist/frontend'));
 });
 
 /**
