@@ -31,6 +31,7 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzOverlayModule } from 'ng-zorro-antd/core/overlay';
 
 
 registerLocaleData(es);
@@ -46,6 +47,9 @@ registerLocaleData(es);
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    
+    
+    NzOverlayModule,
     HttpClientModule,
     BrowserAnimationsModule,
     HttpClientModule,

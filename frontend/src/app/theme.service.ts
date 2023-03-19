@@ -18,7 +18,7 @@ export class ThemeService {
   /**
    * Tema actual.
    */
-  private currentTheme: ThemeType = ThemeType.Default;
+  private currentTheme: ThemeType = ThemeType.Dark;
 
   /**
    * Obtiene el tema actual desde localStorage.
