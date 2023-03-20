@@ -43,14 +43,29 @@ src
 |   ├── task.js # Rutas de tareas
 |   ├── user.js # Rutas de usuarios
 |   └── auth.js # Rutas de autenticación
-└── utils
-    ├── locales
-    |   ├── en.json # Archivo de idioma Inglés
-    |   └── es.json # Archivo de idioma Español
-    └── jwt.js # Utilidades para el manejo de JWT
-    └── i18n.js # Utilidades para el manejo del sistema de i18n
-
-
+├── utils
+|   ├── locales
+|   |   ├── en.json # Archivo de idioma Inglés
+|   |   └── es.json # Archivo de idioma Español
+|   └── jwt.js # Utilidades para el manejo de JWT
+|   └── i18n.js # Utilidades para el manejo del sistema de i18n
+└──__tests__
+    ├── controllers
+    |   ├── task.test.js
+    |   └── user.test.js
+    ├── middlewares
+    |   └── authentication.test.js
+    ├── models
+    |   ├── task.test.js
+    |   └── user.test.js
+    ├── routes
+    |   ├── auth.test.js
+    |   ├── main.test.js
+    |   ├── task.test.js
+    |   └── user.test.js
+    └── utils
+        ├── jwt.test.js
+        └── i18n.test.js
 
 ```
 
