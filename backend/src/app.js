@@ -9,12 +9,15 @@ const i18n = require('./utils/i18n');
 const { initialize } = require('./middlewares/authentication');
 const cookieParser = require('cookie-parser');
 const { errorHandling, rateLimiterMiddleware, routeErrorHandler } = require('./middlewares');
+const path = require('path');
 
 // Conecta la base de datos
 require('./database'); 
 
 // Us Configuración basica de cors
 app.use(cors());
+
+app.use(express.static(path.join(__dirname, '../dist/frontend')));
 
 // Configuración de i18n
 app.use(i18n.init);

@@ -8,9 +8,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'frontend';
-  theme$!: Observable<string>;
-  isDarkTheme = 'light';
+  title = 'Proyecto de Gestión';
   isCollapsed = true;
   isMobile = true;
 
@@ -18,7 +16,7 @@ export class AppComponent {
     let defaultLenguage = localStorage.getItem('locale') || 'es';
 
     if (!['es', 'en'].includes(defaultLenguage)) {
-      defaultLenguage = 'es-CL';
+      defaultLenguage = 'es';
       localStorage.setItem('locale', defaultLenguage);
     }
 
@@ -28,7 +26,6 @@ export class AppComponent {
   onIsCollapsedChanged(value: boolean) {
     this.isCollapsed = value;
   }
-  
 
   ngOnInit() {
     this.onResize();
@@ -47,9 +44,5 @@ export class AppComponent {
   onToggleSidebar(isCollapsed: boolean): void {
     this.isCollapsed = isCollapsed;
   }
-
-
-
-
-
+  
 }
