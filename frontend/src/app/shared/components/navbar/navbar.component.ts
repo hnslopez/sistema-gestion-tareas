@@ -51,7 +51,6 @@ export class NavbarComponent implements OnInit,OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if(changes['isMobile']){
-      console.log(changes['isMobile'].currentValue, this.isCollapsedNotification)
       if(changes['isMobile'].currentValue && this.isCollapsedNotification)return this.openDrawer();
       if(changes['isMobile'].currentValue && !this.isCollapsedNotification)return this.closeDrawer();
       if(!changes['isMobile'].currentValue && this.isCollapsedNotification)return this.openDropdown();
