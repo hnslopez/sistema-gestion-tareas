@@ -32,6 +32,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzOverlayModule } from 'ng-zorro-antd/core/overlay';
+import { HomeModule } from './features/home/home.module';
 
 
 registerLocaleData(es);
@@ -42,11 +43,13 @@ registerLocaleData(es);
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HomeModule,
     
     
     NzOverlayModule,

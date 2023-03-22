@@ -1,0 +1,46 @@
+<nz-divider></nz-divider>
+<div class="jumbotron text-center">
+    <div class="p-5 rounded-3">
+        <div class="container-fluid  ">
+            <h2 class="display-5 fw-bold text-uppercase">{{"home.title" | translate}}</h2>
+            <p class="fs-4">{{"home.description" | translate}}</p>
+            <a [href]="repository" target="_blank">
+                <button nz-button nzType="primary" [nzSize]="'large'">
+                    {{"home.button_repositoty" | translate}}
+                </button>
+            </a>
+
+        </div>
+    </div>
+</div>
+<nz-divider></nz-divider>
+<section>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+                <nz-card nzHoverable class="mb-3 g-0 h-100" [nzCover]="angularTemplate">
+                    <nz-card-meta nzTitle="FRONTEND" [nzDescription]="'home.information.angular' | translate"></nz-card-meta>
+                    <ng-template #angularTemplate>
+                        <img alt="example" src="/assets/image/angular.png" />
+                      </ng-template>
+                </nz-card>
+            </div>
+            <div class="col">
+                <nz-card nzHoverable class="mb-3 g-0 h-100" [nzCover]="expressTemplate">
+                    <nz-card-meta nzTitle="BACKEND" [nzDescription]="'home.information.express' | translate"></nz-card-meta>
+                    <ng-template #expressTemplate>
+                        <img alt="express" src="/assets/image/express.png" />
+                      </ng-template>
+                </nz-card>
+            </div>
+            <div class="col">
+                    <nz-card nzHoverable class="mb-3 g-0 h-100"  [nzCover]="mongoTemplate">
+                        <nz-card-meta nzTitle="DATABASE" [nzDescription]="'home.information.mongodb' | translate"></nz-card-meta>
+                        <ng-template #mongoTemplate>
+                            <img alt="mongodb" src="/assets/image/mongodb.png" />
+                          </ng-template>
+                    </nz-card>
+            </div>
+        </div>
+    </div>
+</section>

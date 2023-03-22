@@ -28,28 +28,35 @@
         }
     },
     "home": {
-        "welcome": "¡Bienvenido al Sistema de Gestión de Tareas!",
-        "description": "Este sistema te permitirá administrar y hacer un seguimiento de tus tareas de manera efectiva y eficiente. Comienza a agregar tareas para empezar."
-    },
-    "tasks": {
-        "title": "Lista de Tareas",
-        "add": "Agregar Tarea",
-        "edit": "Editar Tarea",
-        "delete": "Eliminar Tarea",
-        "completed": "Tarea completada",
-        "not_completed": "Tarea no completada",
-        "no_tasks": "No hay tareas agregadas todavía.",
-        "form": {
-            "name": "Nombre",
-            "description": "Descripción",
-            "due_date": "Fecha de Vencimiento",
-            "completed": "Completada"
+        "title": "Sistema de Gestión",
+        "description": "Este sistema te permitirá administrar y hacer un seguimiento de tus tareas de manera efectiva y eficiente, ademas de otras funcionalidades.",
+        "button_repositoty": "REPOSITORIO",
+        "information": {
+            "express": "Utilize Express como framework de backend para crear y gestionar las rutas utilizando un API RESTful.",
+            "angular": "Angular se empleó para desarrollar la interfaz de usuario, con componentes reutilizables y un enrutador para una navegación fluida.",
+            "mongodb": "MongoDB como base de datos NoSQL para almacenar los datos de las tareas y usuarios."
         }
     },
-    "settings": {
-        "title": "Configuración",
-        "language": "Idioma",
-        "theme": "Tema",
-        "save": "Guardar"
+
+"tasks": {
+    "title": "Lista de Tareas",
+    "add": "Agregar Tarea",
+    "edit": "Editar Tarea",
+    "delete": "Eliminar Tarea",
+    "completed": "Tarea completada",
+    "not_completed": "Tarea no completada",
+    "no_tasks": "No hay tareas agregadas todavía.",
+    "form": {
+        "name": "Nombre",
+        "description": "Descripción",
+        "due_date": "Fecha de Vencimiento",
+        "completed": "Completada"
     }
+},
+"settings": {
+    "title": "Configuración",
+    "language": "Idioma",
+    "theme": "Tema",
+    "save": "Guardar"
+}
 }

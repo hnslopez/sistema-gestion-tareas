@@ -26,10 +26,8 @@
 <nz-drawer *ngIf="isMobile" [nzVisible]="!isCollapsed" [nzPlacement]="'left'" [nzWidth]="'256px'" [nzClosable]="false"  (nzOnClose)="close()" [nzBodyStyle]="{ padding: '0' }">
   <ng-container *nzDrawerContent >
     <div class="sidebar-logo">
-      <a href="https://ng.ant.design/" target="_blank">
         <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
         <h1>Sistema de Gestión</h1>
-      </a>
     </div>
     <ul nz-menu nzMode="inline">
       <ng-container *ngFor="let item of menuItems">

@@ -28,8 +28,14 @@
         }
     },
     "home": {
-        "welcome": "Welcome to the Task Management System!",
-        "description": "This system allows you to manage and keep track of your tasks effectively and efficiently. Start adding tasks to get started."
+        "title": "Management System",
+        "description": "This system allows you to effectively and efficiently manage and track your tasks, as well as other functionalities.",
+        "button_repositoty": "REPOSITORY",
+        "information": {
+            "express": "Express was used as the backend framework to create and manage routes using a RESTful API.",
+            "angular": "Angular was employed to develop the user interface, with reusable components and a router for smooth navigation.",
+            "mongodb": "MongoDB as a NoSQL database to store the data of tasks and users."
+        }
     },
     "tasks": {
         "title": "Task List",
