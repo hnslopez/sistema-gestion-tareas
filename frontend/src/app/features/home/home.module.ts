@@ -12,11 +12,16 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { CardComponent } from 'src/app/shared/components/img-card/card.component';
+import { MainTitleComponent } from 'src/app/shared/components/page-title/main-title.component';
+
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    CardComponent,
+    MainTitleComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +34,8 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
     TranslateModule,
     NzTypographyModule,
     NzButtonModule,
-    NzIconModule
+    NzIconModule,
+    
   ]
 })
 export class HomeModule { }

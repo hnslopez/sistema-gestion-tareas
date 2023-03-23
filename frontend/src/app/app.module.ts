@@ -42,8 +42,7 @@ registerLocaleData(es);
     AppComponent,
     FooterComponent,
     NavbarComponent,
-    SidebarComponent,
-
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
