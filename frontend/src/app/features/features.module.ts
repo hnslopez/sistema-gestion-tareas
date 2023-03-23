@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
+import { HomeComponent } from './home/main/home.component';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
@@ -14,6 +13,10 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { CardComponent } from 'src/app/shared/components/img-card/card.component';
 import { MainTitleComponent } from 'src/app/shared/components/page-title/main-title.component';
+import { ExpressComponent } from './home/express/express.component';
+import { MongodbComponent } from './home/mongodb/mongodb.component';
+import { AngularComponent } from './home/angular/angular.component';
+import { RouterModule } from '@angular/router'; // importa RouterModule
 
 
 
@@ -21,11 +24,13 @@ import { MainTitleComponent } from 'src/app/shared/components/page-title/main-ti
   declarations: [
     HomeComponent,
     CardComponent,
-    MainTitleComponent
+    MainTitleComponent,
+    AngularComponent,
+    ExpressComponent,
+    MongodbComponent
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule,
     NzGridModule,
     NzListModule,
     NzDividerModule,
@@ -35,7 +40,8 @@ import { MainTitleComponent } from 'src/app/shared/components/page-title/main-ti
     NzTypographyModule,
     NzButtonModule,
     NzIconModule,
-    
+    RouterModule // Agrega RouterModule aquí
+
   ]
 })
-export class HomeModule { }
+export class FeaturesModule { }
