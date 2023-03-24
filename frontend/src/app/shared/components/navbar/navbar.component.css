@@ -62,7 +62,7 @@
 }
 
 nz-badge {
-    margin-right: 20px;
+    margin: 0 20px 0 20px;
 }
 
 nz-badge.ant-badge-rtl {
@@ -76,9 +76,8 @@ nz-badge.ant-badge-rtl {
 
 }
 
-.bell-icon{
+:host .bell-icon{
     height: 64px;
-    padding: 0px 24px;
     font-size: 20px;
     cursor: pointer;
     transition: all .3s, padding 0s;

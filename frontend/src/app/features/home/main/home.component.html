@@ -1,4 +1,3 @@
-<nz-divider></nz-divider>
 <page-title>
     <h2 class="display-5 fw-bold text-uppercase">{{"home.title" | translate}}</h2>
     <p class="fs-4">{{"home.description" | translate}}</p>
@@ -8,9 +7,7 @@
       </button>
     </a>
 </page-title>
-  
-<nz-divider></nz-divider>
-<section>
+  <section>
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div class="col">
@@ -20,6 +17,7 @@
                 [imageUrl]="'/assets/image/angular.png'"
                 route="/angular"
                 alt="angular"
+                [loading]="loading"
               ></img-card> 
             </div>
             <div class="col">
@@ -29,6 +27,8 @@
                 [imageUrl]="'/assets/image/express.png'"
                 route="/express"
                 alt="express"
+                [loading]="loading"
+
               ></img-card> 
             </div>
             <div class="col">
@@ -38,6 +38,7 @@
                 [imageUrl]="'/assets/image/mongodb.png'"
                 route="/mongodb"
                 alt="mongodb"
+                [loading]="loading"
               ></img-card> 
             </div>
         </div>

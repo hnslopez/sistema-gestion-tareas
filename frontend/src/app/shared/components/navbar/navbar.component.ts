@@ -14,6 +14,10 @@ export class NavbarComponent implements OnInit,OnChanges {
   isCollapsedNotification = false;
   visibleDrawer = false;
   visibleDropdown = false;
+  visibleUserMenu = false;
+  visibleUserMenuNotification = false;
+
+
   placement: NzDrawerPlacement = 'bottom';
 
   data = [
@@ -54,7 +58,7 @@ export class NavbarComponent implements OnInit,OnChanges {
       if(changes['isMobile'].currentValue && this.isCollapsedNotification)return this.openDrawer();
       if(changes['isMobile'].currentValue && !this.isCollapsedNotification)return this.closeDrawer();
       if(!changes['isMobile'].currentValue && this.isCollapsedNotification)return this.openDropdown();
-  
+      if(!changes['isMobile'].currentValue && this.visibleUserMenu)return this.closeUserDrawer();
     }
 
 
@@ -87,6 +91,13 @@ export class NavbarComponent implements OnInit,OnChanges {
     this.isCollapsedNotification = false; 
   }
 
+  openUserDrawer(): void {
+    this.visibleUserMenu = true;
+  }
+
+  closeUserDrawer(): void {
+    this.visibleUserMenu = false;
+  }
 
   onDropdownVisibleChange(visible: boolean) {
     if (visible) {
@@ -95,4 +106,14 @@ export class NavbarComponent implements OnInit,OnChanges {
       this.isCollapsedNotification = false; 
     }
   }
+
+  onDropdownUserVisibleChange(visible: boolean) {
+    if (visible) {
+      this.visibleUserMenuNotification = true; 
+    } else {
+      this.visibleUserMenuNotification = false; 
+    }
+  }
+
+
 }

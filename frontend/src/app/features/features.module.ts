@@ -16,7 +16,9 @@ import { MainTitleComponent } from 'src/app/shared/components/page-title/main-ti
 import { ExpressComponent } from './home/express/express.component';
 import { MongodbComponent } from './home/mongodb/mongodb.component';
 import { AngularComponent } from './home/angular/angular.component';
-import { RouterModule } from '@angular/router'; // importa RouterModule
+import { RouterModule } from '@angular/router'; 
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 
 
 
@@ -40,7 +42,9 @@ import { RouterModule } from '@angular/router'; // importa RouterModule
     NzTypographyModule,
     NzButtonModule,
     NzIconModule,
-    RouterModule // Agrega RouterModule aquí
+    RouterModule,
+    NzBreadCrumbModule,
+    NzPageHeaderModule
 
   ]
 })

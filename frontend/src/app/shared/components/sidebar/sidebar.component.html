@@ -1,9 +1,7 @@
 
 <div class="sidebar-logo" >
-  <a href="https://ng.ant.design/" target="_blank">
     <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
     <h1>Sistema de Gestión</h1>
-  </a>
 </div>
 
 <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
@@ -47,23 +45,3 @@
     </ul>
   </ng-container>
 </nz-drawer>
-
-<!---
-
-<div class="sidebar-container">
-  <div class="sidebar-logo">
-    <a href="https://ng.ant.design/" target="_blank">
-      <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
-      <h1>Sistema de Gestión</h1>
-    </a>
-  </div>
-  <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed" *ngIf="!isMobile">
-
-  </ul>
-  <nz-drawer *ngIf="isMobile" [nzVisible]="!isCollapsed" [nzPlacement]="'left'" [nzWidth]="'256px'" [nzClosable]="false"  (nzOnClose)="close()" >
-    <ul nz-menu [nzMode]="'inline'">
-    </ul>
-  </nz-drawer>
-</div>
-
--->

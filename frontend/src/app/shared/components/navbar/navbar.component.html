@@ -1,22 +1,24 @@
 <nz-header>
-  <div class="nav-wrap">
-    <ul class="nav-left list-unstyled">
-      <li>
+  <div class="navbar">
+    <div class="nav nav-left">
+      <div>
         <span class="header-trigger" (click)="onToggleMenu()">
           <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
         </span>
-      </li>
-    </ul>
-    <ul class="nav nav-right list-unstyled d-flex ">
-      <li class="mx-3 text-center">
+      </div>
+    </div>
+    <div class="nav"></div>
+    <div class="nav nav-right d-flex">
+      <div class="text-center">
         <nz-badge [nzCount]="1" nz-dropdown [nzDisabled]="isMobile" [nzDropdownMenu]="menuNotification"
           nzPlacement='bottomRight' nzTrigger="click"  [nzVisible]="visibleDropdown"
           (nzVisibleChange)="onDropdownVisibleChange($event)"
           
           (click)="isMobile ? openDrawer() : null" >
-          <span class="header-trigger" style="padding-right: 0;">
+          <span class="bell-icon" style="padding-right: 0;">
             <i class="trigger" nz-icon nzType="bell" [nzTheme]="isCollapsedNotification ? 'fill': 'outline'"></i>
           </span>
+          
         </nz-badge>
         <nz-dropdown-menu  #menuNotification="nzDropdownMenu"  class="p-0">
           <nz-card [nzBodyStyle]="{'overflow':'auto','max-height':'300px'}" style="width:350px;"
@@ -37,12 +39,18 @@
             <a nz-button [routerLink]="''">Ver Todo</a>
           </ng-template>
         </nz-dropdown-menu>
-      </li>
+      </div>
+      <div class="dropdown ">
+        <nz-badge nz-dropdown [nzDisabled]="isMobile" [nzDropdownMenu]="menu"
+        nzPlacement='bottomRight' nzTrigger="click"  [nzVisible]="visibleDropdown"
+        (nzVisibleChange)="onDropdownUserVisibleChange($event)"
+        (click)="isMobile ? openUserDrawer() : null" >
+        <span class="bell-icon" style="padding-right: 0;">
+          <i class="trigger" nz-icon nzType="user" [nzTheme]="visibleUserMenuNotification ? 'fill': 'outline'"></i>
+        </span>
+      </nz-badge>
 
-      <li class="dropdown mx-3">
-        <a class="dropdown-toggle" nz-dropdown [nzDropdownMenu]="menu">
-          Nombre Usuario.
-        </a>
+        
         <nz-dropdown-menu #menu="nzDropdownMenu" class="p-0">
           <ul nz-menu>
             <li nz-menu-group [nzTitle]="'header.user.dropdown.profile.title' | translate">
@@ -73,9 +81,10 @@
             <li nz-menu-item>{{'header.user.dropdown.logout' | translate}}</li>
           </ul>
         </nz-dropdown-menu>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
+
   <nz-drawer
   [nzClosable]="false"
   [nzVisible]="visibleDrawer"
@@ -102,4 +111,41 @@
   </ng-container>
 </nz-drawer>
   
+<nz-drawer
+[nzClosable]="false"
+[nzVisible]="visibleUserMenu"
+nzPlacement="right"
+(nzOnClose)="closeUserDrawer()"
+[nzBodyStyle]="{ padding: '0' }"
+>
+<ng-container *nzDrawerContent>
+  <ul nz-menu nzMode="inline">
+    <li nz-submenu [nzTitle]="'header.user.dropdown.profile.title' | translate" nzIcon="user" nzOpen="true">
+      <ul>
+        <li nz-menu-item>{{'header.user.dropdown.profile.view' | translate}}</li>
+        <li nz-menu-item>{{'header.user.dropdown.profile.edit' | translate}}</li>
+        <li nz-menu-item>{{'header.user.dropdown.profile.myAccount' | translate}}</li>
+        <li nz-menu-item>{{'header.user.dropdown.profile.notifications' | translate}}</li>
+        <li nz-menu-item>{{'header.user.dropdown.profile.recentActivity' | translate}}</li>
+      </ul>
+    </li>
+    <li nz-submenu [nzTitle]="'header.user.dropdown.settings.title' | translate"  nzIcon="setting" nzOpen="true">
+      <ul>
+        <li nz-menu-item>{{'header.user.dropdown.settings.changePassword' | translate}}</li> 
+        <li nz-menu-item>{{'header.user.dropdown.settings.preferences' | translate}}</li>
+        <li nz-menu-item>{{'header.user.dropdown.settings.privacy' | translate}}</li>
+        <li nz-menu-item>{{'header.user.dropdown.settings.security' | translate}}</li>
+      </ul>
+    </li>
+    <li nz-submenu [nzTitle]="'header.user.dropdown.help.title' | translate" nzIcon="question" nzOpen="true">
+      <ul>
+        <li nz-menu-item>{{'header.user.dropdown.help.faq' | translate}}</li>
+        <li nz-menu-item>{{'header.user.dropdown.help.documentation' | translate}}</li>
+      </ul>
+    </li>
+
+    <li nz-menu-item >{{'header.user.dropdown.logout' | translate}}</li>
+  </ul>
+</ng-container>
+</nz-drawer>
 </nz-header>

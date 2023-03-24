@@ -11,7 +11,7 @@ export class CardComponent implements OnInit {
   @Input() imageUrl!: string;
   @Input() alt!: string;
   @Input() route?: string;
-
+  @Input() loading?: boolean;
   constructor() { }
 
   ngOnInit(): void {
