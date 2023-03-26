@@ -36,6 +36,7 @@ import { FeaturesModule } from './features/features.module';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { InputComponent } from './shared/components/input/input.component';
+import { SearchPipe } from './shared/pipes/search.pipe';
 
 
 registerLocaleData(es);
@@ -46,7 +47,8 @@ registerLocaleData(es);
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-    InputComponent
+    InputComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
