@@ -32,6 +32,11 @@ fontend/
 |           ├── task-form.component.ts # Componente para mostrar el formulario de tarea
 |           ├── task-form.component.html # Plantilla del componente para mostrar el formulario de tarea
 |           └── task-form.component.scss # Estilos del componente para mostrar el formulario de tarea
+|       └── navbar/
+|           ├── navbar.component.ts # Componente para mostrar el formulario de tarea
+|           ├── navbar.component.html # Plantilla del componente para mostrar el formulario de tarea
+|           └── navbar.component.scss # Estilos del componente para mostrar el formulario de tarea
+
 └── features/
     ├── tasks/
     |   ├── components/

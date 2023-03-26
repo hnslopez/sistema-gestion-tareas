@@ -47,7 +47,7 @@ export class AppComponent {
       })
     ).subscribe((title: string) => {
       if (title) {
-        this.titleService.setTitle(`Sitema de Gestión - ${title}`);
+        this.titleService.setTitle(`Sistema de Gestión - ${title}`);
       }
     });
   }

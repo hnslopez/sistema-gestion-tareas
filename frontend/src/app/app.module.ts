@@ -33,6 +33,9 @@ import { NzListModule } from 'ng-zorro-antd/list';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzOverlayModule } from 'ng-zorro-antd/core/overlay';
 import { FeaturesModule } from './features/features.module';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { InputComponent } from './shared/components/input/input.component';
 
 
 registerLocaleData(es);
@@ -42,7 +45,8 @@ registerLocaleData(es);
     AppComponent,
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,8 @@ registerLocaleData(es);
       }
     }),
 
-
+    NzInputModule,
+    NzAutocompleteModule,
     NzLayoutModule,
     NzMenuModule,
     NzDropDownModule,

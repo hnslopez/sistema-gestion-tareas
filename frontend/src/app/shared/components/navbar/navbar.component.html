@@ -7,16 +7,20 @@
         </span>
       </div>
     </div>
-    <div class="nav"></div>
+    <div class="nav">
+      <app-input [cleaner]='true' icon='search' placeholder="Buscador" [autoComplete]="auto">
+        <nz-autocomplete [nzDataSource]="options" nzBackfill #auto></nz-autocomplete>
+      </app-input>
+    </div>
     <div class="nav nav-right d-flex">
-      <div class="text-center">
+      <div class="dropdown">
         <nz-badge [nzCount]="1" nz-dropdown [nzDisabled]="isMobile" [nzDropdownMenu]="menuNotification"
           nzPlacement='bottomRight' nzTrigger="click"  [nzVisible]="visibleDropdown"
           (nzVisibleChange)="onDropdownVisibleChange($event)"
           
           (click)="isMobile ? openDrawer() : null" >
-          <span class="bell-icon" style="padding-right: 0;">
-            <i class="trigger" nz-icon nzType="bell" [nzTheme]="isCollapsedNotification ? 'fill': 'outline'"></i>
+          <span class="bell-icon">
+            <i id="bellIcon" class="trigger" nz-icon nzType="bell" [nzTheme]="isCollapsedNotification ? 'fill': 'outline'"></i>
           </span>
           
         </nz-badge>
@@ -40,45 +44,25 @@
           </ng-template>
         </nz-dropdown-menu>
       </div>
-      <div class="dropdown ">
+      <div class="dropdown" style="margin-top: 3px;">
         <nz-badge nz-dropdown [nzDisabled]="isMobile" [nzDropdownMenu]="menu"
         nzPlacement='bottomRight' nzTrigger="click"  [nzVisible]="visibleDropdown"
         (nzVisibleChange)="onDropdownUserVisibleChange($event)"
         (click)="isMobile ? openUserDrawer() : null" >
         <span class="bell-icon" style="padding-right: 0;">
-          <i class="trigger" nz-icon nzType="user" [nzTheme]="visibleUserMenuNotification ? 'fill': 'outline'"></i>
+          <i id="userIcon" class="trigger bi bi-person-circle"></i>
         </span>
       </nz-badge>
-
-        
-        <nz-dropdown-menu #menu="nzDropdownMenu" class="p-0">
-          <ul nz-menu>
-            <li nz-menu-group [nzTitle]="'header.user.dropdown.profile.title' | translate">
-              <ul>
-                <li nz-menu-item>{{'header.user.dropdown.profile.view' | translate}}</li>
-                <li nz-menu-item>{{'header.user.dropdown.profile.edit' | translate}}</li>
-                <li nz-menu-item>{{'header.user.dropdown.profile.myAccount' | translate}}</li>
-                <li nz-menu-item>{{'header.user.dropdown.profile.notifications' | translate}}</li>
-                <li nz-menu-item>{{'header.user.dropdown.profile.recentActivity' | translate}}</li>
-              </ul>
-            </li>
-            <li nz-menu-group [nzTitle]="'header.user.dropdown.settings.title' | translate">
-              <ul>
-                <li nz-menu-item>{{'header.user.dropdown.settings.changePassword' | translate}}</li> 
-                <li nz-menu-item>{{'header.user.dropdown.settings.preferences' | translate}}</li>
-                <li nz-menu-item>{{'header.user.dropdown.settings.privacy' | translate}}</li>
-                <li nz-menu-item>{{'header.user.dropdown.settings.security' | translate}}</li>
-              </ul>
-            </li>
-            <li nz-menu-divider></li>
-            <li nz-menu-group [nzTitle]="'header.user.dropdown.help.title' | translate">
-              <ul>
-                <li nz-menu-item>{{'header.user.dropdown.help.faq' | translate}}</li>
-                <li nz-menu-item>{{'header.user.dropdown.help.documentation' | translate}}</li>
-              </ul>
-            </li>
-            <li nz-menu-divider></li>
-            <li nz-menu-item>{{'header.user.dropdown.logout' | translate}}</li>
+        <nz-dropdown-menu #menu="nzDropdownMenu" class="p-0 no-bootstrap">
+          <ul nz-menu nzMode="vertical" style="width: 240px;">
+            <ng-container *ngFor="let menu of menus">
+              <li *ngIf="menu.submenus && menu.submenus.length > 0" nz-submenu [nzTitle]="menu.title | translate" [nzIcon]="menu.icon" >
+                <ul>
+                  <li *ngFor="let submenu of menu.submenus" nz-menu-item>{{ submenu | translate }}</li>
+                </ul>
+              </li>
+              <li *ngIf="!menu.submenus" nz-menu-item>{{ menu.title | translate }}</li>
+            </ng-container>
           </ul>
         </nz-dropdown-menu>
       </div>
@@ -115,36 +99,20 @@
 [nzClosable]="false"
 [nzVisible]="visibleUserMenu"
 nzPlacement="right"
+[nzWidth]="'256px'"
 (nzOnClose)="closeUserDrawer()"
 [nzBodyStyle]="{ padding: '0' }"
 >
 <ng-container *nzDrawerContent>
   <ul nz-menu nzMode="inline">
-    <li nz-submenu [nzTitle]="'header.user.dropdown.profile.title' | translate" nzIcon="user" nzOpen="true">
-      <ul>
-        <li nz-menu-item>{{'header.user.dropdown.profile.view' | translate}}</li>
-        <li nz-menu-item>{{'header.user.dropdown.profile.edit' | translate}}</li>
-        <li nz-menu-item>{{'header.user.dropdown.profile.myAccount' | translate}}</li>
-        <li nz-menu-item>{{'header.user.dropdown.profile.notifications' | translate}}</li>
-        <li nz-menu-item>{{'header.user.dropdown.profile.recentActivity' | translate}}</li>
-      </ul>
-    </li>
-    <li nz-submenu [nzTitle]="'header.user.dropdown.settings.title' | translate"  nzIcon="setting" nzOpen="true">
-      <ul>
-        <li nz-menu-item>{{'header.user.dropdown.settings.changePassword' | translate}}</li> 
-        <li nz-menu-item>{{'header.user.dropdown.settings.preferences' | translate}}</li>
-        <li nz-menu-item>{{'header.user.dropdown.settings.privacy' | translate}}</li>
-        <li nz-menu-item>{{'header.user.dropdown.settings.security' | translate}}</li>
-      </ul>
-    </li>
-    <li nz-submenu [nzTitle]="'header.user.dropdown.help.title' | translate" nzIcon="question" nzOpen="true">
-      <ul>
-        <li nz-menu-item>{{'header.user.dropdown.help.faq' | translate}}</li>
-        <li nz-menu-item>{{'header.user.dropdown.help.documentation' | translate}}</li>
-      </ul>
-    </li>
-
-    <li nz-menu-item >{{'header.user.dropdown.logout' | translate}}</li>
+    <ng-container *ngFor="let menu of menus">
+      <li *ngIf="menu.submenus && menu.submenus.length > 0" nz-submenu [nzTitle]="menu.title | translate" [nzIcon]="menu.icon" [nzOpen]="true">
+        <ul>
+          <li *ngFor="let submenu of menu.submenus" nz-menu-item>{{ submenu | translate }}</li>
+        </ul>
+      </li>
+      <li *ngIf="!menu.submenus" nz-menu-item>{{ menu.title | translate }}</li>
+    </ng-container>
   </ul>
 </ng-container>
 </nz-drawer>

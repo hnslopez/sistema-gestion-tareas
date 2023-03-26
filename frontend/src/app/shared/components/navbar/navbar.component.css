@@ -76,9 +76,24 @@ nz-badge.ant-badge-rtl {
 
 }
 
-:host .bell-icon{
+:host .bell-icon {
     height: 64px;
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
     transition: all .3s, padding 0s;
 }
+
+.anticon {
+    vertical-align: 0;
+}
+
+
+.trigger {
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.trigger:hover {
+    opacity: 1;
+}
+
