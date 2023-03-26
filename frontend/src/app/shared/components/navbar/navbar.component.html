@@ -13,7 +13,7 @@
       </app-input>
     </div>
     <div class="nav nav-right d-flex">
-      <div class="dropdown">
+      <div >
         <nz-badge [nzCount]="1" nz-dropdown [nzDisabled]="isMobile" [nzDropdownMenu]="menuNotification"
           nzPlacement='bottomRight' nzTrigger="click"  [nzVisible]="visibleDropdown"
           (nzVisibleChange)="onDropdownVisibleChange($event)"
@@ -44,7 +44,7 @@
           </ng-template>
         </nz-dropdown-menu>
       </div>
-      <div class="dropdown" style="margin-top: 3px;">
+      <div style="margin-top: 3px;">
         <nz-badge nz-dropdown [nzDisabled]="isMobile" [nzDropdownMenu]="menu"
         nzPlacement='bottomRight' nzTrigger="click"  [nzVisible]="visibleDropdown"
         (nzVisibleChange)="onDropdownUserVisibleChange($event)"

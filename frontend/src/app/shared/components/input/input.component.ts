@@ -12,7 +12,7 @@ export class InputComponent implements OnInit {
   @Input() icon?:string;
   @Input() placeholder?:string='';
   @Input() autoComplete?: NzAutocompleteComponent | null = null;
-
+  @Input() status?:'error' | 'warning';
 
   constructor() { }
 
