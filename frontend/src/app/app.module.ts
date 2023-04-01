@@ -37,6 +37,9 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { InputComponent } from './shared/components/input/input.component';
 import { SearchPipe } from './shared/pipes/search.pipe';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
 
 registerLocaleData(es);
@@ -84,6 +87,9 @@ registerLocaleData(es);
     NzBadgeModule,
     NzListModule,
     NzCardModule,
+    NzTabsModule,
+    NzSegmentedModule,
+    NzToolTipModule
     
   ],
   providers: [AppInitializerProvider,{ provide: NZ_I18N, useValue: es_ES }],

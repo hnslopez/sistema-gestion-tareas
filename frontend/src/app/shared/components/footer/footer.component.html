@@ -19,10 +19,6 @@
           <nz-option *ngFor="let item of language; trackBy :trackByValue" [nzValue]="item.value" [nzLabel]="item.name"></nz-option>
         </nz-select>
       </span>
-      <nz-divider nzType="vertical"></nz-divider>
-      <span>
-        <button nz-button nzType="text" (click)="toggleTheme()">{{"settings.theme" | translate }}</button>
-      </span>
     </div>
   </div>
   

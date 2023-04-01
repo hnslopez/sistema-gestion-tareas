@@ -55,7 +55,10 @@
     "settings": {
         "title": "Settings",
         "language": "Language",
-        "theme": "Theme",
+        "theme": {
+            "dark": "Dark Mode",
+            "default": "Light Mode"
+        },
         "save": "Save"
     }
 }

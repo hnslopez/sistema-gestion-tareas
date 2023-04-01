@@ -37,3 +37,13 @@
   .cdk-global-scrollblock {
     overflow: unset !important;
   }
+
+  :host ::ng-deep .ant-tabs-nav {
+    align-self: center;
+}
+
+
+:host ::ng-deep .ant-tabs-nav-wrap,:host ::ng-deep  .ant-tabs-nav-operations{
+  display:none!important;
+}
+

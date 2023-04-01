@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="nav nav-center col-1 d-flex flex-fill">
-      <app-input [cleaner]='true' icon='search' placeholder="Buscador" [autoComplete]="auto">
+      <app-input [cleaner]='true' icon='search' [placeholder]="'header.search' | translate" [autoComplete]="auto">
         <nz-autocomplete [nzDataSource]="options" nzBackfill #auto></nz-autocomplete>
       </app-input>
     </div>

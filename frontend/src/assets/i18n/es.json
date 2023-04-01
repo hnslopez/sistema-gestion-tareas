@@ -25,7 +25,8 @@
                 },
                 "logout": "Cerrar sesión"
             }
-        }
+        },
+        "search": "Buscar..."
     },
     "home": {
         "title": "Sistema de Gestión",
@@ -37,26 +38,28 @@
             "mongodb": "MongoDB como base de datos NoSQL para almacenar los datos de las tareas y usuarios."
         }
     },
-
-"tasks": {
-    "title": "Lista de Tareas",
-    "add": "Agregar Tarea",
-    "edit": "Editar Tarea",
-    "delete": "Eliminar Tarea",
-    "completed": "Tarea completada",
-    "not_completed": "Tarea no completada",
-    "no_tasks": "No hay tareas agregadas todavía.",
-    "form": {
-        "name": "Nombre",
-        "description": "Descripción",
-        "due_date": "Fecha de Vencimiento",
-        "completed": "Completada"
+    "tasks": {
+        "title": "Lista de Tareas",
+        "add": "Agregar Tarea",
+        "edit": "Editar Tarea",
+        "delete": "Eliminar Tarea",
+        "completed": "Tarea completada",
+        "not_completed": "Tarea no completada",
+        "no_tasks": "No hay tareas agregadas todavía.",
+        "form": {
+            "name": "Nombre",
+            "description": "Descripción",
+            "due_date": "Fecha de Vencimiento",
+            "completed": "Completada"
+        }
+    },
+    "settings": {
+        "title": "Configuración",
+        "language": "Idioma",
+        "theme": {
+            "dark": "Modo Oscuro",
+            "default": "Modo Claro"
+        },
+        "save": "Guardar"
     }
-},
-"settings": {
-    "title": "Configuración",
-    "language": "Idioma",
-    "theme": "Tema",
-    "save": "Guardar"
-}
 }
