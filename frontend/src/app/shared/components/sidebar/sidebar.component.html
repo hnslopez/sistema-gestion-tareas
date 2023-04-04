@@ -235,7 +235,7 @@
     </ul>
     <ul class="ant-menu-item-group-list">
       <li *ngIf="(themeChanged$ | async) as themeType" nz-menu-item nz-tooltip nzTooltipPlacement="right"
-        (click)="toggleTheme(); selected($event)"
+        (click)="toggleTheme();"
         [nzTooltipTitle]="isCollapsed ? (((themeChanged$ | async) === ThemeType.Dark ? 'settings.theme.default' : 'settings.theme.dark') | translate): ''"
         class="prueba">
         <span nz-icon>
@@ -517,7 +517,7 @@
       <li nz-menu-group nzTitle="Extra">
         <ul class="ant-menu-item-group-list">
           <li *ngIf="(themeChanged$ | async) as themeType" nz-menu-item nz-tooltip nzTooltipPlacement="right"
-            (click)="toggleTheme(); selected($event)"
+            (click)="toggleTheme()"
             [nzTooltipTitle]="isCollapsed ? (((themeChanged$ | async) === ThemeType.Dark ? 'settings.theme.default' : 'settings.theme.dark') | translate): ''"
             class="prueba">
             <span nz-icon>

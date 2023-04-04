@@ -62,7 +62,7 @@
 }
 
 nz-badge {
-    margin: 0 20px 0 20px;
+    margin: 0 25px 0 25px;
 }
 
 nz-badge.ant-badge-rtl {
@@ -100,3 +100,18 @@ nz-badge.ant-badge-rtl {
 .nav-center{
  margin-right: auto;   
 }
+
+.navbar-transparent{
+    background-color: transparent;
+}
+
+
+
+:host ::ng-deep ul.ant-menu.ant-menu-root.ant-menu-light.ant-menu-horizontal{
+    border: 0;
+}
+
+:host ::ng-deep li::after{
+    display:none!important;
+  }
+  

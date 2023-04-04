@@ -13,6 +13,8 @@ export class InputComponent implements OnInit {
   @Input() placeholder?:string='';
   @Input() autoComplete?: NzAutocompleteComponent | null = null;
   @Input() status?:'error' | 'warning';
+  @Input() borderless?:boolean = false;
+  @Input() type?:string = 'text';
 
   constructor() { }
 

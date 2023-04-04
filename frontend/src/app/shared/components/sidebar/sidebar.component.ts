@@ -40,11 +40,7 @@ export class SidebarComponent implements OnInit{
     this.themeService.toggleTheme().then();
   }
 
-  selected(event:Event):void{
-    console.log(event)
-    console.log(event)
 
-  }
 
   close(): void {
     this.isCollapsed = this.isCollapsed;

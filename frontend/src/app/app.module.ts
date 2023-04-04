@@ -40,6 +40,7 @@ import { SearchPipe } from './shared/pipes/search.pipe';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
 
 
 registerLocaleData(es);
@@ -89,7 +90,8 @@ registerLocaleData(es);
     NzCardModule,
     NzTabsModule,
     NzSegmentedModule,
-    NzToolTipModule
+    NzToolTipModule,
+    NzPopoverModule
     
   ],
   providers: [AppInitializerProvider,{ provide: NZ_I18N, useValue: es_ES }],
