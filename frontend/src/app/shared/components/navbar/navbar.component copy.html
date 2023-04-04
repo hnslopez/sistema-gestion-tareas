@@ -70,8 +70,88 @@
           </div>
         </nz-dropdown-menu>
       </div>
+
+      <!--Prueba -->
+      <ul nz-menu nzMode="horizontal" >
+        <li nz-submenu nzTitle="Navigation Three - Submenu" nzIcon="setting">
+          <ul>
+            <li nz-menu-group nzTitle="Item 1">
+              <ul>
+                <li nz-menu-item>Option 1</li>
+                <li nz-menu-item>Option 2</li>
+              </ul>
+            </li>
+            <li nz-menu-group nzTitle="Item 2">
+              <ul>
+                <li nz-menu-item>Option 3</li>
+                <li nz-menu-item>Option 4</li>
+                <li nz-submenu nzTitle="Sub Menu">
+                  <ul>
+                    <li nz-menu-item nzDisabled>Option 5</li>
+                    <li nz-menu-item>Option 6</li>
+                  </ul>
+                </li>
+                <li nz-submenu nzDisabled nzTitle="Disabled Sub Menu">
+                  <ul>
+                    <li nz-menu-item>Option 5</li>
+                    <li nz-menu-item>Option 6</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+
     </div>
   </div>
 
-
+  <nz-drawer
+  [nzClosable]="false"
+  [nzVisible]="visibleDrawer"
+  [nzPlacement]="placement"
+  nzTitle="Notificaciones" [nzExtra]="extraTemplate"
+  (nzOnClose)="closeDrawer()"
+  [nzBodyStyle]="{'overflow':'auto','max-height':'300px'}"
+>
+  <ng-container *nzDrawerContent>
+        <nz-list nzItemLayout="horizontal" [nzSize]="'small'">
+          <nz-list-item *ngFor="let item of data">
+            <nz-list-item-meta nzAvatar="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+              nzDescription="Ant Design, a design language for background applications, is refined by Ant UED Team">
+              <nz-list-item-meta-title>
+                <a href="https://ng.ant.design">{{ item.title }}</a>
+              </nz-list-item-meta-title>
+            </nz-list-item-meta>
+          </nz-list-item>
+          <nz-list-empty *ngIf="data.length === 0"></nz-list-empty>
+        </nz-list>
+      <ng-template #extraTemplate>
+        <a nz-button [routerLink]="''">Ver Todo</a>
+      </ng-template>
+  </ng-container>
+</nz-drawer>
+  
+<nz-drawer
+[nzClosable]="false"
+[nzVisible]="visibleUserMenu"
+nzPlacement="right"
+[nzWidth]="'256px'"
+(nzOnClose)="closeUserDrawer()"
+[nzBodyStyle]="{ padding: '0' }"
+>
+<ng-container *nzDrawerContent>
+  <ul nz-menu nzMode="inline">
+    <ng-container *ngFor="let menu of menus">
+      <li *ngIf="menu.submenus && menu.submenus.length > 0" nz-submenu [nzTitle]="menu.title | translate" [nzIcon]="menu.icon" [nzOpen]="true">
+        <ul>
+          <li *ngFor="let submenu of menu.submenus" nz-menu-item>{{ submenu | translate }}</li>
+        </ul>
+      </li>
+      <li *ngIf="!menu.submenus" nz-menu-item>{{ menu.title | translate }}</li>
+    </ng-container>
+  </ul>
+</ng-container>
+</nz-drawer>
 </nz-header>
