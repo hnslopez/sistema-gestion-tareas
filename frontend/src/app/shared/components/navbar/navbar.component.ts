@@ -92,10 +92,9 @@ export class NavbarComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['isMobile']) {
-      if (changes['isMobile'].currentValue && this.isCollapsedNotification) return this.openDrawer();
-      if (changes['isMobile'].currentValue && !this.isCollapsedNotification) return this.closeDrawer();
-      if (!changes['isMobile'].currentValue && this.isCollapsedNotification) return this.openDropdown();
+      if (!changes['isMobile'].currentValue && this.isCollapsedNotification) return this.closeDrawer();
       if (!changes['isMobile'].currentValue && this.visibleUserMenu) return this.closeUserDrawer();
+
     }
   }
 
@@ -114,11 +113,14 @@ export class NavbarComponent implements OnInit, OnChanges {
     this.visibleDrawer = true;
     this.isCollapsedNotification = true;
     this.visibleDropdown = false;
+    this.onDropdownVisibleChange(true);
   }
 
   closeDrawer(): void {
     this.visibleDrawer = false;
     this.isCollapsedNotification = false;
+    this.onDropdownVisibleChange(false);
+
   }
 
   openUserDrawer(): void {
