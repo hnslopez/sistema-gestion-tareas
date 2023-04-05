@@ -41,6 +41,7 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { RibbonComponent } from './shared/components/ribbon/ribbon.component';
 
 
 registerLocaleData(es);
@@ -52,7 +53,8 @@ registerLocaleData(es);
     NavbarComponent,
     SidebarComponent,
     InputComponent,
-    SearchPipe
+    SearchPipe,
+    RibbonComponent
   ],
   imports: [
     BrowserModule,
