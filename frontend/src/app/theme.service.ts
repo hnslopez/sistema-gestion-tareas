@@ -1,12 +1,6 @@
 import { Injectable } from '@angular/core';
-
-/**
- * Tipos de temas disponibles.
- */
-enum ThemeType {
-  Dark = 'dark',
-  Default = 'default',
-}
+import { BehaviorSubject } from 'rxjs';
+import { ThemeType } from './shared/enum';
 
 /**
  * Servicio encargado del manejo de temas.
@@ -19,6 +13,7 @@ export class ThemeService {
    * Tema actual.
    */
   private currentTheme: ThemeType = ThemeType.Dark;
+  private themeChanged = new BehaviorSubject<ThemeType>(this.currentTheme);
 
   /**
    * Obtiene el tema actual desde localStorage.
@@ -27,6 +22,8 @@ export class ThemeService {
     const theme = localStorage.getItem('theme');
     if (theme && Object.values(ThemeType).includes(theme as ThemeType)) {
       this.currentTheme = theme as ThemeType;
+      this.themeChanged.next(this.currentTheme); 
+
     }
   }
 
@@ -82,8 +79,17 @@ export class ThemeService {
    */
   public toggleTheme(): Promise<Event> {
     this.currentTheme = this.reverseTheme(this.currentTheme);
+    this.themeChanged.next(this.currentTheme); 
     return this.loadTheme(false);
   }
+
+    /**
+   * Obtener el tema actual.
+   * @returns Retorna el tema actual.
+   */
+    public getThemeChanged(): BehaviorSubject<ThemeType> {
+      return this.themeChanged;
+    }
 
   /**
    * Carga una hoja de estilos de forma asíncrona.

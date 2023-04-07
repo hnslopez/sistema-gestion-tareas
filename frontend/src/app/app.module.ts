@@ -32,6 +32,21 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzOverlayModule } from 'ng-zorro-antd/core/overlay';
+import { FeaturesModule } from './features/features.module';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { InputComponent } from './shared/components/input/input.component';
+import { SearchPipe } from './shared/pipes/search.pipe';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { RibbonComponent } from './shared/components/ribbon/ribbon.component';
+import { CoreModule } from './core/core.module';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
 registerLocaleData(es);
@@ -42,13 +57,16 @@ registerLocaleData(es);
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
+    InputComponent,
+    SearchPipe,
+    RibbonComponent
   ],
   imports: [
+    CoreModule,
     BrowserModule,
+    FeaturesModule,
     AppRoutingModule,
     FormsModule,
-    
-    
     NzOverlayModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -61,7 +79,8 @@ registerLocaleData(es);
       }
     }),
 
-
+    NzInputModule,
+    NzAutocompleteModule,
     NzLayoutModule,
     NzMenuModule,
     NzDropDownModule,
@@ -77,6 +96,15 @@ registerLocaleData(es);
     NzBadgeModule,
     NzListModule,
     NzCardModule,
+    NzTabsModule,
+    NzSegmentedModule,
+    NzToolTipModule,
+    NzPopoverModule,
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot(),
+    StoreDevtoolsModule.instrument({ maxAge: 25}),
+
     
   ],
   providers: [AppInitializerProvider,{ provide: NZ_I18N, useValue: es_ES }],

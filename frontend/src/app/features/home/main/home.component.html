@@ -1,0 +1,46 @@
+<page-title>
+    <h2 class="display-5 fw-bold text-uppercase">{{"home.title" | translate}}</h2>
+    <p class="fs-4">{{"home.description" | translate}}</p>
+    <a [href]="repository" target="_blank">
+      <button nz-button nzType="primary" [nzSize]="'large'">
+        {{"home.button_repositoty" | translate}}
+      </button>
+    </a>
+</page-title>
+  <section>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+                <img-card
+                title="FRONTEND"
+                [description]="'home.information.angular' | translate"
+                [imageUrl]="'/assets/image/angular.png'"
+                route="/angular"
+                alt="angular"
+                [loading]="loading"
+              ></img-card> 
+            </div>
+            <div class="col">
+                <img-card
+                title="BACKEND"
+                [description]="'home.information.express' | translate"
+                [imageUrl]="'/assets/image/express.png'"
+                route="/express"
+                alt="express"
+                [loading]="loading"
+
+              ></img-card> 
+            </div>
+            <div class="col">
+                <img-card
+                title="DATABASE"
+                [description]="'home.information.mongodb' | translate"
+                [imageUrl]="'/assets/image/mongodb.png'"
+                route="/mongodb"
+                alt="mongodb"
+                [loading]="loading"
+              ></img-card> 
+            </div>
+        </div>
+    </div>
+</section>

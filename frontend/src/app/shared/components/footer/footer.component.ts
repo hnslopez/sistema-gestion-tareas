@@ -30,9 +30,6 @@ export class FooterComponent implements OnInit {
     return language.value;
 }
 
-toggleTheme(): void {
-  this.themeService.toggleTheme().then();
-}
 
 languageChange(params:any) {
   this.app.switchLanguage(params);

@@ -1,4 +1,4 @@
-  <footer class="footer py-3 text-center">
+  <div class="py-3 text-center">
     <div class="text-center container">
       <span>
         &copy; {{year}}
@@ -15,14 +15,10 @@
       </span>
       <nz-divider nzType="vertical"></nz-divider>
       <span>
-        <nz-select nzPlaceHolder="Language" [(ngModel)]="selectedValue" (ngModelChange)="languageChange($event)" nzBorderless>
+        <nz-select  [nzSuffixIcon]='"up"' nzPlaceHolder="Language" [(ngModel)]="selectedValue" (ngModelChange)="languageChange($event)" nzBorderless>
           <nz-option *ngFor="let item of language; trackBy :trackByValue" [nzValue]="item.value" [nzLabel]="item.name"></nz-option>
         </nz-select>
       </span>
-      <nz-divider nzType="vertical"></nz-divider>
-      <span>
-        <button nz-button nzType="text" (click)="toggleTheme()">{{"settings.theme" | translate }}</button>
-      </span>
     </div>
-  </footer>
+  </div>
   
