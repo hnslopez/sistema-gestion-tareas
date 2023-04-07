@@ -4,7 +4,7 @@
     <app-sidebar [isCollapsed]="isCollapsed" [isMobile]="isMobile" (isCollapsedChanged)="onIsCollapsedChanged($event)" class="sidebar-container"></app-sidebar>
   </nz-sider>
   <nz-layout>
-    <app-navbar [isCollapsed]="isCollapsed" [isMobile]="isMobile" (toggleCollapsed)="onToggleSidebar($event)"></app-navbar>
+    <app-navbar *ngIf="showNavbar" [isCollapsed]="isCollapsed" [isMobile]="isMobile" (toggleCollapsed)="onToggleSidebar($event)"></app-navbar>
     <nz-content class="container my-4">
       <router-outlet></router-outlet>
     </nz-content>

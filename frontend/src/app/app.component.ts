@@ -13,6 +13,7 @@ export class AppComponent {
   title = 'Proyecto de Gestión';
   isCollapsed = true;
   isMobile = true;
+  showNavbar = true;
 
   constructor(public translate: TranslateService, private router: Router, private titleService: Title ) {
     let defaultLenguage = localStorage.getItem('locale') || 'es';
@@ -43,10 +44,21 @@ export class AppComponent {
         if (route.snapshot.data['title']) {
           routeTitle = route!.snapshot.data['title'];
         }
+
+        if(route.snapshot.data['navbar'] === undefined){
+            this.showNavbar = true;
+        }else{
+          this.showNavbar = false;
+        }
+
+
+        
+
         return routeTitle;
       })
     ).subscribe((title: string) => {
       if (title) {
+
         this.titleService.setTitle(`Sistema de Gestión - ${title}`);
       }
     });

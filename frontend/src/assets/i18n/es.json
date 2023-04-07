@@ -53,6 +53,17 @@
             "completed": "Completada"
         }
     },
+    "login": {
+        "title": "Iniciar sesión",
+        "username": "Nombre de usuario",
+        "password": "Contraseña",
+        "forgot_password": "¿Olvidaste tu contraseña?",
+        "button_login": "Ingresar",
+        "form_errors": {
+            "required": "Por favor, complete este campo.",
+            "minlength": "Este campo requiere un mínimo de {{minlength}} caracteres."
+            }
+    },
     "settings": {
         "title": "Configuración",
         "language": "Idioma",

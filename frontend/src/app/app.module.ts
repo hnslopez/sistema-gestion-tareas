@@ -42,6 +42,11 @@ import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { RibbonComponent } from './shared/components/ribbon/ribbon.component';
+import { CoreModule } from './core/core.module';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
 registerLocaleData(es);
@@ -57,6 +62,7 @@ registerLocaleData(es);
     RibbonComponent
   ],
   imports: [
+    CoreModule,
     BrowserModule,
     FeaturesModule,
     AppRoutingModule,
@@ -93,7 +99,12 @@ registerLocaleData(es);
     NzTabsModule,
     NzSegmentedModule,
     NzToolTipModule,
-    NzPopoverModule
+    NzPopoverModule,
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot(),
+    StoreDevtoolsModule.instrument({ maxAge: 25}),
+
     
   ],
   providers: [AppInitializerProvider,{ provide: NZ_I18N, useValue: es_ES }],

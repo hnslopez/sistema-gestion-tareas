@@ -1,0 +1,39 @@
+.bg{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.bg-login-form{
+  background: #1F1F1F;
+}
+
+i {
+  cursor: pointer;
+  }
+
+.blur{
+  backdrop-filter: blur(10px);
+}
+
+@media only screen and (max-height: 600px) {
+  .py-md-4 {
+    padding-top: 0rem!important;
+    padding-bottom: 0rem!important;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .form-login-width{
+    min-width: 450px;
+   }
+ 
+}
+/*
+input:-webkit-autofill{
+  -webkit-box-shadow: 0 0 0 1000px #212529 inset !important;
+  -webkit-text-fill-color: white !important;
+
+}
+*/
