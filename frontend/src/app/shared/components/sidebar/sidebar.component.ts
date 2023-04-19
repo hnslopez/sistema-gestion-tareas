@@ -22,7 +22,7 @@ export class SidebarComponent implements OnInit{
   currentPath!: string;
   public ThemeType = ThemeType; 
   nzSelected= false;
-  mode = false;
+  mode = true;
 
   public themeChanged$!: BehaviorSubject<ThemeType>;
 

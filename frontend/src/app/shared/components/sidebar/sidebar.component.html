@@ -227,12 +227,6 @@
 
 <ul nz-menu [nzMode]="mode ? 'vertical' : 'inline'" [nzInlineCollapsed]="isCollapsed" class="mt-auto">
   <li nz-menu-group nzTitle="Extra">
-    <ul>
-      <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? (mode? 'Vertical': 'Lateral') : ''"  class="prueba">
-        <span nz-icon> <nz-switch [(ngModel)]="mode" nzSize="small"></nz-switch></span>
-        <span>{{mode? 'Vertical': 'Lateral'}}</span>
-      </li>
-    </ul>
     <ul class="ant-menu-item-group-list">
       <li *ngIf="(themeChanged$ | async) as themeType" nz-menu-item nz-tooltip nzTooltipPlacement="right"
         (click)="toggleTheme();"
