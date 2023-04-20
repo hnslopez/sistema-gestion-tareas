@@ -53,3 +53,9 @@
   border-right: 0px;
 }
 
+
+.scrolling{
+  max-height: calc(100vh - 132px);
+    overflow: auto;
+    overflow-x: hidden;
+}

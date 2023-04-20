@@ -5,6 +5,7 @@ import { MenuSection } from 'src/app/core/models/menu-section.model';
 import { ThemeService } from 'src/app/theme.service';
 import { menuItems } from '../../data/menu-items.data';
 import { ThemeType } from '../../enum';
+import { query } from '@angular/animations';
 
 @Component({
   selector: 'app-sidebar',
@@ -22,13 +23,17 @@ export class SidebarComponent implements OnInit{
   currentPath!: string;
   public ThemeType = ThemeType; 
   nzSelected= false;
-  mode = true;
+  mode = false;
 
   public themeChanged$!: BehaviorSubject<ThemeType>;
 
 
   constructor(private router: Router, private themeService: ThemeService) {
+
   }
+
+  
+  
 
 
   ngOnInit(): void {

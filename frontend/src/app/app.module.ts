@@ -47,6 +47,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { RouterLinkActive } from '@angular/router';
 
 
 registerLocaleData(es);
@@ -59,7 +60,8 @@ registerLocaleData(es);
     SidebarComponent,
     InputComponent,
     SearchPipe,
-    RibbonComponent
+    RibbonComponent,
+
   ],
   imports: [
     CoreModule,

@@ -3,20 +3,25 @@
   <h1>Sistema de Gestión</h1>
 </div>
 
-<ul nz-menu [nzMode]="mode ? 'vertical' : 'inline'" [nzInlineCollapsed]="isCollapsed">
-  <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'Inicio' : ''">
-    <span nz-icon nzType="home"></span>
-    <span>Inicio</span>
+<ul class="scrolling" nz-menu [nzMode]="mode ? 'vertical' : 'inline'" [nzInlineCollapsed]="isCollapsed" >
+  <li nz-menu-item nz-tooltip nzTooltipPlacement="right" 
+  [nzTooltipTitle]="isCollapsed ? 'Inicio' : ''"  
+  [routerLink]="['/']"
+  routerLinkActive="ant-menu-item-selected"
+  [routerLinkActiveOptions]="{ exact: true }"
+  >
+      <span nz-icon nzType="home"></span>
+      <span>Inicio</span>
   </li>
-  <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'Angular' : ''">
+  <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'Angular' : ''" nzMatchRouter [routerLink]="['angular']">
     <span nz-icon><i class="fab fa-angular"></i></span>
     <span>Angular</span>
   </li>
-  <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'MongoDB' : ''">
+  <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'MongoDB' : ''" nzMatchRouter [routerLink]="['mongodb']">
     <span nz-icon><i class="fas fa-database"></i></span>
     <span>MongoDB</span>
   </li>
-  <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'Express' : ''">
+  <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'Express' : ''" nzMatchRouter [routerLink]="['express']">
     <span nz-icon><i class="fab fa-node-js"></i></span>
     <span>Express</span>
   </li>
@@ -226,7 +231,7 @@
 </ul>
 
 <ul nz-menu [nzMode]="mode ? 'vertical' : 'inline'" [nzInlineCollapsed]="isCollapsed" class="mt-auto">
-  <li nz-menu-group nzTitle="Extra">
+  <li nz-menu-group>
     <ul class="ant-menu-item-group-list">
       <li *ngIf="(themeChanged$ | async) as themeType" nz-menu-item nz-tooltip nzTooltipPlacement="right"
         (click)="toggleTheme();"
@@ -286,19 +291,24 @@
       <h1>Sistema de Gestión</h1>
     </div>
     <ul nz-menu [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
-      <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'Inicio' : ''">
-        <span nz-icon nzType="home"></span>
-        <span>Inicio</span>
+      <li nz-menu-item nz-tooltip nzTooltipPlacement="right" 
+      [nzTooltipTitle]="isCollapsed ? 'Inicio' : ''"  
+      [routerLink]="['/']"
+      routerLinkActive="ant-menu-item-selected"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >
+          <span nz-icon nzType="home"></span>
+          <span>Inicio</span>
       </li>
-      <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'Angular' : ''">
+      <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'Angular' : ''" nzMatchRouter [routerLink]="['angular']">
         <span nz-icon><i class="fab fa-angular"></i></span>
         <span>Angular</span>
       </li>
-      <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'MongoDB' : ''">
+      <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'MongoDB' : ''" nzMatchRouter [routerLink]="['mongodb']">
         <span nz-icon><i class="fas fa-database"></i></span>
         <span>MongoDB</span>
       </li>
-      <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'Express' : ''">
+      <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'Express' : ''" nzMatchRouter [routerLink]="['express']">
         <span nz-icon><i class="fab fa-node-js"></i></span>
         <span>Express</span>
       </li>
@@ -508,7 +518,7 @@
     </ul>
     
     <ul nz-menu [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed" class="mt-auto">
-      <li nz-menu-group nzTitle="Extra">
+      <li nz-menu-group>
         <ul class="ant-menu-item-group-list">
           <li *ngIf="(themeChanged$ | async) as themeType" nz-menu-item nz-tooltip nzTooltipPlacement="right"
             (click)="toggleTheme()"
