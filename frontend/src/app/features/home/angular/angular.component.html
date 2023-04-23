@@ -1,0 +1,16 @@
+<page-title>
+    <h2 class="display-5 fw-bold text-uppercase">{{"angular.title" | translate}}</h2>
+    <p class="fs-4">{{"angular.description" | translate}}</p>
+</page-title>
+<section>
+    <div class="container">
+            <div nz-row [nzGutter]="[16,16]"  class="custom-class">
+                <div nz-col [nzSpan]="24" [nzXs]="24" [nzSm]="12" [nzMd]="8" [nzLg]="8" *ngFor="let module of modules">
+                <img-card
+                [title]="'angular.'+ module.name | translate"
+                [description]="'angular.'+ module.description | translate"
+              ></img-card> 
+            </div>
+        </div>
+    </div>
+</section>

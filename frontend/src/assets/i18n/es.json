@@ -53,6 +53,55 @@
             "completed": "Completada"
         }
     },
+    "angular": {
+        "title": "Angular",
+        "description": "Angular se empleó para desarrollar la interfaz de usuario, con componentes reutilizables y un enrutador para una navegación fluida.",    
+        "auth0": {
+            "name": "auth0/angular-jwt",
+            "description": "Wrapper de Angular para la utilidad de decodificación de JWT en https://github.com/auth0/angular2-jwt."
+        },
+        "fontawesome": {
+            "name": "fortawesome/fontawesome-free",
+            "description": "Una librería de iconos gratuitos para utilizar con el conjunto de iconos de FontAwesome."
+        },
+        "ngrx/effects": {
+            "name": "ngrx/effects",
+            "description": "Una librería para manejar efectos secundarios y acciones asíncronas en NgRx."
+        },
+        "ngrx/router-store": {
+            "name": "ngrx/router-store",
+            "description": "Una librería para integrar el enrutador de Angular con NgRx."
+        },
+        "ngrx/store-devtools": {
+            "name": "ngrx/store-devtools",
+            "description": "Un conjunto de herramientas de desarrollo para depurar e inspeccionar el almacén de NgRx."
+        },
+        "ngrx/store": {
+            "name": "ngrx/store",
+            "description": "Una librería de gestión de estado para aplicaciones de Angular basada en Redux."
+        },
+        "ngx-translate/core": {
+            "name": "ngx-translate/core",
+            "description": "Una librería para implementar internacionalización (i18n) en aplicaciones de Angular."
+        },
+        "ngx-translate/http-loader": {
+            "name": "ngx-translate/http-loader",
+            "description": "Un cargador Http para ngx-translate para cargar traducciones desde un servidor."
+        },
+        "bootstrap": {
+            "name": "Bootstrap",
+            "description": "Un popular framework CSS para construir páginas web responsivas y diseñadas para dispositivos móviles."
+        },
+        "bootstrap-icons": {
+            "name": "Iconos de Bootstrap",
+            "description": "Un conjunto de iconos gratuitos y de código abierto diseñados para funcionar con Bootstrap."
+        },
+        "ng-zorro": {
+            "name": "ng-zorro-antd",
+            "description": "Una biblioteca de componentes de interfaz de usuario para Angular basada en Ant Design"
+        }
+        
+    },
     "login": {
         "title": "Iniciar sesión",
         "username": "Nombre de usuario",
@@ -62,7 +111,7 @@
         "form_errors": {
             "required": "Por favor, complete este campo.",
             "minlength": "Este campo requiere un mínimo de {{minlength}} caracteres."
-            }
+        }
     },
     "settings": {
         "title": "Configuración",

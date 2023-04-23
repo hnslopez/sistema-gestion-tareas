@@ -37,6 +37,55 @@
             "mongodb": "MongoDB as a NoSQL database to store the data of tasks and users."
         }
     },
+    "angular":{
+        "title":"",
+        "description":"",
+        "auth0": {
+          "name": "auth0/angular-jwt",
+          "description": "Angular wrapper around the JWT-decoding utility at https://github.com/auth0/angular2-jwt."
+        },
+        "fontawesome": {
+          "name": "fortawesome/fontawesome-free",
+          "description": "A library of free icons for use with the FontAwesome icon set."
+        },
+        "ngrx/effects": {
+          "name": "ngrx/effects",
+          "description": "A library for managing side effects and asynchronous actions in NgRx."
+        },
+        "ngrx/router-store": {
+          "name": "ngrx/router-store",
+          "description": "A library for integrating Angular Router with NgRx."
+        },
+        "ngrx/store-devtools": {
+          "name": "ngrx/store-devtools",
+          "description": "A set of dev tools for debugging and inspecting the NgRx store."
+        },
+        "ngrx/store": {
+          "name": "ngrx/store",
+          "description": "A state management library for Angular applications based on Redux."
+        },
+        "ngx-translate/core": {
+          "name": "ngx-translate/core",
+          "description": "A library for implementing internationalization (i18n) in Angular applications."
+        },
+        "ngx-translate/http-loader": {
+          "name": "ngx-translate/http-loader",
+          "description": "An Http loader for ngx-translate to load translations from a server."
+        },
+        "bootstrap": {
+          "name": "Bootstrap",
+          "description": "A popular CSS framework for building responsive, mobile-first web pages."
+        },
+        "bootstrap-icons": {
+          "name": "Bootstrap Icons",
+          "description": "A set of free, open-source icons designed to work with Bootstrap."
+        },
+        "ng-zorro": {
+            "name": "ng-zorro-antd",
+            "description": "A library of UI components for Angular based on Ant Design"
+        }  
+      },
+
     "tasks": {
         "title": "Task List",
         "add": "Add Task",

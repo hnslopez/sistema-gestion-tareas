@@ -48,6 +48,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { RouterLinkActive } from '@angular/router';
+import { NzAnchorModule } from 'ng-zorro-antd/anchor';
 
 
 registerLocaleData(es);
@@ -99,6 +100,7 @@ registerLocaleData(es);
     NzListModule,
     NzCardModule,
     NzTabsModule,
+    NzAnchorModule,
     NzSegmentedModule,
     NzToolTipModule,
     NzPopoverModule,

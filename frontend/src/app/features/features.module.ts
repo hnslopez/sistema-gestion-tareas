@@ -25,6 +25,7 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { LoginFormComponent } from '../shared/components/exclusive/login-form/login-form.component';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
 
 
@@ -56,7 +57,8 @@ import { LoginFormComponent } from '../shared/components/exclusive/login-form/lo
     NzPageHeaderModule,
     NzFormModule,
     ReactiveFormsModule,
-    NzInputModule
+    NzInputModule,
+    NzCollapseModule
     
 
   ]
