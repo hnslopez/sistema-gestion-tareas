@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { angularStructureData } from 'src/app/shared/data';
+import { treeNode } from 'src/app/shared/interface';
 
 @Component({
   selector: 'app-angular',
@@ -6,6 +8,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./angular.component.css']
 })
 export class AngularComponent implements OnInit {
+
+  Data:treeNode[] =  angularStructureData;
+  snippet = 
+ `import { enableProdMode } from '@angular/core';
+  import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+  
+  import { AppModule } from './app/app.module';
+  import { environment } from './environments/environment';
+  
+  if (environment.production) {
+    enableProdMode();
+  }
+  
+  platformBrowserDynamic().bootstrapModule(AppModule)
+    .catch(err => console.error(err));
+    
+
+
+    platformBrowserDynamic().bootstrapModule(AppModule)
+    .catch(err => console.error(err));
+    platformBrowserDynamic().bootstrapModule(AppModule)
+    .catch(err => console.error(err));
+    platformBrowserDynamic().bootstrapModule(AppModule)
+    .catch(err => console.error(err));
+    platformBrowserDynamic().bootstrapModule(AppModule)
+    .catch(err => console.error(err));
+    
+    `
+
 
   modules = [
     {
@@ -55,7 +86,8 @@ export class AngularComponent implements OnInit {
   ];
 
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
   }

@@ -49,7 +49,8 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { RouterLinkActive } from '@angular/router';
 import { NzAnchorModule } from 'ng-zorro-antd/anchor';
-
+import { NzPageHeaderSubtitleDirective } from 'ng-zorro-antd/page-header';
+import { NzTreeViewModule } from 'ng-zorro-antd/tree-view';
 
 registerLocaleData(es);
 
@@ -61,7 +62,7 @@ registerLocaleData(es);
     SidebarComponent,
     InputComponent,
     SearchPipe,
-    RibbonComponent,
+    RibbonComponent
 
   ],
   imports: [
@@ -108,6 +109,7 @@ registerLocaleData(es);
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({ maxAge: 25}),
+    NzTreeViewModule
 
     
   ],

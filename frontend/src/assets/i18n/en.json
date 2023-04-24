@@ -38,8 +38,8 @@
         }
     },
     "angular":{
-        "title":"",
-        "description":"",
+        "title":"Angular",
+        "description":"In this task management project, Angular was chosen for its advantages in developing complex applications and because it offers a wide range of tools and functionalities that enable better data management and a more user-friendly interface along with NG-ZORRO.",
         "auth0": {
           "name": "auth0/angular-jwt",
           "description": "Angular wrapper around the JWT-decoding utility at https://github.com/auth0/angular2-jwt."

@@ -26,6 +26,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { LoginFormComponent } from '../shared/components/exclusive/login-form/login-form.component';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { SectionComponent } from '../shared/components/section/section.component';
+import { NzTreeViewModule } from 'ng-zorro-antd/tree-view';
+
+import { TreeViewComponent } from '../shared/components/tree-view/tree-view.component';
+import { MarkdownComponent } from '../shared/components/markdown/markdown.component';
 
 
 
@@ -39,7 +44,10 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
     MongodbComponent,
     LoginComponent,
     CardComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    SectionComponent,
+    TreeViewComponent,
+    MarkdownComponent
   ],
   imports: [
     CommonModule,
@@ -58,7 +66,8 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
     NzFormModule,
     ReactiveFormsModule,
     NzInputModule,
-    NzCollapseModule
+    NzCollapseModule,
+    NzTreeViewModule
     
 
   ]

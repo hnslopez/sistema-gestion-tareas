@@ -50,7 +50,8 @@
             "stylePreprocessorOptions": {
               "includePaths": ["src/assets/styles/themes"]
             },       
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {

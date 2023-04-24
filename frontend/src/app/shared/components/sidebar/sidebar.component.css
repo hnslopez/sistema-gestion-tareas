@@ -86,20 +86,6 @@
   padding-left:0px;
 }
 
-
-/*
-
-:host ::ng-deep .ant-affix{
-  width: 79.0625px!important
-
-  256px
- 
-}
-*/
-::-webkit-scrollbar-thumb{
-   /* width: 2px*/
-}
-
 .collapsed-affix{
   width: 79.0625px!important
 
