@@ -86,6 +86,10 @@ export class AngularComponent implements OnInit {
   ];
 
 
+  changeSnippet(value:any){
+    this.snippet = value;
+  }
+
   constructor() {
    }
 

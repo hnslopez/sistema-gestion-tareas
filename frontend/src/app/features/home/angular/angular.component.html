@@ -5,7 +5,7 @@
 <page-section  title="Estructura del proyecto" icon="bi bi-folder" >
     <div nz-row [nzGutter]="[16,16]" >
         <div style="max-height: 450px;" class="overflow-auto"  nz-col [nzSpan]="24" [nzXs]="24" [nzSm]="24" [nzMd]="8" [nzLg]="8">
-            <tree-view [TREE_DATA]="Data"></tree-view>
+            <tree-view [TREE_DATA]="Data" (codeData)="changeSnippet($event)"></tree-view>
         </div>
         <div style="max-height: 450px;" class="overflow-auto"  nz-col [nzSpan]="24" [nzXs]="24" [nzSm]="24" [nzMd]="16" [nzLg]="16">
             <app-markdown [code]="snippet">

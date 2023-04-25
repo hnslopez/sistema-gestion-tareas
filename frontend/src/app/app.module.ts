@@ -51,6 +51,7 @@ import { RouterLinkActive } from '@angular/router';
 import { NzAnchorModule } from 'ng-zorro-antd/anchor';
 import { NzPageHeaderSubtitleDirective } from 'ng-zorro-antd/page-header';
 import { NzTreeViewModule } from 'ng-zorro-antd/tree-view';
+import { ApiService } from './core/services';
 
 registerLocaleData(es);
 
@@ -113,7 +114,7 @@ registerLocaleData(es);
 
     
   ],
-  providers: [AppInitializerProvider,{ provide: NZ_I18N, useValue: es_ES }],
+  providers: [AppInitializerProvider,{ provide: NZ_I18N, useValue: es_ES }, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

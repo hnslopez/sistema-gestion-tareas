@@ -4,7 +4,8 @@
       <nz-tree-node-option
         [nzDisabled]="node.disabled"
         [nzSelected]="selectListSelection.isSelected(node)"
-        (nzClick)="selectListSelection.toggle(node)"
+        (nzClick)="selectListSelection.toggle(node);getData(node)"
+        [id]="node.name"
       >
         <i nz-icon nzType="file" nzTheme="outline"></i>
         {{ node.name }}
