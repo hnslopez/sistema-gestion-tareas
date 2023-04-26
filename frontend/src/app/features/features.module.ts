@@ -31,6 +31,8 @@ import { NzTreeViewModule } from 'ng-zorro-antd/tree-view';
 
 import { TreeViewComponent } from '../shared/components/tree-view/tree-view.component';
 import { MarkdownComponent } from '../shared/components/markdown/markdown.component';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 
 
@@ -67,7 +69,9 @@ import { MarkdownComponent } from '../shared/components/markdown/markdown.compon
     ReactiveFormsModule,
     NzInputModule,
     NzCollapseModule,
-    NzTreeViewModule
+    NzTreeViewModule,
+    NzEmptyModule,
+    NzSpinModule
     
 
   ]

@@ -10,6 +10,7 @@ import hljs from 'highlight.js';
 export class MarkdownComponent implements OnInit {
   @Input() code!: string;
   highlightedCode!: string;
+  isInSelection?:boolean = false;
 
 
   ngOnInit(): void {
@@ -20,11 +21,21 @@ export class MarkdownComponent implements OnInit {
     if (changes['code']) {
       this.highlightCode();
     }
+    if (changes['isInSelection']) {
+      this.isInSelection = true;
+    }
+    
+
   }
 
   private highlightCode() {
-    const highlightedCode = hljs.highlightAuto(this.code).value;
-    this.highlightedCode = highlightedCode;
+    try {
+      this.highlightedCode = hljs.highlightAuto(this.code).value;
+      this.isInSelection = false
+    } catch (e) { 
+      this.isInSelection = true;
+    }
+
   }
 
 }

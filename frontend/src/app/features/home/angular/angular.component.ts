@@ -10,33 +10,7 @@ import { treeNode } from 'src/app/shared/interface';
 export class AngularComponent implements OnInit {
 
   Data:treeNode[] =  angularStructureData;
-  snippet = 
- `import { enableProdMode } from '@angular/core';
-  import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-  
-  import { AppModule } from './app/app.module';
-  import { environment } from './environments/environment';
-  
-  if (environment.production) {
-    enableProdMode();
-  }
-  
-  platformBrowserDynamic().bootstrapModule(AppModule)
-    .catch(err => console.error(err));
-    
-
-
-    platformBrowserDynamic().bootstrapModule(AppModule)
-    .catch(err => console.error(err));
-    platformBrowserDynamic().bootstrapModule(AppModule)
-    .catch(err => console.error(err));
-    platformBrowserDynamic().bootstrapModule(AppModule)
-    .catch(err => console.error(err));
-    platformBrowserDynamic().bootstrapModule(AppModule)
-    .catch(err => console.error(err));
-    
-    `
-
+  snippet:any;
 
   modules = [
     {
@@ -89,6 +63,8 @@ export class AngularComponent implements OnInit {
   changeSnippet(value:any){
     this.snippet = value;
   }
+
+  
 
   constructor() {
    }

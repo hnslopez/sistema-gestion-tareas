@@ -56,6 +56,15 @@
     "angular": {
         "title": "Angular",
         "description": "En este proyecto de gestión de tareas, se eligió Angular por sus ventajas para el desarrollo de aplicaciones complejas y porque ofrece una amplia gama de herramientas y funcionalidades que permiten una mejor gestión de los datos y una interfaz de usuario más amigable junto con NG-ZORRO.",    
+        "section":{
+            "structure":{
+                "title":"Estructura del proyecto",
+                "description":"En el árbol de vista se pueden encontrar los archivos de la aplicación de frontend. Por su parte, la 'ventana' muestra el código correspondiente al archivo seleccionado en el árbol de vista, permitiendo una fácil visualización y comprensión de su estructura y funcionalidad. "
+            },
+            "router":"Enrutamiento",
+            "components":"Componentes",
+            "library":"Librerías utilizadas"
+        },
         "auth0": {
             "name": "auth0/angular-jwt",
             "description": "Wrapper de Angular para la utilidad de decodificación de JWT en https://github.com/auth0/angular2-jwt."
@@ -121,5 +130,16 @@
             "default": "Modo Claro"
         },
         "save": "Guardar"
+    },
+    "components":{
+        "empty":{
+            "no_data":"No hay datos",
+            "error_found":"Error al cargar los datos"
+        },
+        "spin":{ 
+           "normal" :"Cargando...",
+           "markdown": "Esperando..."
+        }
+
     }
 }

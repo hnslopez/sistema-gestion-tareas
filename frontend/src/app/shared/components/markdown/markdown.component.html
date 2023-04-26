@@ -1,5 +1,6 @@
-<nz-card [nzBodyStyle]="{'padding':'0px'}">
-    <pre class="hljs py-3" style="margin-bottom: 0px; height: 430px;">
-        <code  [innerHTML]="highlightedCode"></code>
-    </pre>
-</nz-card>
+<nz-spin [nzSpinning]="isInSelection" nzTip="{{ 'components.spin.markdown' | translate}}">
+    <nz-card [nzBodyStyle]="{'padding':'0px'}">
+        <pre class="hljs py-3"
+            style="padding: 5px; margin-bottom: 0px; height: 430px;"><code [innerHTML]="highlightedCode"></code></pre>
+    </nz-card>
+</nz-spin>

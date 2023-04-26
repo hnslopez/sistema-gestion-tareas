@@ -109,5 +109,12 @@
             "default": "Light Mode"
         },
         "save": "Save"
-    }
+    },
+    "components":{
+      "empty":{
+          "no_data":"No Data",
+          "error_found":"Failed to load data"
+      },
+      "spin": "Loading..."
+  }
 }

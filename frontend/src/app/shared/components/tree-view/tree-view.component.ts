@@ -1,10 +1,10 @@
 import { SelectionModel } from '@angular/cdk/collections';
 import { FlatTreeControl } from '@angular/cdk/tree';
-import { AfterViewInit, Component, Input, Output, EventEmitter} from '@angular/core';
+import { AfterViewInit, Component, Input, Output, EventEmitter, SecurityContext} from '@angular/core';
 import { treeFlatNode, treeNode } from '../../interface'
+import { DomSanitizer } from '@angular/platform-browser';
 
 import { NzTreeFlatDataSource, NzTreeFlattener } from 'ng-zorro-antd/tree-view';
-import { ApiService } from 'src/app/core/services';
 import axios from 'axios';
 
 @Component({
@@ -15,6 +15,7 @@ import axios from 'axios';
 export class TreeViewComponent implements AfterViewInit {
   @Input() TREE_DATA!: treeNode[];
   @Output() codeData = new EventEmitter<any>();
+  @Output() onChangeSelect = new EventEmitter<boolean>();
 
 
   private transformer = (node: treeNode, level: number): treeFlatNode => ({
@@ -41,8 +42,9 @@ export class TreeViewComponent implements AfterViewInit {
 
   dataSource = new NzTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-  constructor(private http: ApiService) {
-  }
+  constructor( private sanitizer:DomSanitizer) {
+
+    }
 
   ngOnInit() {
     this.dataSource.setData(this.TREE_DATA);
@@ -56,11 +58,30 @@ export class TreeViewComponent implements AfterViewInit {
     }, 300);
   }
 
+  onChangeSelected(){
+    this.onChangeSelect.emit(true);
+
+  }
+
   async getData(value:any){
-    let route = (value.path === '.'? 'frontend': 'frontend/'+ value.path)
-    let response = await axios.get('https://raw.githubusercontent.com/hnslopez/sistema-gestion-tareas/production/'+ route + '/' + value.name);
-    console.log(JSON.stringify(response.data, null, 2))
-    this.codeData.emit(response.data);
+    const path = value.path === '.' ? 'frontend' : `frontend/${value.path}`;
+    const url = `https://raw.githubusercontent.com/hnslopez/sistema-gestion-tareas/production/${path}/${value.name}`; 
+    const satinizeUrl=  this.sanitizer.sanitize(SecurityContext.URL, url);
+    console.log(satinizeUrl)
+
+    try {
+      const response = await axios.get(satinizeUrl!);
+      let data = response.data;
+      if (typeof data === 'object') {
+        data = JSON.stringify(data, null, 2);
+      }
+      this.codeData.emit(data);
+    } catch (error:any) {
+      console.error(`${error.message}`);
+    }
+    
+
+
   
   }
 

@@ -2,16 +2,20 @@
     <h2 class="display-5 fw-bold text-uppercase">{{"angular.title" | translate}}</h2>
     <p class="fs-4">{{"angular.description" | translate}}</p>
 </page-title>
-<page-section  title="Estructura del proyecto" icon="bi bi-folder" >
-    <div nz-row [nzGutter]="[16,16]" >
-        <div style="max-height: 450px;" class="overflow-auto"  nz-col [nzSpan]="24" [nzXs]="24" [nzSm]="24" [nzMd]="8" [nzLg]="8">
-            <tree-view [TREE_DATA]="Data" (codeData)="changeSnippet($event)"></tree-view>
+<page-section  title="{{'angular.section.structure.title' | translate}}" icon="bi bi-folder" >
+    <p typography>{{"angular.section.structure.description" | translate}}</p>
+    <app-card>
+        <div nz-row [nzGutter]="[16,16]" >
+            <div style="max-height: 440px;" class="overflow-auto"  nz-col [nzSpan]="24" [nzXs]="24" [nzSm]="24" [nzMd]="8" [nzLg]="8">
+                <tree-view [TREE_DATA]="Data" (codeData)="changeSnippet($event)"></tree-view>
+            </div>
+            <div style="max-height: 450px;" class="overflow-auto"  nz-col [nzSpan]="24" [nzXs]="24" [nzSm]="24" [nzMd]="16" [nzLg]="16">
+                <app-markdown [code]="snippet">
+                </app-markdown>
+            </div>
         </div>
-        <div style="max-height: 450px;" class="overflow-auto"  nz-col [nzSpan]="24" [nzXs]="24" [nzSm]="24" [nzMd]="16" [nzLg]="16">
-            <app-markdown [code]="snippet">
-            </app-markdown>
-        </div>
-    </div>
+    </app-card>
+
 </page-section>
 <page-section title="Enrutamiento" icon="bi bi-diagram-3" [divider]="true">
 </page-section>
