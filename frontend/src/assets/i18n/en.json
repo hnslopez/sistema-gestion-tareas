@@ -40,6 +40,25 @@
     "angular":{
         "title":"Angular",
         "description":"In this task management project, Angular was chosen for its advantages in developing complex applications and because it offers a wide range of tools and functionalities that enable better data management and a more user-friendly interface along with NG-ZORRO.",
+        "section":{
+          "structure": {
+            "title": "Project Structure",
+            "description": "In the tree view, you can find the frontend application files. On the other hand, the 'window' displays the code corresponding to the selected file in the tree view, allowing for easy visualization and understanding of its structure and functionality."
+        },
+        "Internationalization": {
+          "title": "Internationalization",
+          "description": "Manage language localization and translations in your application.",
+          "language":{
+            "es":"Spanish",
+            "en":"English"
+        },
+        "button":"Español"
+      },
+          "library":{
+              "title":"Used Libraries",
+              "description":"The library section lists the libraries or frameworks utilized in the frontend application. These libraries provide additional functionalities, utilities, or tools that enhance the development process and enable efficient code implementation."
+          }
+      },
         "auth0": {
           "name": "auth0/angular-jwt",
           "description": "Angular wrapper around the JWT-decoding utility at https://github.com/auth0/angular2-jwt."
@@ -115,6 +134,10 @@
           "no_data":"No Data",
           "error_found":"Failed to load data"
       },
-      "spin": "Loading..."
+      "spin":{ 
+        "normal":"Loading...",
+      "markdown": "Waiting..."
+}
   }
+  
 }

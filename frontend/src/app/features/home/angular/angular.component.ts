@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 import { angularStructureData } from 'src/app/shared/data';
 import { treeNode } from 'src/app/shared/interface';
 
@@ -11,6 +12,8 @@ export class AngularComponent implements OnInit {
 
   Data:treeNode[] =  angularStructureData;
   snippet:any;
+  selectedValue!: 'es' | 'en';
+  selectedTab:number = 0;
 
   modules = [
     {
@@ -64,9 +67,17 @@ export class AngularComponent implements OnInit {
     this.snippet = value;
   }
 
-  
+  languageChange() {
+    const languageValue =  localStorage.getItem('locale') as 'es' | 'en';
+    if(languageValue === 'es') this.selectedTab = 0;
+    if(languageValue === 'en') this.selectedTab = 1;
 
-  constructor() {
+    this.selectedValue = languageValue || 'es';
+
+    this.app.switchLanguage(this.selectedValue === 'es'? 'en':'es');
+  }
+
+  constructor(private app: AppComponent) {
    }
 
   ngOnInit(): void {

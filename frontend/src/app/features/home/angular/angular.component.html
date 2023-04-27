@@ -1,8 +1,8 @@
-<page-title>
+<page-title [dividerTop] ='true'>
     <h2 class="display-5 fw-bold text-uppercase">{{"angular.title" | translate}}</h2>
     <p class="fs-4">{{"angular.description" | translate}}</p>
 </page-title>
-<page-section  title="{{'angular.section.structure.title' | translate}}" icon="bi bi-folder" >
+<page-section  title="{{'angular.section.structure.title' | translate}}" icon="bi bi-folder" [divider]="true" >
     <p typography>{{"angular.section.structure.description" | translate}}</p>
     <app-card>
         <div nz-row [nzGutter]="[16,16]" >
@@ -15,15 +15,71 @@
             </div>
         </div>
     </app-card>
-
 </page-section>
-<page-section title="Enrutamiento" icon="bi bi-diagram-3" [divider]="true">
-</page-section>
-<page-section title="Componentes" icon="bi bi-collection" [divider]="true">
+<page-section title="{{'angular.section.Internationalization.title' | translate}}" icon="fa-solid fa-globe" [divider]="true">
+    <div nz-row [nzGutter]="[16,16]" >
+        <div style="max-height: 450px;" class="overflow-auto">
+            <nz-tabset nzTabPosition="top" [nzTabBarExtraContent]="changeLanguage" [nzSelectedIndex]="selectedTab">
+                <nz-tab nzTitle="{{'angular.section.Internationalization.language.es' | translate}}">
+                 <p nz-typography>
+                    i18n es una abreviatura de internacionalización, que significa adaptar una aplicación a diferentes idiomas y regiones. En este proyecto angular de gestión de tareas que estoy creando, uso i18n para facilitar la comunicación con los usuarios de diferentes países y culturas. Algunas ventajas de usar i18n en este proyecto son:
+                 </p>  
+                 <li>
+                    <ul>
+                        <p nz-typography>
+                            Mejora la experiencia de usuario al ofrecer una interfaz en su idioma preferido.
+                        </p> 
+                    </ul>
+                    <ul>
+                        <p nz-typography>
+                            Aumenta el alcance y la audiencia potencial de la aplicación al permitir acceder a usuarios de diferentes mercados.
+                        </p> 
+                    </ul>
+                    <ul>
+                        <p nz-typography>
+                            Facilita el mantenimiento y la actualización de la aplicación al separar el contenido del código.
+                        </p> 
+                    </ul>
+                 </li>
+                 <p nz-typography>
+                    Para usar i18n en este proyecto, se utilizan las tecnologías de Angular "@ngx-translate/core" y "@ngx-translate/http-loader". Estas bibliotecas proporcionan herramientas para extraer, traducir y mostrar el texto de la aplicación. Se utiliza el formato JSON para almacenar los textos y el atributo i18n se utiliza para marcar los elementos HTML que contienen texto traducible.                </p>
+                </nz-tab>
+                <nz-tab nzTitle="{{'angular.section.Internationalization.language.en' | translate}}"> 
+                    <p nz-typography>
+                        i18n is an abbreviation for internationalization, which means adapting an application to different languages and regions. In this Angular task management project I'm creating, I use i18n to facilitate communication with users from different countries and cultures. Some advantages of using i18n in this project are:
+                     </p>  
+                     <li>
+                        <ul>
+                           <p nz-typography>
+                              Enhances the user experience by offering an interface in their preferred language.
+                           </p> 
+                        </ul>
+                        <ul>
+                           <p nz-typography>
+                              Increases the reach and potential audience of the application by allowing access to users from different markets.
+                           </p> 
+                        </ul>
+                        <ul>
+                           <p nz-typography>
+                              Facilitates the maintenance and updating of the application by separating content from code.
+                           </p> 
+                        </ul>
+                     </li>
+                     <p nz-typography>
+                        To use i18n in this project, we use the Angular technologies "@ngx-translate/core" and "@ngx-translate/http-loader". These libraries provide tools for extracting, translating, and displaying application text. The JSON format is used to store the texts, and the i18n attribute is used to mark HTML elements that contain translatable text.
+                     </p>
+                     
+                </nz-tab>
+              </nz-tabset>
+              <ng-template #changeLanguage>
+                <button nz-button nzType="primary" (click)="languageChange()" >{{'angular.section.Internationalization.button' | translate}}</button>
+              </ng-template>
+        </div>
+    </div>
 </page-section>
 <page-section title="Pipes" icon="fa fa-filter" [divider]="true">
 </page-section>
-<page-section title="Librerías utilizadas" icon="fa fa-puzzle-piece" [divider]="true">
+<page-section title="{{'angular.section.library.title' | translate}}" icon="fa fa-puzzle-piece" [divider]="true">
     <div nz-row [nzGutter]="[16,16]">
         <div nz-col [nzSpan]="24" [nzXs]="24" [nzSm]="12" [nzMd]="8" [nzLg]="8" *ngFor="let module of modules">
             <img-card [title]="'angular.'+ module.name | translate"

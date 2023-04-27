@@ -37,7 +37,7 @@ languageChange(params:any) {
 
 
   ngOnInit(): void {
-    const languageValue =  localStorage.getItem('locale') as 'es';
+    const languageValue =  localStorage.getItem('locale') as 'es' | 'en';
     this.selectedValue = languageValue || 'es';
     this.year = new Date().getFullYear();
   }

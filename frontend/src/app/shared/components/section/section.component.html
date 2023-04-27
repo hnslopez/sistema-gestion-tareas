@@ -1,12 +1,13 @@
 <section>
     <nz-divider *ngIf="divider"></nz-divider>
-    <div class="px-2 pb-5">
+    <div class="pb-5">
         <nz-collapse nzGhost>
             <ng-template #HeaderComponent>
                 <span nz-typography class="icon-text">
                     <span nz-icon *ngIf="icon"><i class="{{icon}}"></i></span>
                     <nz-divider nzType="vertical"></nz-divider>
-                    <h2 nz-typography class="mb-2">{{title}}</h2>
+                    <h3 nz-typography class="mb-2">{{title}}</h3>
+                    <ng-content select="description"></ng-content>
                 </span>
               </ng-template>
             <nz-collapse-panel

@@ -55,15 +55,25 @@
     },
     "angular": {
         "title": "Angular",
-        "description": "En este proyecto de gestión de tareas, se eligió Angular por sus ventajas para el desarrollo de aplicaciones complejas y porque ofrece una amplia gama de herramientas y funcionalidades que permiten una mejor gestión de los datos y una interfaz de usuario más amigable junto con NG-ZORRO.",    
-        "section":{
-            "structure":{
-                "title":"Estructura del proyecto",
-                "description":"En el árbol de vista se pueden encontrar los archivos de la aplicación de frontend. Por su parte, la 'ventana' muestra el código correspondiente al archivo seleccionado en el árbol de vista, permitiendo una fácil visualización y comprensión de su estructura y funcionalidad. "
+        "description": "En este proyecto de gestión de tareas, se eligió Angular por sus ventajas para el desarrollo de aplicaciones complejas y porque ofrece una amplia gama de herramientas y funcionalidades que permiten una mejor gestión de los datos y una interfaz de usuario más amigable junto con NG-ZORRO.",
+        "section": {
+            "structure": {
+                "title": "Estructura del proyecto",
+                "description": "En el árbol de vista se pueden encontrar los archivos de la aplicación de frontend. Por su parte, la 'ventana' muestra el código correspondiente al archivo seleccionado en el árbol de vista, permitiendo una fácil visualización y comprensión de su estructura y funcionalidad."
             },
-            "router":"Enrutamiento",
-            "components":"Componentes",
-            "library":"Librerías utilizadas"
+            "Internationalization": {
+                "title": "Internacionalización",
+                "description": "Administra la localización de idioma y las traducciones en tu aplicación.",
+                "language":{
+                    "es":"Español",
+                    "en":"Ingles"
+                },
+                "button":"English"
+           },
+            "library": {
+                "title": "Librerías utilizadas",
+                "description": "La sección de librerías enumera las librerías o frameworks utilizados en la aplicación de frontend. Estas librerías proporcionan funcionalidades adicionales, utilidades o herramientas que mejoran el proceso de desarrollo y permiten una implementación de código eficiente."
+            }
         },
         "auth0": {
             "name": "auth0/angular-jwt",
@@ -109,7 +119,6 @@
             "name": "ng-zorro-antd",
             "description": "Una biblioteca de componentes de interfaz de usuario para Angular basada en Ant Design"
         }
-        
     },
     "login": {
         "title": "Iniciar sesión",
@@ -131,15 +140,14 @@
         },
         "save": "Guardar"
     },
-    "components":{
-        "empty":{
-            "no_data":"No hay datos",
-            "error_found":"Error al cargar los datos"
+    "components": {
+        "empty": {
+            "no_data": "No hay datos",
+            "error_found": "Error al cargar los datos"
         },
-        "spin":{ 
-           "normal" :"Cargando...",
-           "markdown": "Esperando..."
+        "spin": {
+            "normal": "Cargando...",
+            "markdown": "Esperando..."
         }
-
     }
 }
