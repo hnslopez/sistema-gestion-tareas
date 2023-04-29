@@ -1,143 +1,147 @@
 {
-    "header": {
-        "title": "Task Management System",
-        "user": {
-            "dropdown": {
-                "profile": {
-                    "title": "Profile",
-                    "view": "View Profile",
-                    "edit": "Edit Profile",
-                    "myAccount": "My Account",
-                    "notifications": "Notifications",
-                    "recentActivity": "Recent Activity"
-                },
-                "settings": {
-                    "title": "Settings",
-                    "changePassword": "Change Password",
-                    "preferences": "Preferences",
-                    "privacy": "Privacy",
-                    "security": "Security"
-                },
-                "help": {
-                    "title": "Help",
-                    "faq": "FAQ",
-                    "documentation": "Documentation"
-                },
-                "logout": "Logout"
-            }
-        }
-    },
-    "home": {
-        "title": "Management System",
-        "description": "This system allows you to effectively and efficiently manage and track your tasks, as well as other functionalities.",
-        "button_repositoty": "REPOSITORY",
-        "information": {
-            "express": "Express was used as the backend framework to create and manage routes using a RESTful API.",
-            "angular": "Angular was employed to develop the user interface, with reusable components and a router for smooth navigation.",
-            "mongodb": "MongoDB as a NoSQL database to store the data of tasks and users."
-        }
-    },
-    "angular":{
-        "title":"Angular",
-        "description":"In this task management project, Angular was chosen for its advantages in developing complex applications and because it offers a wide range of tools and functionalities that enable better data management and a more user-friendly interface along with NG-ZORRO.",
-        "section":{
-          "structure": {
-            "title": "Project Structure",
-            "description": "In the tree view, you can find the frontend application files. On the other hand, the 'window' displays the code corresponding to the selected file in the tree view, allowing for easy visualization and understanding of its structure and functionality."
+  "header": {
+    "title": "Task Management System",
+    "user": {
+      "dropdown": {
+        "profile": {
+          "title": "Profile",
+          "view": "View Profile",
+          "edit": "Edit Profile",
+          "myAccount": "My Account",
+          "notifications": "Notifications",
+          "recentActivity": "Recent Activity"
         },
-        "Internationalization": {
-          "title": "Internationalization",
-          "description": "Manage language localization and translations in your application.",
-          "language":{
-            "es":"Spanish",
-            "en":"English"
+        "settings": {
+          "title": "Settings",
+          "changePassword": "Change Password",
+          "preferences": "Preferences",
+          "privacy": "Privacy",
+          "security": "Security"
         },
-        "button":"Español"
+        "help": {
+          "title": "Help",
+          "faq": "FAQ",
+          "documentation": "Documentation"
+        },
+        "logout": "Logout"
+      }
+    }
+  },
+  "home": {
+    "title": "Management System",
+    "description": "This system allows you to effectively and efficiently manage and track your tasks, as well as other functionalities.",
+    "button_repositoty": "REPOSITORY",
+    "information": {
+      "express": "Express was used as the backend framework to create and manage routes using a RESTful API.",
+      "angular": "Angular was employed to develop the user interface, with reusable components and a router for smooth navigation.",
+      "mongodb": "MongoDB as a NoSQL database to store the data of tasks and users."
+    }
+  },
+  "angular": {
+    "title": "Angular",
+    "description": "In this task management project, Angular was chosen for its advantages in developing complex applications and because it offers a wide range of tools and functionalities that enable better data management and a more user-friendly interface along with NG-ZORRO.",
+    "section": {
+      "structure": {
+        "title": "Project Structure",
+        "description": "In the tree view, you can find the frontend application files. On the other hand, the 'window' displays the code corresponding to the selected file in the tree view, allowing for easy visualization and understanding of its structure and functionality."
       },
-          "library":{
-              "title":"Used Libraries",
-              "description":"The library section lists the libraries or frameworks utilized in the frontend application. These libraries provide additional functionalities, utilities, or tools that enhance the development process and enable efficient code implementation."
-          }
+      "Internationalization": {
+        "title": "Internationalization",
+        "description": "Manage language localization and translations in your application.",
+        "language": {
+          "es": "Spanish",
+          "en": "English"
+        },
+        "button": "Español"
       },
-        "auth0": {
-          "name": "auth0/angular-jwt",
-          "description": "Angular wrapper around the JWT-decoding utility at https://github.com/auth0/angular2-jwt."
-        },
-        "fontawesome": {
-          "name": "fortawesome/fontawesome-free",
-          "description": "A library of free icons for use with the FontAwesome icon set."
-        },
-        "ngrx/effects": {
-          "name": "ngrx/effects",
-          "description": "A library for managing side effects and asynchronous actions in NgRx."
-        },
-        "ngrx/router-store": {
-          "name": "ngrx/router-store",
-          "description": "A library for integrating Angular Router with NgRx."
-        },
-        "ngrx/store-devtools": {
-          "name": "ngrx/store-devtools",
-          "description": "A set of dev tools for debugging and inspecting the NgRx store."
-        },
-        "ngrx/store": {
-          "name": "ngrx/store",
-          "description": "A state management library for Angular applications based on Redux."
-        },
-        "ngx-translate/core": {
-          "name": "ngx-translate/core",
-          "description": "A library for implementing internationalization (i18n) in Angular applications."
-        },
-        "ngx-translate/http-loader": {
-          "name": "ngx-translate/http-loader",
-          "description": "An Http loader for ngx-translate to load translations from a server."
-        },
-        "bootstrap": {
-          "name": "Bootstrap",
-          "description": "A popular CSS framework for building responsive, mobile-first web pages."
-        },
-        "bootstrap-icons": {
-          "name": "Bootstrap Icons",
-          "description": "A set of free, open-source icons designed to work with Bootstrap."
-        },
-        "ng-zorro": {
-            "name": "ng-zorro-antd",
-            "description": "A library of UI components for Angular based on Ant Design"
-        }  
-      },
-
-    "tasks": {
-        "title": "Task List",
-        "add": "Add Task",
-        "edit": "Edit Task",
-        "delete": "Delete Task",
-        "completed": "Task completed",
-        "not_completed": "Task not completed",
-        "no_tasks": "No tasks added yet.",
-        "form": {
-            "name": "Name",
-            "description": "Description",
-            "due_date": "Due Date",
-            "completed": "Completed"
-        }
+      "library": {
+        "title": "Used Libraries",
+        "description": "The library section lists the libraries or frameworks utilized in the frontend application. These libraries provide additional functionalities, utilities, or tools that enhance the development process and enable efficient code implementation."
+      }
     },
-    "settings": {
-        "title": "Settings",
-        "language": "Language",
-        "theme": {
-            "dark": "Dark Mode",
-            "default": "Light Mode"
-        },
-        "save": "Save"
+    "auth0": {
+      "name": "auth0/angular-jwt",
+      "description": "Angular wrapper around the JWT-decoding utility at https://github.com/auth0/angular2-jwt."
     },
-    "components":{
-      "empty":{
-          "no_data":"No Data",
-          "error_found":"Failed to load data"
-      },
-      "spin":{ 
-        "normal":"Loading...",
+    "fontawesome": {
+      "name": "fortawesome/fontawesome-free",
+      "description": "A library of free icons for use with the FontAwesome icon set."
+    },
+    "ngrx/effects": {
+      "name": "ngrx/effects",
+      "description": "A library for managing side effects and asynchronous actions in NgRx."
+    },
+    "ngrx/router-store": {
+      "name": "ngrx/router-store",
+      "description": "A library for integrating Angular Router with NgRx."
+    },
+    "ngrx/store-devtools": {
+      "name": "ngrx/store-devtools",
+      "description": "A set of dev tools for debugging and inspecting the NgRx store."
+    },
+    "ngrx/store": {
+      "name": "ngrx/store",
+      "description": "A state management library for Angular applications based on Redux."
+    },
+    "ngx-translate/core": {
+      "name": "ngx-translate/core",
+      "description": "A library for implementing internationalization (i18n) in Angular applications."
+    },
+    "ngx-translate/http-loader": {
+      "name": "ngx-translate/http-loader",
+      "description": "An Http loader for ngx-translate to load translations from a server."
+    },
+    "bootstrap": {
+      "name": "Bootstrap",
+      "description": "A popular CSS framework for building responsive, mobile-first web pages."
+    },
+    "bootstrap-icons": {
+      "name": "Bootstrap Icons",
+      "description": "A set of free, open-source icons designed to work with Bootstrap."
+    },
+    "ng-zorro": {
+      "name": "ng-zorro-antd",
+      "description": "A library of UI components for Angular based on Ant Design"
+    }
+  },
+  "tasks": {
+    "title": "Task List",
+    "add": "Add Task",
+    "edit": "Edit Task",
+    "delete": "Delete Task",
+    "completed": "Task completed",
+    "not_completed": "Task not completed",
+    "no_tasks": "No tasks added yet.",
+    "form": {
+      "name": "Name",
+      "description": "Description",
+      "due_date": "Due Date",
+      "completed": "Completed"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "theme": {
+      "dark": "Dark Mode",
+      "default": "Light Mode"
+    },
+    "save": "Save"
+  },
+  "components": {
+    "empty": {
+      "no_data": "No Data",
+      "error_found": "Failed to load data"
+    },
+    "spin": {
+      "normal": "Loading...",
       "markdown": "Waiting..."
-}
+    },
+    "notification": {
+      "changeLanguage": {
+        "title": "Idioma Cambiado",
+        "description": "El idioma se ha cambiado exitosamente"
+      }
+    }
   }
-  
 }

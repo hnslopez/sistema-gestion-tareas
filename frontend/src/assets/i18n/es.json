@@ -148,6 +148,13 @@
         "spin": {
             "normal": "Cargando...",
             "markdown": "Esperando..."
-        }
+        },
+        "notification": {
+            "changeLanguage": {
+                "title": "Language Changed",
+                "description": "The language has been successfully changed"
+                }
+            }
+
     }
 }

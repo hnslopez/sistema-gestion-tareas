@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { AppComponent } from 'src/app/app.component';
 import { angularStructureData } from 'src/app/shared/data';
 import { treeNode } from 'src/app/shared/interface';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-angular',
@@ -67,17 +69,26 @@ export class AngularComponent implements OnInit {
     this.snippet = value;
   }
 
-  languageChange() {
+  async languageChange() {
     const languageValue =  localStorage.getItem('locale') as 'es' | 'en';
-    if(languageValue === 'es') this.selectedTab = 0;
-    if(languageValue === 'en') this.selectedTab = 1;
+    if(languageValue === 'es') this.selectedTab = 1;
+    if(languageValue === 'en') this.selectedTab = 0;
 
     this.selectedValue = languageValue || 'es';
 
-    this.app.switchLanguage(this.selectedValue === 'es'? 'en':'es');
+    await this.app.switchLanguage(this.selectedValue === 'es'? 'en':'es');
+
+    const notificactionTitle = this.translateService.instant('components.notification.changeLanguage.title');
+    const notificactionDescription = this.translateService.instant('components.notification.changeLanguage.description');
+
+    await this.notification.create(
+      'success',
+      notificactionTitle,
+      notificactionDescription
+    );
   }
 
-  constructor(private app: AppComponent) {
+  constructor(private app: AppComponent, private notification: NzNotificationService, private translateService: TranslateService) {
    }
 
   ngOnInit(): void {

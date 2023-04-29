@@ -52,6 +52,7 @@ import { NzAnchorModule } from 'ng-zorro-antd/anchor';
 import { NzPageHeaderSubtitleDirective } from 'ng-zorro-antd/page-header';
 import { NzTreeViewModule } from 'ng-zorro-antd/tree-view';
 import { ApiService } from './core/services';
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
 
 registerLocaleData(es);
 
@@ -110,7 +111,8 @@ registerLocaleData(es);
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({ maxAge: 25}),
-    NzTreeViewModule
+    NzTreeViewModule,
+    NzNotificationModule
 
     
   ],
