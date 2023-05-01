@@ -53,6 +53,156 @@
             "completed": "Completada"
         }
     },
+    "angular": {
+        "title": "Angular",
+        "description": "En este proyecto de gestión de tareas, se eligió Angular por sus ventajas para el desarrollo de aplicaciones complejas y porque ofrece una amplia gama de herramientas y funcionalidades que permiten una mejor gestión de los datos y una interfaz de usuario más amigable junto con NG-ZORRO.",
+        "section": {
+            "structure": {
+                "title": "Estructura del proyecto",
+                "description": "En el árbol de vista se pueden encontrar los archivos de la aplicación de frontend. Por su parte, la 'ventana' muestra el código correspondiente al archivo seleccionado en el árbol de vista, permitiendo una fácil visualización y comprensión de su estructura y funcionalidad."
+            },
+            "Internationalization": {
+                "title": "Internacionalización",
+                "description": "Administra la localización de idioma y las traducciones en tu aplicación.",
+                "language": {
+                    "es": "Español",
+                    "en": "Ingles"
+                },
+                "button": "English"
+            },
+            "libraries": {
+                "title": "Librerías utilizadas",
+                "description": "La sección de librerías enumera las librerías o frameworks utilizados en la aplicación de frontend. Estas librerías proporcionan funcionalidades adicionales, utilidades o herramientas que mejoran el proceso de desarrollo y permiten una implementación de código eficiente.",
+                "components":[
+                    {
+                      "name": "auth0/angular-jwt",
+                      "description": "Wrapper de Angular para la utilidad de decodificación de JWT en https://github.com/auth0/angular2-jwt."
+                    },
+                    {
+                      "name": "fortawesome/fontawesome-free",
+                      "description": "Una librería de iconos gratuitos para utilizar con el conjunto de iconos de FontAwesome."
+                    },
+                    {
+                      "name": "ngrx/effects",
+                      "description": "Una librería para manejar efectos secundarios y acciones asíncronas en NgRx."
+                    },
+                    {
+                      "name": "ngrx/router-store",
+                      "description": "Una librería para integrar el enrutador de Angular con NgRx."
+                    },
+                    {
+                      "name": "ngrx/store-devtools",
+                      "description": "Un conjunto de herramientas de desarrollo para depurar e inspeccionar el almacén de NgRx."
+                    },
+                    {
+                      "name": "ngrx/store",
+                      "description": "Una librería de gestión de estado para aplicaciones de Angular basada en Redux."
+                    },
+                    {
+                      "name": "ngx-translate/core",
+                      "description": "Una librería para implementar internacionalización (i18n) en aplicaciones de Angular."
+                    },
+                    {
+                      "name": "ngx-translate/http-loader",
+                      "description": "Un cargador Http para ngx-translate para cargar traducciones desde un servidor."
+                    },
+                    {
+                      "name": "Bootstrap",
+                      "description": "Un popular framework CSS para construir páginas web responsivas y diseñadas para dispositivos móviles."
+                    },
+                    {
+                      "name": "Iconos de Bootstrap",
+                      "description": "Un conjunto de iconos gratuitos y de código abierto diseñados para funcionar con Bootstrap."
+                    },
+                    {
+                      "name": "ng-zorro-antd",
+                      "description": "Una biblioteca de componentes de interfaz de usuario para Angular basada en Ant Design"
+                    }
+                  ]
+                  
+            }
+        }
+    },
+    "express": {
+        "title": "Express",
+        "description": "Express es un potente framework de Node.js utilizado en nuestro sistema de gestión para construir aplicaciones web robustas y escalables. Proporciona una variedad de características y capacidades que mejoran el proceso de desarrollo y permiten un manejo eficiente de las solicitudes y respuestas.",
+        "section": {
+            "libraries": {
+                "title":"Librerías utilizadas",
+                "components":[
+                        {
+                          "name": "bcrypt",
+                          "description": "bcrypt es una biblioteca utilizada para el hash seguro de contraseñas. Proporciona una implementación robusta del algoritmo de hash bcrypt."
+                        },
+                        {
+                          "name": "bcryptjs",
+                          "description": "bcryptjs es una implementación de JavaScript del algoritmo de hash bcrypt. Ofrece una forma simple y directa de hacer hash a las contraseñas."
+                        },
+                        {
+                          "name": "body-parser",
+                          "description": "body-parser es un middleware que analiza los cuerpos de las solicitudes entrantes en un formato compatible con los middlewares. Simplifica el manejo de los datos de las solicitudes HTTP."
+                        },
+                        {
+                          "name": "cookie-parser",
+                          "description": "cookie-parser es un middleware utilizado para analizar cookies en Node.js. Facilita la lectura y manipulación de cookies en las solicitudes y respuestas HTTP."
+                        },
+                        {
+                          "name": "cors",
+                          "description": "cors es un middleware que permite el intercambio de recursos de origen cruzado (CORS) en aplicaciones Express. Permite el acceso controlado a recursos desde diferentes orígenes."
+                        },
+                        {
+                          "name": "dotenv",
+                          "description": "dotenv es un módulo sin dependencias que carga variables de entorno desde un archivo .env en el objeto process.env. Simplifica la gestión de los valores de configuración."
+                        },
+                        {
+                          "name": "express",
+                          "description": "express es un framework rápido, sin opiniones y minimalista para aplicaciones web en Node.js. Proporciona un conjunto robusto de características para construir aplicaciones web y APIs."
+                        },
+                        {
+                          "name": "express-rate-limit",
+                          "description": "express-rate-limit es un middleware que permite establecer límites de velocidad en aplicaciones Express. Ayuda a proteger contra solicitudes abusivas o maliciosas limitando el número de solicitudes por IP o usuario."
+                        },
+                        {
+                          "name": "i18n",
+                          "description": "i18n es una biblioteca que facilita la internacionalización (i18n) y localización (l10n) en aplicaciones Node.js. Proporciona herramientas para gestionar traducciones y admitir múltiples idiomas."
+                        },
+                        {
+                          "name": "jsonwebtoken",
+                          "description": "jsonwebtoken es una biblioteca para generar y verificar JSON Web Tokens (JWT) en Node.js. Permite una comunicación y autenticación seguras entre partes mediante el uso de tokens firmados digitalmente."
+                        },
+                        {
+                          "name": "mongoose",
+                          "description": "mongoose es una herramienta de modelado de objetos para Node.js y MongoDB. Proporciona una forma sencilla de interactuar con bases de datos MongoDB y definir esquemas de datos."
+                        },
+                        {
+                          "name": "morgan",
+                          "description": "morgan es un middleware de registro para aplicaciones Express. Registra las solicitudes HTTP y proporciona información detallada sobre cada solicitud, como el método HTTP, la URL y el estado de respuesta."
+                        },
+                        {
+                          "name": "nodemon",
+                          "description": "nodemon es una utilidad que reinicia automáticamente la aplicación de Node.js cuando se detectan cambios en los archivos. Mejora el flujo de desarrollo al eliminar la necesidad de reinicios manuales."
+                        },{
+                            "name": "passport",
+                            "description": "passport es un middleware de autenticación para Node.js. Proporciona una forma flexible y modular de implementar estrategias de autenticación, como nombre de usuario/contraseña, OAuth y JWT."
+        
+                        },{
+                            "name": "passport-jwt",
+                            "description": "passport-jwt es una estrategia de Passport para autenticarse con JSON Web Tokens (JWT). Permite autenticar y autorizar solicitudes validando el JWT presente en los encabezados o cookies de la solicitud."
+        
+                        },{
+                            "name": "passport-local",
+                            "description": "passport-local es una estrategia de Passport para autenticarse con un nombre de usuario y contraseña. Proporciona una forma sencilla y personalizable de autenticar usuarios contra una base de datos local u cualquier otra fuente de datos."
+        
+                        }
+                      
+                ]
+            },
+            "routes":{
+              "title":"Rutas de Express",
+              "description":"A continuación se muestra una lista de todas las rutas disponibles en el backend de Express y sus métodos correspondientes:"
+            }
+        }
+    },
     "login": {
         "title": "Iniciar sesión",
         "username": "Nombre de usuario",
@@ -62,7 +212,7 @@
         "form_errors": {
             "required": "Por favor, complete este campo.",
             "minlength": "Este campo requiere un mínimo de {{minlength}} caracteres."
-            }
+        }
     },
     "settings": {
         "title": "Configuración",
@@ -72,5 +222,21 @@
             "default": "Modo Claro"
         },
         "save": "Guardar"
+    },
+    "components": {
+        "empty": {
+            "no_data": "No hay datos",
+            "error_found": "Error al cargar los datos"
+        },
+        "spin": {
+            "normal": "Cargando...",
+            "markdown": "Esperando..."
+        },
+        "notification": {
+            "changeLanguage": {
+                "title": "Language Changed",
+                "description": "The language has been successfully changed"
+            }
+        }
     }
 }

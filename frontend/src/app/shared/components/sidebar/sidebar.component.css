@@ -53,3 +53,40 @@
   border-right: 0px;
 }
 
+
+.scrolling{
+  max-height: calc(100vh - 132px);
+   /* overflow: auto;*/
+    overflow: overlay;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */  
+    overflow-x: hidden;
+}
+.scrolling::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+.scrolling:hover {
+  overflow-y: scroll;
+}
+
+/*
+.scrolling:hover::-webkit-scrollbar {
+  overflow: overlay;
+  display: inline; 
+}
+*/
+
+:host ::ng-deep .ant-anchor-ink{
+  display: none;
+}
+
+
+:host ::ng-deep .ant-anchor{
+  padding-left:0px;
+}
+
+.collapsed-affix{
+  width: 79.0625px!important
+
+}

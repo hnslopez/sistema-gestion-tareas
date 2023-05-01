@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Input, OnInit , Output, DoCheck} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit , Output, DoCheck, OnChanges, SimpleChanges, ElementRef, Renderer2} from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { MenuSection } from 'src/app/core/models/menu-section.model';
 import { ThemeService } from 'src/app/theme.service';
 import { menuItems } from '../../data/menu-items.data';
 import { ThemeType } from '../../enum';
+import { query } from '@angular/animations';
 
 @Component({
   selector: 'app-sidebar',
@@ -14,7 +15,7 @@ import { ThemeType } from '../../enum';
 
 
 
-export class SidebarComponent implements OnInit{
+export class SidebarComponent implements OnInit, OnChanges {
   @Input() isCollapsed = false;
   @Input() isMobile = false;
   @Output() isCollapsedChanged = new EventEmitter<boolean>();
@@ -27,20 +28,25 @@ export class SidebarComponent implements OnInit{
   public themeChanged$!: BehaviorSubject<ThemeType>;
 
 
-  constructor(private router: Router, private themeService: ThemeService) {
+  constructor(private router: Router, private themeService: ThemeService, private renderer: Renderer2, private el: ElementRef) {
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['isMobile']) {
+      const divGenerado = this.el.nativeElement.querySelector('.ant-affix');
+      if (divGenerado) {
+        this.renderer.addClass(divGenerado, 'collapsed-affix');
+      }
+    }
+  }
 
   ngOnInit(): void {
     this.themeChanged$ = this.themeService.getThemeChanged();
-
   }
 
   toggleTheme(): void {
     this.themeService.toggleTheme().then();
   }
-
-
 
   close(): void {
     this.isCollapsed = this.isCollapsed;

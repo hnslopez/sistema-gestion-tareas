@@ -15,29 +15,29 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    data: { title: 'Login', navbar:false },
+    data: { title: 'Login', navbar: false },
     component: LoginComponent
   },
   {
-    path: '',
-    children: [
-      {
-        path: 'angular',
-        component: AngularComponent,
-        data: { title: 'Angular' }
-      },
-      {
-        path: 'express',
-        component: ExpressComponent,
-        data: { title: 'Express' }
-      },
-      {
-        path: 'mongodb',
-        component: MongodbComponent,
-        data: { title: 'MongoDB' }
-      },
-    ]
+    path: 'angular',
+    component: AngularComponent,
+    data: { title: 'Angular' }
   },
+  {
+    path: 'express',
+    component: ExpressComponent,
+    data: { title: 'Express' }
+  },
+  {
+    path: 'mongodb',
+    component: MongodbComponent,
+    data: { title: 'MongoDB' }
+  },
+  {
+    path: 'home',
+    pathMatch: 'full',
+    redirectTo: ''
+  }
 
 ];
 

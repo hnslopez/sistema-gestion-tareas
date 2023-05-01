@@ -1,64 +1,229 @@
 {
-    "header": {
-        "title": "Task Management System",
-        "user": {
-            "dropdown": {
-                "profile": {
-                    "title": "Profile",
-                    "view": "View Profile",
-                    "edit": "Edit Profile",
-                    "myAccount": "My Account",
-                    "notifications": "Notifications",
-                    "recentActivity": "Recent Activity"
-                },
-                "settings": {
-                    "title": "Settings",
-                    "changePassword": "Change Password",
-                    "preferences": "Preferences",
-                    "privacy": "Privacy",
-                    "security": "Security"
-                },
-                "help": {
-                    "title": "Help",
-                    "faq": "FAQ",
-                    "documentation": "Documentation"
-                },
-                "logout": "Logout"
-            }
-        }
-    },
-    "home": {
-        "title": "Management System",
-        "description": "This system allows you to effectively and efficiently manage and track your tasks, as well as other functionalities.",
-        "button_repositoty": "REPOSITORY",
-        "information": {
-            "express": "Express was used as the backend framework to create and manage routes using a RESTful API.",
-            "angular": "Angular was employed to develop the user interface, with reusable components and a router for smooth navigation.",
-            "mongodb": "MongoDB as a NoSQL database to store the data of tasks and users."
-        }
-    },
-    "tasks": {
-        "title": "Task List",
-        "add": "Add Task",
-        "edit": "Edit Task",
-        "delete": "Delete Task",
-        "completed": "Task completed",
-        "not_completed": "Task not completed",
-        "no_tasks": "No tasks added yet.",
-        "form": {
-            "name": "Name",
-            "description": "Description",
-            "due_date": "Due Date",
-            "completed": "Completed"
-        }
-    },
-    "settings": {
-        "title": "Settings",
-        "language": "Language",
-        "theme": {
-            "dark": "Dark Mode",
-            "default": "Light Mode"
+  "header": {
+    "title": "Task Management System",
+    "user": {
+      "dropdown": {
+        "profile": {
+          "title": "Profile",
+          "view": "View Profile",
+          "edit": "Edit Profile",
+          "myAccount": "My Account",
+          "notifications": "Notifications",
+          "recentActivity": "Recent Activity"
         },
-        "save": "Save"
+        "settings": {
+          "title": "Settings",
+          "changePassword": "Change Password",
+          "preferences": "Preferences",
+          "privacy": "Privacy",
+          "security": "Security"
+        },
+        "help": {
+          "title": "Help",
+          "faq": "FAQ",
+          "documentation": "Documentation"
+        },
+        "logout": "Logout"
+      }
     }
+  },
+  "home": {
+    "title": "Management System",
+    "description": "This system allows you to effectively and efficiently manage and track your tasks, as well as other functionalities.",
+    "button_repositoty": "REPOSITORY",
+    "information": {
+      "express": "Express was used as the backend framework to create and manage routes using a RESTful API.",
+      "angular": "Angular was employed to develop the user interface, with reusable components and a router for smooth navigation.",
+      "mongodb": "MongoDB as a NoSQL database to store the data of tasks and users."
+    }
+  },
+  "angular": {
+    "title": "Angular",
+    "description": "In this task management project, Angular was chosen for its advantages in developing complex applications and because it offers a wide range of tools and functionalities that enable better data management and a more user-friendly interface along with NG-ZORRO.",
+    "section": {
+      "structure": {
+        "title": "Project Structure",
+        "description": "In the tree view, you can find the frontend application files. On the other hand, the 'window' displays the code corresponding to the selected file in the tree view, allowing for easy visualization and understanding of its structure and functionality."
+      },
+      "Internationalization": {
+        "title": "Internationalization",
+        "description": "Manage language localization and translations in your application.",
+        "language": {
+          "es": "Spanish",
+          "en": "English"
+        },
+        "button": "Español"
+      },
+      "libraries": {
+        "title": "Used Libraries",
+        "description": "The library section lists the libraries or frameworks utilized in the frontend application. These libraries provide additional functionalities, utilities, or tools that enhance the development process and enable efficient code implementation.",
+        "components":[
+          {
+            "name": "auth0/angular-jwt",
+            "description": "Angular wrapper for the JWT decoding utility at https://github.com/auth0/angular2-jwt."
+          },
+          {
+            "name": "fortawesome/fontawesome-free",
+            "description": "A library of free icons to use with the FontAwesome icon set."
+          },
+          {
+            "name": "ngrx/effects",
+            "description": "A library for handling side effects and asynchronous actions in NgRx."
+          },
+          {
+            "name": "ngrx/router-store",
+            "description": "A library for integrating the Angular router with NgRx."
+          },
+          {
+            "name": "ngrx/store-devtools",
+            "description": "A set of development tools for debugging and inspecting the NgRx store."
+          },
+          {
+            "name": "ngrx/store",
+            "description": "A state management library for Angular applications based on Redux."
+          },
+          {
+            "name": "ngx-translate/core",
+            "description": "A library for implementing internationalization (i18n) in Angular applications."
+          },
+          {
+            "name": "ngx-translate/http-loader",
+            "description": "An Http loader for ngx-translate to load translations from a server."
+          },
+          {
+            "name": "Bootstrap",
+            "description": "A popular CSS framework for building responsive web pages designed for mobile devices."
+          },
+          {
+            "name": "Bootstrap Icons",
+            "description": "A set of free and open-source icons designed to work with Bootstrap."
+          },
+          {
+            "name": "ng-zorro-antd",
+            "description": "A UI component library for Angular based on Ant Design."
+          }
+        ]
+        
+      }
+    }
+  },
+  "express": {
+    "title": "Express",
+    "description": "Express is a powerful Node.js framework used in our management system for building robust and scalable web applications. It provides a range of features and capabilities that enhance the development process and enable efficient handling of requests and responses.",
+    "section": {
+      "libraries": {
+        "title": "Used Libraries",
+        "components": [
+          {
+            "name": "bcrypt",
+            "description": "bcrypt is a library used for hashing passwords securely. It provides a robust implementation of the bcrypt hashing algorithm."
+          },
+          {
+            "name": "bcryptjs",
+            "description": "bcryptjs is a JavaScript implementation of the bcrypt hashing algorithm. It offers a simple and straightforward way to hash passwords."
+          },
+          {
+            "name": "body-parser",
+            "description": "body-parser is a middleware that parses incoming request bodies in a middleware-friendly format. It simplifies the handling of HTTP request data."
+          },
+          {
+            "name": "cookie-parser",
+            "description": "cookie-parser is a middleware used for parsing cookies in Node.js. It makes it easy to read and manipulate cookies in HTTP requests and responses."
+          },
+          {
+            "name": "cors",
+            "description": "cors is a middleware that enables Cross-Origin Resource Sharing (CORS) in Express applications. It allows controlled access to resources from different origins."
+          },
+          {
+            "name": "dotenv",
+            "description": "dotenv is a zero-dependency module that loads environment variables from a .env file into the process.env object. It simplifies the management of configuration values."
+          },
+          {
+            "name": "express",
+            "description": "express is a fast, unopinionated, and minimalist web application framework for Node.js. It provides a robust set of features for building web applications and APIs."
+          },
+          {
+            "name": "express-rate-limit",
+            "description": "express-rate-limit is a middleware that enables rate limiting in Express applications. It helps protect against abusive or malicious requests by limiting the number of requests per IP or user."
+          },
+          {
+            "name": "i18n",
+            "description": "i18n is a library that facilitates internationalization (i18n) and localization (l10n) in Node.js applications. It provides tools for managing translations and supporting multiple languages."
+          },
+          {
+            "name": "jsonwebtoken",
+            "description": "jsonwebtoken is a library for generating and verifying JSON Web Tokens (JWT) in Node.js. It enables secure communication and authentication between parties using digitally signed tokens."
+          },
+          {
+            "name": "mongoose",
+            "description": "mongoose is an object modeling tool for Node.js and MongoDB. It provides a straightforward way to interact with MongoDB databases and define data schemas."
+          },
+          {
+            "name": "morgan",
+            "description": "morgan is a logging middleware for Express applications. It logs HTTP requests and provides detailed information about each request, such as the HTTP method, URL, and response status."
+          },
+          {
+            "name": "nodemon",
+            "description": "nodemon is a utility that automatically restarts the Node.js application when file changes are detected. It improves the development workflow by eliminating the need for manual restarts."
+          },
+          {
+            "name": "passport",
+            "description": "passport is an authentication middleware for Node.js. It provides a flexible and modular way to implement authentication strategies, such as username/password, OAuth, and JWT."
+          },
+          {
+            "name": "passport-jwt",
+            "description": "passport-jwt is a Passport strategy for authenticating with JSON Web Tokens (JWT). It allows you to authenticate and authorize requests by validating the JWT present in the request headers or cookies."
+          },
+          {
+            "name": "passport-local",
+            "description": "passport-local is a Passport strategy for authenticating with a username and password. It provides a simple and customizable way to authenticate users against a local database or any other data source."
+          }
+        ]
+      },
+      "routes":{
+        "title":"Express Routes",
+        "description":"Below is a list of all the available routes in the Express backend and their corresponding methods:"
+      }
+    }
+  },
+  "tasks": {
+    "title": "Task List",
+    "add": "Add Task",
+    "edit": "Edit Task",
+    "delete": "Delete Task",
+    "completed": "Task completed",
+    "not_completed": "Task not completed",
+    "no_tasks": "No tasks added yet.",
+    "form": {
+      "name": "Name",
+      "description": "Description",
+      "due_date": "Due Date",
+      "completed": "Completed"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "theme": {
+      "dark": "Dark Mode",
+      "default": "Light Mode"
+    },
+    "save": "Save"
+  },
+  "components": {
+    "empty": {
+      "no_data": "No Data",
+      "error_found": "Failed to load data"
+    },
+    "spin": {
+      "normal": "Loading...",
+      "markdown": "Waiting..."
+    },
+    "notification": {
+      "changeLanguage": {
+        "title": "Idioma Cambiado",
+        "description": "El idioma se ha cambiado exitosamente"
+      }
+    }
+  }
 }

@@ -52,3 +52,41 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
+
+// Extraer todas las rutas
+function extractRoutes(app) {
+  const routes = [];
+
+  app._router.stack.forEach((middleware) => {
+    if (middleware.route) {
+      const fullPath = middleware.route.path;
+      const methods = Object.keys(middleware.route.methods);
+      methods.forEach((method) => {
+        routes.push({
+          method,
+          path: fullPath
+        });
+      });
+    } else if (middleware.name === 'router') {
+      middleware.handle.stack.forEach((handler) => {
+        if (handler.route) {
+
+          const fullPath = middleware.regexp.toString().replace(/^\/|\/[?].*|\/[i]$/g, '').replace(/\\/g, '').replace(/^^/g, '')  + handler.route.path;
+
+          const methods = Object.keys(handler.route.methods);
+          methods.forEach((method) => {
+            routes.push({
+              method,
+              path: fullPath
+            });
+          });
+        }
+      });
+    }
+  });
+
+  return routes;
+}
+
+const allRoutes = extractRoutes(app);
+console.log(allRoutes)

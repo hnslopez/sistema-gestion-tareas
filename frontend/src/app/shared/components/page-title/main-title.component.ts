@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'page-title',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-title.component.css']
 })
 export class MainTitleComponent implements OnInit {
+  @Input() dividerTop: boolean = false;
+  @Input() dividerBottom: boolean = false;
 
   constructor() { }
 

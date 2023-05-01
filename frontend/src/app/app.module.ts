@@ -47,7 +47,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-
+import { RouterLinkActive } from '@angular/router';
+import { NzAnchorModule } from 'ng-zorro-antd/anchor';
+import { NzPageHeaderSubtitleDirective } from 'ng-zorro-antd/page-header';
+import { NzTreeViewModule } from 'ng-zorro-antd/tree-view';
+import { ApiService } from './core/services';
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
 
 registerLocaleData(es);
 
@@ -60,6 +65,7 @@ registerLocaleData(es);
     InputComponent,
     SearchPipe,
     RibbonComponent
+
   ],
   imports: [
     CoreModule,
@@ -97,6 +103,7 @@ registerLocaleData(es);
     NzListModule,
     NzCardModule,
     NzTabsModule,
+    NzAnchorModule,
     NzSegmentedModule,
     NzToolTipModule,
     NzPopoverModule,
@@ -104,10 +111,12 @@ registerLocaleData(es);
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({ maxAge: 25}),
+    NzTreeViewModule,
+    NzNotificationModule
 
     
   ],
-  providers: [AppInitializerProvider,{ provide: NZ_I18N, useValue: es_ES }],
+  providers: [AppInitializerProvider,{ provide: NZ_I18N, useValue: es_ES }, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

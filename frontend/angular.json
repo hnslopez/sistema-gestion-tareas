@@ -50,7 +50,8 @@
             "stylePreprocessorOptions": {
               "includePaths": ["src/assets/styles/themes"]
             },       
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {
@@ -58,7 +59,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "600kb",
-                  "maximumError": "2mb"
+                  "maximumError": "3mb"
                 },
                 {
                   "type": "anyComponentStyle",

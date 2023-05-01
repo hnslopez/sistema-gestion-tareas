@@ -1,0 +1,9 @@
+.icon-text {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+  }
+  
+  nz-divider.ant-divider.ant-divider-horizontal{
+    margin: 0px 0px;
+  }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { TranslateService } from '@ngx-translate/core';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { AppComponent } from 'src/app/app.component';
 import { ThemeService } from 'src/app/theme.service';
 
@@ -20,7 +22,7 @@ export class FooterComponent implements OnInit {
   ];
   selectedValue!: 'es' | 'en';
 
-  constructor(private sanitizer:DomSanitizer, private app: AppComponent, private themeService: ThemeService) { 
+  constructor(private sanitizer:DomSanitizer, private app: AppComponent, private themeService: ThemeService,private notification: NzNotificationService, private translateService: TranslateService) { 
     this.linkedin = sanitizer.bypassSecurityTrustUrl('https://www.linkedin.com/in/hnslopez/');
     this.github = sanitizer.bypassSecurityTrustUrl('https://github.com/hnslopez');
   }
@@ -31,13 +33,22 @@ export class FooterComponent implements OnInit {
 }
 
 
-languageChange(params:any) {
+ async languageChange(params:any) {
   this.app.switchLanguage(params);
+  
+  const notificactionTitle = this.translateService.instant('components.notification.changeLanguage.title');
+  const notificactionDescription = this.translateService.instant('components.notification.changeLanguage.description');
+
+  await this.notification.create(
+    'success',
+    notificactionTitle,
+    notificactionDescription
+  );
 }
 
 
   ngOnInit(): void {
-    const languageValue =  localStorage.getItem('locale') as 'es';
+    const languageValue =  localStorage.getItem('locale') as 'es' | 'en';
     this.selectedValue = languageValue || 'es';
     this.year = new Date().getFullYear();
   }

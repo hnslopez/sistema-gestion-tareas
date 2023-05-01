@@ -1,0 +1,12 @@
+{
+  "/github": {
+    "target": "https://raw.githubusercontent.com/",
+    "secure": true,
+    "changeOrigin": true,
+    "headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+    },
+    "logLevel": "debug"
+  }
+}

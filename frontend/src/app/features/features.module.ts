@@ -25,6 +25,18 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { LoginFormComponent } from '../shared/components/exclusive/login-form/login-form.component';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { SectionComponent } from '../shared/components/section/section.component';
+import { NzTreeViewModule } from 'ng-zorro-antd/tree-view';
+
+import { TreeViewComponent } from '../shared/components/tree-view/tree-view.component';
+import { MarkdownComponent } from '../shared/components/markdown/markdown.component';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { TableComponent } from '../shared/components/table/table.component';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 
 
 
@@ -38,7 +50,11 @@ import { LoginFormComponent } from '../shared/components/exclusive/login-form/lo
     MongodbComponent,
     LoginComponent,
     CardComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    SectionComponent,
+    TreeViewComponent,
+    MarkdownComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,
@@ -56,7 +72,15 @@ import { LoginFormComponent } from '../shared/components/exclusive/login-form/lo
     NzPageHeaderModule,
     NzFormModule,
     ReactiveFormsModule,
-    NzInputModule
+    NzInputModule,
+    NzCollapseModule,
+    NzTreeViewModule,
+    NzEmptyModule,
+    NzSpinModule,
+    NzTabsModule,
+    NzTableModule,
+    NzSelectModule
+    
     
 
   ]
