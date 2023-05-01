@@ -77,9 +77,7 @@
         </div>
     </div>
 </page-section>
-<page-section title="Pipes" icon="fa fa-filter" [divider]="true">
-</page-section>
-<page-section title="{{'angular.section.library.title' | translate}}" icon="fa fa-puzzle-piece" [divider]="true">
+<page-section title="{{'angular.section.libraries.title' | translate}}" icon="fa fa-puzzle-piece" [divider]="true">
     <div nz-row [nzGutter]="[16,16]">
         <div nz-col [nzSpan]="24" [nzXs]="24" [nzSm]="12" [nzMd]="8" [nzLg]="8" *ngFor="let module of modules">
             <img-card [title]="'angular.'+ module.name | translate"

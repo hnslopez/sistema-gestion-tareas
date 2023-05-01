@@ -1,7 +1,7 @@
 import { SelectionModel } from '@angular/cdk/collections';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { AfterViewInit, Component, Input, Output, EventEmitter, SecurityContext} from '@angular/core';
-import { treeFlatNode, treeNode } from '../../interface'
+import { treeFlatNode, treeNode } from '../../types'
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { NzTreeFlatDataSource, NzTreeFlattener } from 'ng-zorro-antd/tree-view';
@@ -14,6 +14,7 @@ import axios from 'axios';
 })
 export class TreeViewComponent implements AfterViewInit {
   @Input() TREE_DATA!: treeNode[];
+  @Input() type?: 'backend' | 'frontend' = 'frontend';
   @Output() codeData = new EventEmitter<any>();
   @Output() onChangeSelect = new EventEmitter<boolean>();
 
@@ -64,7 +65,7 @@ export class TreeViewComponent implements AfterViewInit {
   }
 
   async getData(value:any){
-    const path = value.path === '.' ? 'frontend' : `frontend/${value.path}`;
+    const path = value.path === '.' ? this.type : `${this.type}/${value.path}`;
     const url = `https://raw.githubusercontent.com/hnslopez/sistema-gestion-tareas/production/${path}/${value.name}`; 
     const satinizeUrl=  this.sanitizer.sanitize(SecurityContext.URL, url);
     try {

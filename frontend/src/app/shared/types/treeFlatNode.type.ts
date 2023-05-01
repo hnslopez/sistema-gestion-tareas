@@ -1,4 +1,4 @@
-export interface treeFlatNode {
+export type treeFlatNode = {
     expandable: boolean;
     name: string;
     level: number;

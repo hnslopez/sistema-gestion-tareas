@@ -34,6 +34,9 @@ import { MarkdownComponent } from '../shared/components/markdown/markdown.compon
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { TableComponent } from '../shared/components/table/table.component';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 
 
 
@@ -50,7 +53,8 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
     LoginFormComponent,
     SectionComponent,
     TreeViewComponent,
-    MarkdownComponent
+    MarkdownComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,
@@ -73,7 +77,10 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
     NzTreeViewModule,
     NzEmptyModule,
     NzSpinModule,
-    NzTabsModule
+    NzTabsModule,
+    NzTableModule,
+    NzSelectModule
+    
     
 
   ]
