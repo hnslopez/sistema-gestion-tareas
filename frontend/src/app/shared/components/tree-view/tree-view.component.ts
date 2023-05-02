@@ -66,7 +66,7 @@ export class TreeViewComponent implements AfterViewInit {
 
   async getData(value:any){
     const path = value.path === '.' ? this.type : `${this.type}/${value.path}`;
-    const url = `https://raw.githubusercontent.com/hnslopez/sistema-gestion-tareas/production/${path}/${value.name}`; 
+    const url = `https://raw.githubusercontent.com/hnslopez/sistema-gestion-tareas/main/${path}/${value.name}`; 
     const satinizeUrl=  this.sanitizer.sanitize(SecurityContext.URL, url);
     try {
       const response = await axios.get(satinizeUrl!);
