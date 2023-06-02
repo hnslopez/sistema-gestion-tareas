@@ -127,6 +127,10 @@
         "title": "Express",
         "description": "Express es un potente framework de Node.js utilizado en nuestro sistema de gestión para construir aplicaciones web robustas y escalables. Proporciona una variedad de características y capacidades que mejoran el proceso de desarrollo y permiten un manejo eficiente de las solicitudes y respuestas.",
         "section": {
+          "structure":{
+            "title": "Estructura del proyecto",
+            "description": "En el árbol de vista se pueden encontrar los archivos de la aplicación del backend. Por su parte, la 'ventana' muestra el código correspondiente al archivo seleccionado en el árbol de vista, permitiendo una fácil visualización y comprensión de su estructura y funcionalidad."
+          },
             "libraries": {
                 "title":"Librerías utilizadas",
                 "components":[
@@ -199,10 +203,93 @@
             },
             "routes":{
               "title":"Rutas de Express",
-              "description":"A continuación se muestra una lista de todas las rutas disponibles en el backend de Express y sus métodos correspondientes:"
+              "description":"A continuación se muestra una lista de todas las rutas disponibles en el backend de Express y sus métodos correspondientes:",
+              "table":{
+                "method":"Metodo",
+                "router":"Ruta",
+                "description":"Descripción"
+              }
+            },
+            "authentication": {
+              "title": "Autenticación",
+              "description": "Esta sección explica el proceso de autenticación en el sistema.",
+              "jwt": {
+                "title": "JSON Web Token (JWT)",
+                "description": "JWT es un estándar abierto para la creación de tokens de acceso seguro. Permite autenticar y autorizar solicitudes en el sistema.",
+                "howItWorks": "Cómo funciona JWT:",
+                "step1": "El cliente inicia sesión y envía sus credenciales al servidor.",
+                "step2": "El servidor verifica las credenciales y genera un JWT único que contiene la información de autenticación.",
+                "step3": "El servidor envía el JWT al cliente, quien lo almacenará y lo enviará en cada solicitud protegida.",
+                "protectedRoutes": "Rutas protegidas con JWT:",
+                "unprotectedRoutes": "Rutas no protegidas con JWT:"
+              },
+              "passport": {
+                "title": "Passport",
+                "description": "Passport es un middleware de autenticación flexible para Node.js. Proporciona una forma sencilla de autenticar las solicitudes en el sistema.",
+                "strategies": "Estrategias de autenticación disponibles:",
+                "strategy1": "passport-local: autenticación basada en nombre de usuario y contraseña.",
+                "strategy2": "passport-jwt: autenticación basada en JSON Web Tokens (JWT).",
+                "strategy3": "passport: autenticación basada en otras estrategias personalizadas.",
+                "howToUse": "Cómo usar Passport en el sistema:"
+              },
+              "buttons": {
+                "title":"Código de autenticación JWT y Passport",
+                "jwtCreation": "Creación de JWT",
+                "jwtValidation": "Validación de JWT",
+                "localStrategy": "LocalStrategy",
+                "loginRoute": "Ruta de Logín"
+              }
             }
         }
-    },
+    },  
+  "mongodb": {
+    "title": "MongoDB",
+    "description": "MongoDB es una base de datos NoSQL de alto rendimiento y orientada a documentos.",
+    "section": {
+      "introduction": {
+        "title": "Introducción a MongoDB",
+        "text1": "MongoDB es una base de datos de documentos NoSQL que proporciona una solución flexible y escalable para almacenar y gestionar datos en tu aplicación. En este proyecto, utilizamos MongoDB como nuestra tecnología de base de datos para almacenar información de usuario, datos de tareas y tokens para autenticación..",
+        "text2": "Se han definido varios esquemas utilizando Mongoose, una biblioteca ODM (Object Data Modeling) para MongoDB y Node.js, para definir la estructura y el comportamiento de nuestros modelos de datos. Por ejemplo, el esquema de Usuario representa los datos de usuario, el esquema de Token maneja los tokens para la autenticación y el esquema de Tarea representa información relacionada con las tareas.            ",
+        "text3": "Aquí tienes un ejemplo de un esquema de usuario definido en el backend:"
+      },
+      "dataModeling": {
+        "title": "Modelado de datos",
+        "description": "El modelado de datos en MongoDB implica el diseño de la estructura de los documentos y las relaciones entre ellos."
+      },
+      "basicOperations": {
+        "title": "Operaciones básicas",
+        "description": "MongoDB ofrece operaciones CRUD (Crear, Leer, Actualizar y Eliminar) para interactuar con los datos almacenados."
+      },
+      "advancedQueries": {
+        "title": "Consultas avanzadas",
+        "description": "MongoDB proporciona un potente sistema de consultas que permite buscar datos de manera flexible y eficiente."
+      },
+      "indexingPerformance": {
+        "title": "Indexación y rendimiento",
+        "description": "La indexación en MongoDB mejora la velocidad de las consultas y el rendimiento general del sistema."
+      },
+      "transactions": {
+        "title": "Transacciones",
+        "description": "Las transacciones en MongoDB aseguran la integridad de los datos en operaciones que involucran múltiples documentos."
+      },
+      "scalabilityReplication": {
+        "title": "Escalabilidad y replicación",
+        "description": "MongoDB ofrece capacidades de escalabilidad horizontal y replicación para gestionar grandes volúmenes de datos y mejorar la disponibilidad."
+      },
+      "expressIntegration": {
+        "title": "Integración con Express",
+        "description": "MongoDB se puede utilizar junto con el framework Express para desarrollar aplicaciones web y APIs robustas."
+      },
+      "securityAuthentication": {
+        "title": "Seguridad y autenticación",
+        "description": "MongoDB proporciona mecanismos de seguridad y autenticación para proteger los datos almacenados en la base de datos."
+      },
+      "useCasesExamples": {
+        "title": "Casos de uso y ejemplos",
+        "description": "Explora algunos casos de uso comunes de MongoDB y descubre ejemplos prácticos de su implementación."
+      }
+    }
+  },
     "login": {
         "title": "Iniciar sesión",
         "username": "Nombre de usuario",

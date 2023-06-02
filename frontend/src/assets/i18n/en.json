@@ -111,6 +111,10 @@
     "title": "Express",
     "description": "Express is a powerful Node.js framework used in our management system for building robust and scalable web applications. It provides a range of features and capabilities that enhance the development process and enable efficient handling of requests and responses.",
     "section": {
+      "structure": {
+        "title": "Project Structure",
+        "description": "In the tree view, you can find the backend application files. On the other hand, the 'window' displays the code corresponding to the selected file in the tree view, allowing for easy visualization and understanding of its structure and functionality."
+      },
       "libraries": {
         "title": "Used Libraries",
         "components": [
@@ -182,7 +186,90 @@
       },
       "routes":{
         "title":"Express Routes",
-        "description":"Below is a list of all the available routes in the Express backend and their corresponding methods:"
+        "description":"Below is a list of all the available routes in the Express backend and their corresponding methods:",
+        "table":{
+          "method":"Method",
+          "router":"Router",
+          "description":"Description"
+        }
+      },
+      "authentication": {
+        "title": "Authentication",
+        "description": "This section explains the authentication process in the system.",
+        "jwt": {
+          "title": "JSON Web Token (JWT)",
+          "description": "JWT is an open standard for creating secure access tokens. It allows authenticating and authorizing requests in the system.",
+          "howItWorks": "How JWT works:",
+          "step1": "The client logs in and sends its credentials to the server.",
+          "step2": "The server verifies the credentials and generates a unique JWT that contains the authentication information.",
+          "step3": "The server sends the JWT to the client, who will store it and send it in every protected request.",
+          "protectedRoutes": "Protected routes with JWT:",
+          "unprotectedRoutes": "Unprotected routes without JWT:"
+        },
+        "passport": {
+          "title": "Passport",
+          "description": "Passport is a flexible authentication middleware for Node.js. It provides an easy way to authenticate requests in the system.",
+          "strategies": "Available authentication strategies:",
+          "strategy1": "passport-local: username and password-based authentication.",
+          "strategy2": "passport-jwt: JSON Web Token (JWT) based authentication.",
+          "strategy3": "passport: authentication based on other custom strategies.",
+          "howToUse": "How to use Passport in the system:"
+        },
+        "buttons": {
+          "title": "JWT and Passport Authentication Code",
+          "jwtCreation": "JWT Creation",
+          "jwtValidation": "JWT Validation",
+          "localStrategy": "LocalStrategy",
+          "loginRoute": "Login Route"
+        }
+      }
+    }
+  },
+  "mongodb": {
+    "title": "MongoDB",
+    "description": "MongoDB is a high-performance, document-oriented NoSQL database.",
+    "section": {
+      "introduction": {
+        "title": "Introduction to MongoDB",
+        "text1": "MongoDB is a NoSQL document database that provides a flexible and scalable solution for storing and managing data in your application. In this project, we use MongoDB as our database technology to store user information, task data, and authentication tokens.",
+        "text2": "We have defined several schemas using Mongoose, an ODM (Object Data Modeling) library for MongoDB and Node.js, to define the structure and behavior of our data models. For example, the User schema represents user data, the Token schema handles authentication tokens, and the Task schema represents task-related information.",
+        "text3": "Here's an example of a user schema defined in the backend:"
+      },
+      "dataModeling": {
+        "title": "Data Modeling",
+        "description": "Data modeling in MongoDB involves designing the structure of documents and the relationships between them."
+      },
+      "basicOperations": {
+        "title": "Basic Operations",
+        "description": "MongoDB offers CRUD (Create, Read, Update, Delete) operations to interact with stored data."
+      },
+      "advancedQueries": {
+        "title": "Advanced Queries",
+        "description": "MongoDB provides a powerful query system that allows flexible and efficient data retrieval."
+      },
+      "indexingPerformance": {
+        "title": "Indexing and Performance",
+        "description": "Indexing in MongoDB improves query speed and overall system performance."
+      },
+      "transactions": {
+        "title": "Transactions",
+        "description": "Transactions in MongoDB ensure data integrity for operations involving multiple documents."
+      },
+      "scalabilityReplication": {
+        "title": "Scalability and Replication",
+        "description": "MongoDB offers horizontal scalability and replication capabilities to handle large volumes of data and improve availability."
+      },
+      "expressIntegration": {
+        "title": "Express Integration",
+        "description": "MongoDB can be used alongside the Express framework to develop robust web applications and APIs."
+      },
+      "securityAuthentication": {
+        "title": "Security and Authentication",
+        "description": "MongoDB provides security and authentication mechanisms to protect data stored in the database."
+      },
+      "useCasesExamples": {
+        "title": "Use Cases and Examples",
+        "description": "Explore common use cases of MongoDB and discover practical examples of its implementation."
       }
     }
   },

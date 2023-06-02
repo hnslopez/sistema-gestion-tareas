@@ -24,6 +24,7 @@ export const menuItems: MenuSection[] = [
           name: 'Tareas Eliminadas',
           route: '/tareas/eliminadas',
         },
+        /*
         {
           name: 'Subtarea 1',
           route: '/tareas/todas/subtarea1',
@@ -36,6 +37,7 @@ export const menuItems: MenuSection[] = [
           name: 'Subtarea 3',
           route: '/tareas/todas/subtarea3',
         },
+        */
       ],
     },
     {
@@ -54,10 +56,12 @@ export const menuItems: MenuSection[] = [
           name: 'Roles',
           route: '/admin/roles',
         },
+        /*
         {
           name: 'Dashboard',
           route: '/admin/dashboard',
         },
+        */
       ],
     },
   ];

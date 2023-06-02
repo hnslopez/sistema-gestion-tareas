@@ -1,1 +1,51 @@
-<p>mongodb works!</p>
+<page-title [dividerTop]="true">
+    <h2 class="display-5 fw-bold text-uppercase">{{"mongodb.title" | translate}}</h2>
+    <p class="fs-4">{{"mongodb.description" | translate}}</p>
+</page-title>
+
+<page-section title="{{'mongodb.section.introduction.title' | translate}}" icon="bi bi-info-circle" [divider]="true">
+    <p typography>
+        {{"mongodb.section.introduction.text1" | translate}}</p>
+    <p typography>
+        {{"mongodb.section.introduction.text2" | translate}}
+    </p>
+    <p typography>
+        {{"mongodb.section.introduction.text3" | translate}}
+    </p>
+    <app-markdown [code]="code"></app-markdown>
+</page-section>
+
+
+<page-section title="{{'mongodb.section.dataModeling.title' | translate}}" icon="bi bi-collections" [divider]="true">
+    <p typography>{{"mongodb.section.dataModeling.description" | translate}}</p>
+</page-section>
+
+<page-section title="{{'mongodb.section.basicOperations.title' | translate}}" icon="bi bi-database" [divider]="true">
+    <p typography>{{"mongodb.section.basicOperations.description" | translate}}</p>
+</page-section>
+
+<page-section title="{{'mongodb.section.advancedQueries.title' | translate}}" icon="bi bi-search" [divider]="true">
+    <p typography>{{"mongodb.section.advancedQueries.description" | translate}}</p>
+</page-section>
+
+<page-section title="{{'mongodb.section.indexingPerformance.title' | translate}}" icon="bi bi-speedometer2" [divider]="true">
+    <p typography>{{"mongodb.section.indexingPerformance.description" | translate}}</p>
+</page-section>
+
+<page-section title="{{'mongodb.section.transactions.title' | translate}}" icon="bi bi-arrow-repeat" [divider]="true">
+    <p typography>{{"mongodb.section.transactions.description" | translate}}</p>
+</page-section>
+
+<page-section title="{{'mongodb.section.scalabilityReplication.title' | translate}}" icon="bi bi-cluster" [divider]="true">
+    <p typography>{{"mongodb.section.scalabilityReplication.description" | translate}}</p>
+</page-section>
+
+ 
+
+<page-section title="{{'mongodb.section.securityAuthentication.title' | translate}}" icon="bi bi-shield-lock" [divider]="true">
+    <p typography>{{"mongodb.section.securityAuthentication.description" | translate}}</p>
+</page-section>
+
+<page-section title="{{'mongodb.section.useCasesExamples.title' | translate}}" icon="bi bi-lightbulb" [divider]="true">
+    <p typography>{{"mongodb.section.useCasesExamples.description" | translate}}</p>
+</page-section>
