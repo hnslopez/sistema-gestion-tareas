@@ -254,39 +254,17 @@
       },
       "dataModeling": {
         "title": "Modelado de datos",
-        "description": "El modelado de datos en MongoDB implica el diseño de la estructura de los documentos y las relaciones entre ellos."
+        "description": "El modelado de datos en MongoDB implica el diseño de la estructura de los documentos y las relaciones entre ellos.",
+          "items": [
+            "Para almacenar las tareas, se creó una colección llamada 'tasks' en MongoDB",
+            "Cada tarea se representó como un documento JSON en la colección 'tasks'.",
+            "Los campos del documento incluyen 'title' (título de la tarea), 'description' (descripción de la tarea), 'assignee' (responsable de la tarea) y 'comments' (comentarios asociados a la tarea)."
+          ],
+          "example": "Ejemplo de modelado de datos en MongoDB para las tareas:"
       },
       "basicOperations": {
         "title": "Operaciones básicas",
         "description": "MongoDB ofrece operaciones CRUD (Crear, Leer, Actualizar y Eliminar) para interactuar con los datos almacenados."
-      },
-      "advancedQueries": {
-        "title": "Consultas avanzadas",
-        "description": "MongoDB proporciona un potente sistema de consultas que permite buscar datos de manera flexible y eficiente."
-      },
-      "indexingPerformance": {
-        "title": "Indexación y rendimiento",
-        "description": "La indexación en MongoDB mejora la velocidad de las consultas y el rendimiento general del sistema."
-      },
-      "transactions": {
-        "title": "Transacciones",
-        "description": "Las transacciones en MongoDB aseguran la integridad de los datos en operaciones que involucran múltiples documentos."
-      },
-      "scalabilityReplication": {
-        "title": "Escalabilidad y replicación",
-        "description": "MongoDB ofrece capacidades de escalabilidad horizontal y replicación para gestionar grandes volúmenes de datos y mejorar la disponibilidad."
-      },
-      "expressIntegration": {
-        "title": "Integración con Express",
-        "description": "MongoDB se puede utilizar junto con el framework Express para desarrollar aplicaciones web y APIs robustas."
-      },
-      "securityAuthentication": {
-        "title": "Seguridad y autenticación",
-        "description": "MongoDB proporciona mecanismos de seguridad y autenticación para proteger los datos almacenados en la base de datos."
-      },
-      "useCasesExamples": {
-        "title": "Casos de uso y ejemplos",
-        "description": "Explora algunos casos de uso comunes de MongoDB y descubre ejemplos prácticos de su implementación."
       }
     }
   },

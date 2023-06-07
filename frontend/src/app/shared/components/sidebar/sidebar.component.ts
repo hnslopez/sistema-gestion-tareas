@@ -3,9 +3,8 @@ import { Router, NavigationEnd } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { MenuSection } from 'src/app/core/models/menu-section.model';
 import { ThemeService } from 'src/app/theme.service';
-import { menuItems } from '../../data/menu-items.data';
+import { menuItems, submenuItems } from '../../data/menu-items.data';
 import { ThemeType } from '../../enum';
-import { query } from '@angular/animations';
 
 @Component({
   selector: 'app-sidebar',
@@ -20,6 +19,7 @@ export class SidebarComponent implements OnInit, OnChanges {
   @Input() isMobile = false;
   @Output() isCollapsedChanged = new EventEmitter<boolean>();
   menuItems = menuItems;
+  submenuItems = submenuItems;
   currentPath!: string;
   public ThemeType = ThemeType; 
   nzSelected= false;

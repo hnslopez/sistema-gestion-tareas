@@ -54,7 +54,8 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
     SectionComponent,
     TreeViewComponent,
     MarkdownComponent,
-    TableComponent
+    TableComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -80,9 +81,11 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
     NzTabsModule,
     NzTableModule,
     NzSelectModule
-    
-    
-
+  ],
+  exports: [
+    MainTitleComponent,
+    TranslateModule,
+    NzButtonModule
   ]
 })
 export class FeaturesModule { }

@@ -237,39 +237,17 @@
       },
       "dataModeling": {
         "title": "Data Modeling",
-        "description": "Data modeling in MongoDB involves designing the structure of documents and the relationships between them."
+        "description": "Data modeling in MongoDB involves designing the structure of documents and the relationships between them.",
+        "items": [
+          "Each task was represented as a JSON document in the 'tasks' collection.",
+          "The document fields include 'title' (task title), 'description' (task description), 'assignee' (task assignee), and 'comments' (comments associated with the task)."
+        ],
+        "exampleTitle": "Example of data modeling in MongoDB for tasks:"
+
       },
       "basicOperations": {
         "title": "Basic Operations",
         "description": "MongoDB offers CRUD (Create, Read, Update, Delete) operations to interact with stored data."
-      },
-      "advancedQueries": {
-        "title": "Advanced Queries",
-        "description": "MongoDB provides a powerful query system that allows flexible and efficient data retrieval."
-      },
-      "indexingPerformance": {
-        "title": "Indexing and Performance",
-        "description": "Indexing in MongoDB improves query speed and overall system performance."
-      },
-      "transactions": {
-        "title": "Transactions",
-        "description": "Transactions in MongoDB ensure data integrity for operations involving multiple documents."
-      },
-      "scalabilityReplication": {
-        "title": "Scalability and Replication",
-        "description": "MongoDB offers horizontal scalability and replication capabilities to handle large volumes of data and improve availability."
-      },
-      "expressIntegration": {
-        "title": "Express Integration",
-        "description": "MongoDB can be used alongside the Express framework to develop robust web applications and APIs."
-      },
-      "securityAuthentication": {
-        "title": "Security and Authentication",
-        "description": "MongoDB provides security and authentication mechanisms to protect data stored in the database."
-      },
-      "useCasesExamples": {
-        "title": "Use Cases and Examples",
-        "description": "Explore common use cases of MongoDB and discover practical examples of its implementation."
       }
     }
   },

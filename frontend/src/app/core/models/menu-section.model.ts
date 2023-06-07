@@ -7,10 +7,19 @@ import { MenuItem } from "./menu-item.model";
  * @param icon - Icono que se muestra junto a la sección.
  * @param children - Hijos de la sección.
  */
-export interface MenuSection  {
-    name: string;
-    route?: string;
-    icon: string;
-    children: MenuItem[];
-    isOpen?:boolean;
-  }
+export interface MenuSection {
+  title: string;
+  icon?: string;
+  name?: string;
+  children?: submenuSection[];
+}
+
+
+interface submenuSection {
+  title?:string;
+  name?:string;
+  icon?:string;
+  routerLink?:string[];
+  children?: submenuSection[];
+}
+

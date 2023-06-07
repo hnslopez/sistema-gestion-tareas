@@ -18,34 +18,17 @@
 
 <page-section title="{{'mongodb.section.dataModeling.title' | translate}}" icon="bi bi-collections" [divider]="true">
     <p typography>{{"mongodb.section.dataModeling.description" | translate}}</p>
-</page-section>
+    <ul>
+        <li>{{ 'mongodb.section.dataModeling.items.0' | translate }}</li>
+        <li>{{ 'mongodb.section.dataModeling.items.1' | translate }}</li>
+        <li>{{ 'mongodb.section.dataModeling.items.2' | translate }}</li>
+    </ul>
 
-<page-section title="{{'mongodb.section.basicOperations.title' | translate}}" icon="bi bi-database" [divider]="true">
-    <p typography>{{"mongodb.section.basicOperations.description" | translate}}</p>
+    <h3>{{ 'mongodb.section.dataModeling.example' | translate }}</h3>
+    <app-markdown [code]="codeTask"></app-markdown>
 </page-section>
 
 <page-section title="{{'mongodb.section.advancedQueries.title' | translate}}" icon="bi bi-search" [divider]="true">
     <p typography>{{"mongodb.section.advancedQueries.description" | translate}}</p>
-</page-section>
-
-<page-section title="{{'mongodb.section.indexingPerformance.title' | translate}}" icon="bi bi-speedometer2" [divider]="true">
-    <p typography>{{"mongodb.section.indexingPerformance.description" | translate}}</p>
-</page-section>
-
-<page-section title="{{'mongodb.section.transactions.title' | translate}}" icon="bi bi-arrow-repeat" [divider]="true">
-    <p typography>{{"mongodb.section.transactions.description" | translate}}</p>
-</page-section>
-
-<page-section title="{{'mongodb.section.scalabilityReplication.title' | translate}}" icon="bi bi-cluster" [divider]="true">
-    <p typography>{{"mongodb.section.scalabilityReplication.description" | translate}}</p>
-</page-section>
-
- 
-
-<page-section title="{{'mongodb.section.securityAuthentication.title' | translate}}" icon="bi bi-shield-lock" [divider]="true">
-    <p typography>{{"mongodb.section.securityAuthentication.description" | translate}}</p>
-</page-section>
-
-<page-section title="{{'mongodb.section.useCasesExamples.title' | translate}}" icon="bi bi-lightbulb" [divider]="true">
-    <p typography>{{"mongodb.section.useCasesExamples.description" | translate}}</p>
+    <app-markdown [code]="codeQuerys"></app-markdown>
 </page-section>
