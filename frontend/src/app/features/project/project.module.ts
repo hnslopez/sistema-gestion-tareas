@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectComponent } from './project.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FeaturesModule } from '../features.module';
+import { SharedModule } from '../shared.module';
 
 
 const routes: Routes = [
@@ -20,7 +20,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    FeaturesModule,
+    SharedModule,
     
   ]
 })

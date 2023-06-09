@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TasksComponent } from './tasks.component';
 import { RouterModule, Routes } from '@angular/router';
-import { MainTitleComponent } from 'src/app/shared/components/page-title/main-title.component';
-import { FeaturesModule } from '../features.module';
+import { SharedModule } from '../shared.module';
 
 const routes: Routes = [
   {
@@ -19,7 +18,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    FeaturesModule,
+    SharedModule,
   ]
 })
 export class TasksModule { }

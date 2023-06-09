@@ -22,7 +22,7 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { LoginComponent } from './auth/login/login.component';
 import { NzFormModule } from 'ng-zorro-antd/form';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { LoginFormComponent } from '../shared/components/exclusive/login-form/login-form.component';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
@@ -42,6 +42,25 @@ import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { DrawerComponent } from '../shared/components/drawer/drawer.component';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { DragAndDropComponent } from '../shared/components/drag-and-drop/drag-and-drop.component';
+import { InputComponent } from '../shared/components/input/input.component';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
+import { NzAnchorModule } from 'ng-zorro-antd/anchor';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { IconsProviderModule } from '../icon-provider.module';
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
+import { NzOverlayModule } from 'ng-zorro-antd/core/overlay';
+import { SearchPipe } from '../shared/pipes/search.pipe';
+import { RibbonComponent } from '../shared/components/ribbon/ribbon.component';
+import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 
 
 
@@ -63,7 +82,9 @@ import { DragAndDropComponent } from '../shared/components/drag-and-drop/drag-an
     EmptyComponent,
     DrawerComponent,
     DragAndDropComponent,
-    
+    InputComponent,
+    SearchPipe,
+    RibbonComponent
   ],
   imports: [
     CommonModule,
@@ -90,8 +111,27 @@ import { DragAndDropComponent } from '../shared/components/drag-and-drop/drag-an
     NzTableModule,
     NzSelectModule,
     NzDrawerModule,
-    NzUploadModule
-    
+    NzUploadModule,
+    NzAutocompleteModule,
+    NzLayoutModule,
+    NzMenuModule,
+    NzDropDownModule,
+    NzAvatarModule,
+    NzButtonModule,
+    NzDividerModule,
+    NzSelectModule,
+    NzSwitchModule,
+    IconsProviderModule,
+    NzBadgeModule,
+    NzAnchorModule,
+    NzSegmentedModule,
+    NzToolTipModule,
+    NzPopoverModule,
+    NzNotificationModule,
+    FormsModule,
+    NzOverlayModule,
+    NzTimePickerModule,
+    NzDatePickerModule
   ],
   exports: [
     MainTitleComponent,
@@ -119,11 +159,33 @@ import { DragAndDropComponent } from '../shared/components/drag-and-drop/drag-an
     NzSpinModule,
     NzTabsModule,
     NzTableModule,
-    NzSelectModule,
     NzDrawerModule,
     DrawerComponent,
     NzUploadModule,
-    DragAndDropComponent
+    DragAndDropComponent,
+    InputComponent,
+    NzSelectModule,
+    NzUploadModule,
+    NzAutocompleteModule,
+    NzLayoutModule,
+    NzMenuModule,
+    NzDropDownModule,
+    NzAvatarModule,
+    NzDividerModule,
+    NzSwitchModule,
+    IconsProviderModule,
+    NzBadgeModule,
+    NzAnchorModule,
+    NzSegmentedModule,
+    NzToolTipModule,
+    NzPopoverModule,
+    NzNotificationModule,
+    FormsModule,
+    NzOverlayModule,
+    SearchPipe,
+    RibbonComponent,
+    NzTimePickerModule,
+    NzDatePickerModule
   ]
 })
-export class FeaturesModule { }
+export class SharedModule { }
