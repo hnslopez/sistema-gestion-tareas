@@ -117,6 +117,7 @@ registerLocaleData(es);
     
   ],
   providers: [AppInitializerProvider,{ provide: NZ_I18N, useValue: es_ES }, ApiService],
+  exports:[InputComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

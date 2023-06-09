@@ -1,5 +1,5 @@
 <page-title [dividerTop]="true">
-    <h2 class="display-5 fw-bold text-uppercase">{{"mongodb.title" | translate}}</h2>
+    <h2 class="display-6 fw-bold text-uppercase">{{"mongodb.title" | translate}}</h2>
     <p class="fs-4">{{"mongodb.description" | translate}}</p>
 </page-title>
 
@@ -26,9 +26,4 @@
 
     <h3>{{ 'mongodb.section.dataModeling.example' | translate }}</h3>
     <app-markdown [code]="codeTask"></app-markdown>
-</page-section>
-
-<page-section title="{{'mongodb.section.advancedQueries.title' | translate}}" icon="bi bi-search" [divider]="true">
-    <p typography>{{"mongodb.section.advancedQueries.description" | translate}}</p>
-    <app-markdown [code]="codeQuerys"></app-markdown>
 </page-section>

@@ -37,6 +37,11 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { TableComponent } from '../shared/components/table/table.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzSelectModule } from 'ng-zorro-antd/select';
+import { EmptyComponent } from '../shared/components/empty/empty.component';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { DrawerComponent } from '../shared/components/drawer/drawer.component';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { DragAndDropComponent } from '../shared/components/drag-and-drop/drag-and-drop.component';
 
 
 
@@ -55,6 +60,9 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
     TreeViewComponent,
     MarkdownComponent,
     TableComponent,
+    EmptyComponent,
+    DrawerComponent,
+    DragAndDropComponent,
     
   ],
   imports: [
@@ -80,12 +88,42 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
     NzSpinModule,
     NzTabsModule,
     NzTableModule,
-    NzSelectModule
+    NzSelectModule,
+    NzDrawerModule,
+    NzUploadModule
+    
   ],
   exports: [
     MainTitleComponent,
+    EmptyComponent,
+    SectionComponent,
+    CardComponent,
+    NzGridModule,
+    NzListModule,
+    NzDividerModule,
+    NzCardModule,
+    NzSpaceModule,
     TranslateModule,
-    NzButtonModule
+    NzTypographyModule,
+    NzButtonModule,
+    NzIconModule,
+    RouterModule,
+    NzBreadCrumbModule,
+    NzPageHeaderModule,
+    NzFormModule,
+    ReactiveFormsModule,
+    NzInputModule,
+    NzCollapseModule,
+    NzTreeViewModule,
+    NzEmptyModule,
+    NzSpinModule,
+    NzTabsModule,
+    NzTableModule,
+    NzSelectModule,
+    NzDrawerModule,
+    DrawerComponent,
+    NzUploadModule,
+    DragAndDropComponent
   ]
 })
 export class FeaturesModule { }

@@ -10,6 +10,7 @@ export class SectionComponent implements OnInit {
   @Input() divider: boolean = false;
   @Input() icon?: string;
   @Input() showArrow?: boolean = false;
+  @Input() collapse?: boolean = true;
 
   id:any;
   

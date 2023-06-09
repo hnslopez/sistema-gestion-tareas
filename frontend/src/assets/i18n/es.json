@@ -244,7 +244,7 @@
     },  
   "mongodb": {
     "title": "MongoDB",
-    "description": "MongoDB es una base de datos NoSQL de alto rendimiento y orientada a documentos.",
+    "description": " Este proyecto utiliza MongoDB como una base de datos NoSQL para el almacenamiento y gestión eficiente de datos.",
     "section": {
       "introduction": {
         "title": "Introducción a MongoDB",
@@ -303,5 +303,50 @@
                 "description": "The language has been successfully changed"
             }
         }
-    }
+    },
+
+    "project": {
+      "title": "Proyectos",
+      "description": "En esta sección podrás ver y administrar tus proyectos. Explora la lista de proyectos y accede a su información detallada para realizar un seguimiento de su progreso y tareas asociadas.",
+      "add": "Agregar Proyecto",
+      "edit": "Editar Proyecto",
+      "delete": "Eliminar Proyecto",
+      "no_projects": "No hay proyectos agregados todavía.",
+      "project_details": {
+          "title": "Detalles del Proyecto",
+          "name": "Nombre",
+          "description": "Descripción",
+          "start_date": "Fecha de Inicio",
+          "create_button": "Crear Proyecto",
+          "no_projects": "Aún no has creado ningún proyecto.",      
+          "end_date": "Fecha de Finalización",
+          "status": "Estado",
+          "tasks": "Tareas",
+          "team_members": "Miembros del Equipo",
+          "progress": "Progreso",
+          "completed": "Completado",
+          "in_progress": "En Progreso",
+          "not_started": "No Iniciado"
+      },
+      "form": {
+        "name": "Nombre",
+        "description": "Descripción",
+        "startDate": "Fecha de Inicio",
+        "endDate": "Fecha de Finalización",
+        "manager": "Responsable",
+        "members": "Miembros del Equipo",
+        "tags": "Etiquetas",
+        "status": "Estado",
+        "statusInProgress": "En Progreso",
+        "statusCompleted": "Completado",
+        "statusPending": "Pendiente",
+        "create": "Crear Proyecto",
+        "nameError": "Por favor ingresa un nombre válido.",
+        "descriptionError": "Por favor ingresa una descripción válida.",
+        "startDateError": "Por favor ingresa una fecha de inicio válida.",
+        "endDateError": "Por favor ingresa una fecha de finalización válida.",
+        "managerError": "Por favor ingresa un responsable válido."
+      }
+  }
+  
 }

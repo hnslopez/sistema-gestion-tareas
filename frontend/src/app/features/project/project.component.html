@@ -1,3 +1,11 @@
-<page-title [dividerTop] ='true' [dividerBottom] ='true'>
-    <h4 class="display-5 fw-bold text-uppercase">{{"home.title" | translate}}</h4>
+<page-title [dividerTop] ='true'>
+    <h4 class="display-6 fw-bold text-uppercase">{{"project.title" | translate}}</h4>
+    <p class="fs-4">{{"project.description" | translate}}</p>
 </page-title>
+<app-empty>
+    <button nz-button nzType="primary" (click)="open()" >{{"project.project_details.create_button" | translate}}</button>
+<app-drawer [title]="'project.add' | translate" size="large">
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  </form>
+</app-drawer>
+</app-empty>

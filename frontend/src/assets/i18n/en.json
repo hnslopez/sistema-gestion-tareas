@@ -227,7 +227,7 @@
   },
   "mongodb": {
     "title": "MongoDB",
-    "description": "MongoDB is a high-performance, document-oriented NoSQL database.",
+    "description": "This project utilizes MongoDB as a NoSQL database for efficient storage and management of data.",
     "section": {
       "introduction": {
         "title": "Introduction to MongoDB",

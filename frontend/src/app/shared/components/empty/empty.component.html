@@ -1,1 +1,15 @@
-<p>empty works!</p>
+<nz-empty
+nzNotFoundImage="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
+[nzNotFoundContent]="contentTpl"
+[nzNotFoundFooter]="footerTpl"
+>
+<ng-template #contentTpl>
+  <span> 
+    <!--Colocar que se añada por select-->
+    {{contentText | translate}}
+  </span>
+</ng-template>
+<ng-template #footerTpl>
+  <ng-content></ng-content>
+</ng-template>
+</nz-empty>
