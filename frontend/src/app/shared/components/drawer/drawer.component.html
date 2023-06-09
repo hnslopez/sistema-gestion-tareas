@@ -1,0 +1,12 @@
+<nz-drawer
+[nzClosable]="true"
+[nzVisible]="visible"
+[nzPlacement]="placement"
+[nzTitle]="title"
+(nzOnClose)="close()"
+  [nzWidth]="isMobile?'100%':'650px'"
+>
+<ng-container *nzDrawerContent>
+  <ng-content></ng-content>
+</ng-container>
+</nz-drawer>

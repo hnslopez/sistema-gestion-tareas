@@ -1,24 +1,43 @@
 <section>
-    <nz-divider *ngIf="divider"></nz-divider>
-    <div class="pb-5">
-        <nz-collapse nzGhost>
-            <ng-template #HeaderComponent>
-                <span nz-typography class="icon-text">
-                    <span nz-icon *ngIf="icon"><i class="{{icon}}"></i></span>
-                    <nz-divider nzType="vertical"></nz-divider>
-                    <h3 nz-typography class="mb-2">{{title}}</h3>
-                    <ng-content select="description"></ng-content>
-                </span>
-              </ng-template>
-            <nz-collapse-panel
-              [nzHeader]="HeaderComponent"
-              [nzActive]="true"
-              [nzShowArrow]="showArrow"
-            >
-            <ng-content></ng-content>
-
-            </nz-collapse-panel>
-          </nz-collapse>
-          
-    </div>
+  <nz-divider *ngIf="divider"></nz-divider>
+  <div class="pb-5" *ngIf="collapse">
+      <nz-collapse nzGhost>
+          <ng-template #HeaderComponent>
+              <span nz-typography class="icon-text">
+                  <span nz-icon *ngIf="icon"><i class="{{icon}}"></i></span>
+                  <nz-divider nzType="vertical"></nz-divider>
+                  <h3 nz-typography class="mb-2">{{title}}</h3>
+                  <ng-content select="description"></ng-content>
+              </span>
+          </ng-template>
+          <nz-collapse-panel
+            [nzHeader]="HeaderComponent"
+            [nzActive]="true"
+            [nzShowArrow]="showArrow"
+          >
+              <div class="content-wrapper">
+                  <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+              </div>
+          </nz-collapse-panel>
+      </nz-collapse>
+  </div>
+  <div class="pb-5" *ngIf="!collapse">
+      <div style="padding: 12px 16px;">
+          <span nz-typography class="icon-text">
+              <span nz-icon *ngIf="icon"><i class="{{icon}}"></i></span>
+              <nz-divider nzType="vertical"></nz-divider>
+              <h3 nz-typography class="mb-2">{{title}}</h3>
+              <ng-content select="description"></ng-content>
+          </span>
+      </div>
+      <div>
+          <div class="content-wrapper">
+              <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+          </div>
+      </div>
+  </div>
 </section>
+
+<ng-template #contentTemplate>
+  <ng-content></ng-content>
+</ng-template>

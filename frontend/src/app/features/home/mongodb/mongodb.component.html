@@ -1,1 +1,29 @@
-<p>mongodb works!</p>
+<page-title [dividerTop]="true">
+    <h2 class="display-6 fw-bold text-uppercase">{{"mongodb.title" | translate}}</h2>
+    <p class="fs-4">{{"mongodb.description" | translate}}</p>
+</page-title>
+
+<page-section title="{{'mongodb.section.introduction.title' | translate}}" icon="bi bi-info-circle" [divider]="true">
+    <p typography>
+        {{"mongodb.section.introduction.text1" | translate}}</p>
+    <p typography>
+        {{"mongodb.section.introduction.text2" | translate}}
+    </p>
+    <p typography>
+        {{"mongodb.section.introduction.text3" | translate}}
+    </p>
+    <app-markdown [code]="code"></app-markdown>
+</page-section>
+
+
+<page-section title="{{'mongodb.section.dataModeling.title' | translate}}" icon="bi bi-collections" [divider]="true">
+    <p typography>{{"mongodb.section.dataModeling.description" | translate}}</p>
+    <ul>
+        <li>{{ 'mongodb.section.dataModeling.items.0' | translate }}</li>
+        <li>{{ 'mongodb.section.dataModeling.items.1' | translate }}</li>
+        <li>{{ 'mongodb.section.dataModeling.items.2' | translate }}</li>
+    </ul>
+
+    <h3>{{ 'mongodb.section.dataModeling.example' | translate }}</h3>
+    <app-markdown [code]="codeTask"></app-markdown>
+</page-section>

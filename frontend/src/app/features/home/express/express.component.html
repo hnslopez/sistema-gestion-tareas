@@ -1,5 +1,5 @@
 <page-title [dividerTop]="true">
-    <h2 class="display-5 fw-bold text-uppercase">{{"express.title" | translate}}</h2>
+    <h2 class="display-6 fw-bold text-uppercase">{{"express.title" | translate}}</h2>
     <p class="fs-4">{{"express.description" | translate}}</p>
 </page-title>
 <page-section title="{{'express.section.structure.title' | translate}}" icon="bi bi-folder" [divider]="true">
@@ -22,38 +22,52 @@
     <p typography>{{"express.section.routes.description" | translate}}</p>
     <app-table [dataTable]="routesBackend">
         <tr>
-            <th>Metodo</th>
-            <th>Ruta</th>
-            <th>Descripción</th>
+            <th>{{'express.section.routes.table.method' | translate}}</th>
+            <th>{{'express.section.routes.table.router' | translate}}</th>
+            <th>{{'express.section.routes.table.description' | translate}}</th>
         </tr>
     </app-table>
 </page-section>
-<page-section title="{{'express.section.Authentication.title' | translate}}" icon="bi bi-shield-lock" [divider]="true">
-    <p typography>{{"express.section.Authentication.description" | translate}}</p>
+<page-section title="{{'express.section.authentication.title' | translate}}" icon="bi bi-shield-lock" [divider]="true">
+    <p typography>{{"express.section.authentication.description" | translate}}</p>
 
     <div nz-row [nzGutter]="[16,16]">
-        <app-card class="overflow-auto" nz-col [nzSpan]="24" [nzXs]="24" [nzSm]="24" [nzMd]="12" [nzLg]="12">
-            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select OS">
-                <nz-option nzCustomContent nzLabel="Windows" nzValue="windows">
-                  <span nz-icon nzType="windows"></span>
-                  Windows
-                </nz-option>
-                <nz-option nzCustomContent nzLabel="Mac" nzValue="mac">
-                  <span nz-icon nzType="apple"></span>
-                  Mac
-                </nz-option>
-                <nz-option nzCustomContent nzLabel="Android" nzValue="android">
-                  <span nz-icon nzType="android"></span>
-                  Android
-                </nz-option>
-              </nz-select>
-        </app-card>
-        <app-card class="overflow-auto" nz-col [nzSpan]="24" [nzXs]="24" [nzSm]="24" [nzMd]="12" [nzLg]="12">
-            <!--mostrar un boton o datos en caso de poder acceder-->
-        </app-card>
-    </div>
+        <div nz-col [nzSpan]="24" [nzXs]="24" [nzSm]="24" [nzMd]="12" [nzLg]="12" >
+            <app-card class="overflow-auto" style="min-height: 500px;">
+                <h4 class="fw-bold">{{"express.section.authentication.jwt.title" | translate}}</h4>
+                <p>{{"express.section.authentication.jwt.description" | translate}}</p>
+                <p>{{"express.section.authentication.jwt.howItWorks" | translate}}</p>
+                <ul>
+                    <li>{{"express.section.authentication.jwt.step1" | translate}}</li>
+                    <li>{{"express.section.authentication.jwt.step2" | translate}}</li>
+                    <li>{{"express.section.authentication.jwt.step3" | translate}}</li>
+                </ul>
+                <h4 class="fw-bold">{{"express.section.authentication.passport.title" | translate}}</h4>
+                <p>{{"express.section.authentication.passport.description" | translate}}</p>
+                <p>{{"express.section.authentication.passport.strategies" | translate}}</p>
+                <ul>
+                    <li>{{"express.section.authentication.passport.strategy1" | translate}}</li>
+                    <li>{{"express.section.authentication.passport.strategy2" | translate}}</li>
+                    <li>{{"express.section.authentication.passport.strategy3" | translate}}</li>
+                </ul>
 
+            </app-card>
+        </div>
+        <div nz-col [nzSpan]="24" [nzXs]="24" [nzSm]="24" [nzMd]="12" [nzLg]="12">
+            <app-card class="overflow-auto" style="min-height: 500px;">
+                <h4 class="fw-bold">{{"express.section.authentication.buttons.title" | translate}}</h4>
+
+                <button nz-button nzType="primary" (click)="changeCode(1)">{{'express.section.authentication.buttons.jwtCreation' |translate}}</button>
+                <button nz-button nzType="primary" (click)="changeCode(2)">{{'express.section.authentication.buttons.jwtValidation' |translate}}</button>
+                <button nz-button nzType="primary" (click)="changeCode(3)">{{'express.section.authentication.buttons.localStrategy' |translate}}</button>
+                <button nz-button nzType="primary" (click)="changeCode(4)">{{'express.section.authentication.buttons.loginRoute' |translate}}</button>
+                    <app-markdown [code]="showCode"></app-markdown>
+            </app-card>
+        </div>
+    </div>
 </page-section>
+
+
 <page-section title="{{'express.section.libraries.title' | translate}}" icon="fa fa-puzzle-piece" [divider]="true">
     <div nz-row [nzGutter]="[16,16]">
         <div nz-col [nzSpan]="24" [nzXs]="24" [nzSm]="12" [nzMd]="8" [nzLg]="8" *ngFor="let module of modules">

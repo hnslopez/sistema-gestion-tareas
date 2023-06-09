@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { expressStructureData, routes } from 'src/app/shared/data';
+import { expressStructureData, generateJWT, loginCode, routes, validationPassportJWT, validationPassportLocal } from 'src/app/shared/data';
 import { Library, Route, treeNode } from 'src/app/shared/types';
 
 @Component({
@@ -15,10 +15,32 @@ export class ExpressComponent implements OnInit {
   snippet:any;
   modules: Library[] = [];
 
+  showCode = '';
+
 
   constructor(private translateService: TranslateService) {
   }
 
+  changeCode(value:number):void{
+    switch (value) {
+      case 1:
+          this.showCode = generateJWT;
+        break;
+        case 2:
+          this.showCode = validationPassportJWT;
+        break;
+        case 3:
+          this.showCode = validationPassportLocal;
+        break;
+        case 4:
+          this.showCode = loginCode;
+        break;
+        default:
+        this.showCode = generateJWT;
+        break;
+    }
+
+  }
 
   ngOnInit(): void {
   // Suscripción al cambio de idioma

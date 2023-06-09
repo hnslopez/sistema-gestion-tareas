@@ -1,0 +1,37 @@
+<page-title [dividerTop] ='true'>
+    <h4 class="display-6 fw-bold text-uppercase">{{"project.title" | translate}}</h4>
+    <p class="fs-4">{{"project.description" | translate}}</p>
+</page-title>
+<app-empty>
+    <button nz-button nzType="primary" (click)="open()" >{{"project.project_details.create_button" | translate}}</button>
+<app-drawer [title]="'project.add' | translate" size="large">
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
+    <nz-form-item>
+      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="{{ 'project.form.nameError' | translate }}">
+        <input nz-input formControlName="projectName" id="projectName" [placeholder]="'project.form.name' | translate "/>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="{{ 'project.form.descriptionError' | translate }}">
+        <textarea rows="4" nz-input  formControlName="projectDescription" id="projectDescription" [placeholder]="'project.form.description' | translate ">
+        </textarea>
+      </nz-form-control>
+    </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control [nzSm]="16" [nzXs]="24" nzRequired>
+          <nz-range-picker formControlName="rangePicker"></nz-range-picker>
+        </nz-form-control>
+      </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control>
+        <app-drag-and-drop></app-drag-and-drop>
+      </nz-form-control>
+    </nz-form-item>
+
+  </form>
+</app-drawer>
+</app-empty>

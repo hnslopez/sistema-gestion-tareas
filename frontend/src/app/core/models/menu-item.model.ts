@@ -5,6 +5,9 @@
 */
 
 export interface MenuItem {
-    name: string;
-    route: string;
-  }
+  icon: string;
+  name: string;
+  route: string;
+  tooltip: string;
+}
+

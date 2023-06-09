@@ -5,6 +5,7 @@ import { ExpressComponent } from './features/home/express/express.component';
 import { HomeComponent } from './features/home/main/home.component';
 import { MongodbComponent } from './features/home/mongodb/mongodb.component';
 import { LoginComponent } from './features/auth/login/login.component';
+import { TasksComponent  } from './features/tasks/tasks.component';
 
 const routes: Routes = [
   {
@@ -34,11 +35,22 @@ const routes: Routes = [
     data: { title: 'MongoDB' }
   },
   {
-    path: 'home',
-    pathMatch: 'full',
-    redirectTo: ''
+    path: 'task',
+    //component: TaskListComponent,
+    loadChildren: () => import('./features/tasks/tasks.module').then(m => m.TasksModule),
+    data: { title: 'Tasks' }
+  },
+  {
+    path: 'projects',
+    //component: TaskListComponent,
+    loadChildren: () => import('./features/project/project.module').then(m => m.ProjectModule),
+    data: { title: 'Project' }
+  },
+  {
+    path: '**', // Captura todas las rutas no encontradas
+    redirectTo: '', // Redirige a la página de inicio
+    pathMatch: 'full'
   }
-
 ];
 
 @NgModule({
