@@ -294,7 +294,7 @@
             "error_found": "Error al cargar los datos"
         },
         "spin": {
-            "normal": "Cargando...",
+            "normal": "Cargando Datos...",
             "markdown": "Esperando..."
         },
         "notification": {
@@ -302,6 +302,11 @@
                 "title": "Language Changed",
                 "description": "The language has been successfully changed"
             }
+        },
+        "upload":{
+          "drag":"Arrastra y suelta los archivos aquí",
+          "clickOrDrag":"Haz clic o arrastra los archivos a esta área para subirlos",
+          "prohibitUpload":"Prohibido subir archivos no relacionados con el proyecto"
         }
     },
 
@@ -341,11 +346,13 @@
         "statusCompleted": "Completado",
         "statusPending": "Pendiente",
         "create": "Crear Proyecto",
-        "nameError": "Por favor ingresa un nombre válido.",
-        "descriptionError": "Por favor ingresa una descripción válida.",
+        "nameError": "Por favor ingresa un nombre válido (mínimo 3 caracteres y máximo 50 caracteres).",
+        "descriptionError": "Por favor ingresa una descripción válida (mínimo 10 caracteres y máximo 500 caracteres).",
         "startDateError": "Por favor ingresa una fecha de inicio válida.",
         "endDateError": "Por favor ingresa una fecha de finalización válida.",
-        "managerError": "Por favor ingresa un responsable válido."
+        "managerError": "Por favor ingresa un responsable válido.",
+        "tagError": "Por favor ingresa por lo menos un tag.",
+        "statusError": "Por favor ingresa un estado del proyecto."
       }
   }
   

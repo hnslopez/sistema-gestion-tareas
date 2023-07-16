@@ -61,6 +61,8 @@ import { SearchPipe } from '../shared/pipes/search.pipe';
 import { RibbonComponent } from '../shared/components/ribbon/ribbon.component';
 import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { SelectComponent } from '../shared/components/select/select.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
 
 
 
@@ -84,7 +86,8 @@ import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
     DragAndDropComponent,
     InputComponent,
     SearchPipe,
-    RibbonComponent
+    RibbonComponent,
+    SelectComponent
   ],
   imports: [
     CommonModule,
@@ -131,7 +134,8 @@ import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
     FormsModule,
     NzOverlayModule,
     NzTimePickerModule,
-    NzDatePickerModule
+    NzDatePickerModule,
+    NzTagModule
   ],
   exports: [
     MainTitleComponent,
@@ -185,7 +189,9 @@ import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
     SearchPipe,
     RibbonComponent,
     NzTimePickerModule,
-    NzDatePickerModule
+    NzDatePickerModule,
+    SelectComponent,
+    NzTagModule
   ]
 })
 export class SharedModule { }

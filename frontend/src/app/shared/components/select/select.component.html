@@ -1,0 +1,17 @@
+<ng-container *ngIf="isAsync">
+  <nz-select (nzBlur)="onChangeValue()"  [nzMode]="dataType == 'member' ? 'multiple':'tags'" [nzPlaceHolder]="placeholder" nzAllowClear nzShowSearch nzServerSearch
+    [(ngModel)]="selectedValue" (nzOnSearch)="onSearch($event)">
+    <ng-container *ngFor="let o of optionList">
+      <nz-option *ngIf="!isLoading" [nzValue]="o" [nzLabel]="o"></nz-option>
+    </ng-container>
+    <nz-option *ngIf="isLoading" nzDisabled nzCustomContent>
+      <i nz-icon nzType="loading" class="loading-icon"></i>
+      {{ 'components.spin.normal' | translate }}
+    </nz-option>
+  </nz-select>
+</ng-container>
+
+<ng-container *ngIf="!isAsync">
+  <nz-select [nzPlaceHolder]="placeholder" [(ngModel)]="selectedValue" (ngModelChange)="onChangeValue()" [nzOptions]="valueFor">
+    </nz-select>
+</ng-container>

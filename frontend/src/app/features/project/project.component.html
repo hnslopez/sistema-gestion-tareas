@@ -1,37 +1,77 @@
-<page-title [dividerTop] ='true'>
-    <h4 class="display-6 fw-bold text-uppercase">{{"project.title" | translate}}</h4>
-    <p class="fs-4">{{"project.description" | translate}}</p>
+<page-title [dividerTop]='true'>
+  <h4 class="display-6 fw-bold text-uppercase">{{"project.title" | translate}}</h4>
+  <p class="fs-4">{{"project.description" | translate}}</p>
 </page-title>
 <app-empty>
-    <button nz-button nzType="primary" (click)="open()" >{{"project.project_details.create_button" | translate}}</button>
-<app-drawer [title]="'project.add' | translate" size="large">
-  <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
-
-    <nz-form-item>
-      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="{{ 'project.form.nameError' | translate }}">
-        <input nz-input formControlName="projectName" id="projectName" [placeholder]="'project.form.name' | translate "/>
-      </nz-form-control>
-    </nz-form-item>
-
-    <nz-form-item>
-      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="{{ 'project.form.descriptionError' | translate }}">
-        <textarea rows="4" nz-input  formControlName="projectDescription" id="projectDescription" [placeholder]="'project.form.description' | translate ">
-        </textarea>
-      </nz-form-control>
-    </nz-form-item>
+  <button nz-button nzType="primary" (click)="open()">{{"project.project_details.create_button" | translate}}</button>
+  <app-drawer [title]="'project.add' | translate" size="large">
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
 
       <nz-form-item>
-        <nz-form-control [nzSm]="16" [nzXs]="24" nzRequired>
-          <nz-range-picker formControlName="rangePicker"></nz-range-picker>
+        <nz-form-control [nzSm]="24" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.nameError' | translate }}">
+          <input nz-input formControlName="projectName" id="projectName"
+            [placeholder]="'project.form.name' | translate " />
         </nz-form-control>
       </nz-form-item>
 
-    <nz-form-item>
-      <nz-form-control>
-        <app-drag-and-drop></app-drag-and-drop>
-      </nz-form-control>
-    </nz-form-item>
+      <nz-form-item>
+        <nz-form-control [nzSm]="24" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.descriptionError' | translate }}">
+          <nz-textarea-count [nzMaxCharacterCount]="500">
+            <textarea rows="4" nz-input formControlName="projectDescription" id="projectDescription"
+            [placeholder]="'project.form.description' | translate ">
+        </textarea>
+          </nz-textarea-count>
+        </nz-form-control>
+      </nz-form-item>
 
-  </form>
-</app-drawer>
+      <nz-form-item nz-row [nzGutter]="16">
+        <nz-form-control   [nzSm]="12" [nzXs]="24"nzRequired nzErrorTip="{{ 'project.form.startDateError' | translate }}">
+          <nz-date-picker style="width: 100%" formControlName="rangePickerStart" [(ngModel)]="startValue" formControlName="rangePickerStart"  id="rangePickerStart"  [nzDisabledDate]="disabledStartDate" nzFormat="yyyy-MM-dd"
+             nzPlaceHolder="{{'project.form.startDate' | translate }}"></nz-date-picker>
+        </nz-form-control>
+        <nz-form-control  [nzSm]="12" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.endDateError' | translate }}">
+          <nz-date-picker style="width: 100%" formControlName="rangePickerEnd" [(ngModel)]="endValue" formControlName="rangePickerEnd"  id="rangePickerEnd" #endDatePicker [nzDisabledDate]="disabledEndDate"
+          nzFormat="yyyy-MM-dd" 
+          nzPlaceHolder="{{'project.form.endDate' | translate }}"></nz-date-picker>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control [nzSm]="24" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.managerError' | translate }}">
+        <app-select placeholder="{{ 'project.form.manager' | translate }}" formControlName="projectManager"  id="projectManager"></app-select>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control [nzSm]="24" [nzXs]="24">
+          <app-select placeholder="{{ 'project.form.members' | translate }}" formControlName="projectMembers"  id="projectMembers"></app-select>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control [nzSm]="24" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.tagError' | translate }}">
+          <app-select placeholder="{{ 'project.form.tags' | translate }}" formControlName="projectTag"  id="projectTag"></app-select>
+        </nz-form-control>
+      </nz-form-item>
+      
+      <nz-form-item>
+        <nz-form-control [nzSm]="24" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.statusError' | translate }}">
+          <app-select placeholder="{{ 'project.form.status' | translate }}" [isAsync]='false' formControlName="projectStatus"  id="projectStatus">
+          </app-select>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+          <app-drag-and-drop></app-drag-and-drop>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item nz-row>
+        <nz-form-control [nzSpan]="24">
+          <button nz-button nzType="primary" nzBlock>{{ 'project.form.create' | translate }}</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </app-drawer>
 </app-empty>
