@@ -12,6 +12,10 @@ export class ImgCardComponent implements OnInit {
   @Input() alt!: string;
   @Input() route?: string;
   @Input() loading?: boolean;
+  @Input() footer?: boolean = false;
+  @Input() size?: number;
+  @Input() extra?: boolean;
+
   constructor() { }
 
   ngOnInit(): void {

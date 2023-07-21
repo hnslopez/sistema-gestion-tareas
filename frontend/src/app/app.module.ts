@@ -40,7 +40,6 @@ registerLocaleData(es);
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

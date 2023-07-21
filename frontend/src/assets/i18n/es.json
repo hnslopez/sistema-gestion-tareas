@@ -1,247 +1,245 @@
 {
-    "header": {
-        "title": "Sistema de Gestión de Tareas",
-        "user": {
-            "dropdown": {
-                "profile": {
-                    "title": "Perfil",
-                    "view": "Ver perfil",
-                    "edit": "Editar perfil",
-                    "myAccount": "Mi cuenta",
-                    "notifications": "Notificaciones",
-                    "recentActivity": "Actividad reciente"
-                },
-                "settings": {
-                    "title": "Configuración",
-                    "changePassword": "Cambiar contraseña",
-                    "preferences": "Preferencias",
-                    "privacy": "Privacidad",
-                    "security": "Seguridad"
-                },
-                "help": {
-                    "title": "Ayuda",
-                    "faq": "Preguntas frecuentes",
-                    "documentation": "Documentación"
-                },
-                "logout": "Cerrar sesión"
-            }
+  "header": {
+    "title": "Sistema de Gestión de Tareas",
+    "user": {
+      "dropdown": {
+        "profile": {
+          "title": "Perfil",
+          "view": "Ver perfil",
+          "edit": "Editar perfil",
+          "myAccount": "Mi cuenta",
+          "notifications": "Notificaciones",
+          "recentActivity": "Actividad reciente"
         },
-        "search": "Buscar..."
+        "settings": {
+          "title": "Configuración",
+          "changePassword": "Cambiar contraseña",
+          "preferences": "Preferencias",
+          "privacy": "Privacidad",
+          "security": "Seguridad"
+        },
+        "help": {
+          "title": "Ayuda",
+          "faq": "Preguntas frecuentes",
+          "documentation": "Documentación"
+        },
+        "logout": "Cerrar sesión"
+      }
     },
-    "home": {
-        "title": "Sistema de Gestión",
-        "description": "Este sistema te permitirá administrar y hacer un seguimiento de tus tareas de manera efectiva y eficiente, ademas de otras funcionalidades.",
-        "button_repositoty": "REPOSITORIO",
-        "information": {
-            "express": "Utilize Express como framework de backend para crear y gestionar las rutas utilizando un API RESTful.",
-            "angular": "Angular se empleó para desarrollar la interfaz de usuario, con componentes reutilizables y un enrutador para una navegación fluida.",
-            "mongodb": "MongoDB como base de datos NoSQL para almacenar los datos de las tareas y usuarios."
-        }
-    },
-    "tasks": {
-        "title": "Lista de Tareas",
-        "add": "Agregar Tarea",
-        "edit": "Editar Tarea",
-        "delete": "Eliminar Tarea",
-        "completed": "Tarea completada",
-        "not_completed": "Tarea no completada",
-        "no_tasks": "No hay tareas agregadas todavía.",
-        "form": {
-            "name": "Nombre",
-            "description": "Descripción",
-            "due_date": "Fecha de Vencimiento",
-            "completed": "Completada"
-        }
-    },
-    "angular": {
-        "title": "Angular",
-        "description": "En este proyecto de gestión de tareas, se eligió Angular por sus ventajas para el desarrollo de aplicaciones complejas y porque ofrece una amplia gama de herramientas y funcionalidades que permiten una mejor gestión de los datos y una interfaz de usuario más amigable junto con NG-ZORRO.",
-        "section": {
-            "structure": {
-                "title": "Estructura del proyecto",
-                "description": "En el árbol de vista se pueden encontrar los archivos de la aplicación de frontend. Por su parte, la 'ventana' muestra el código correspondiente al archivo seleccionado en el árbol de vista, permitiendo una fácil visualización y comprensión de su estructura y funcionalidad."
-            },
-            "Internationalization": {
-                "title": "Internacionalización",
-                "description": "Administra la localización de idioma y las traducciones en tu aplicación.",
-                "language": {
-                    "es": "Español",
-                    "en": "Ingles"
-                },
-                "button": "English"
-            },
-            "libraries": {
-                "title": "Librerías utilizadas",
-                "description": "La sección de librerías enumera las librerías o frameworks utilizados en la aplicación de frontend. Estas librerías proporcionan funcionalidades adicionales, utilidades o herramientas que mejoran el proceso de desarrollo y permiten una implementación de código eficiente.",
-                "components":[
-                    {
-                      "name": "auth0/angular-jwt",
-                      "description": "Wrapper de Angular para la utilidad de decodificación de JWT en https://github.com/auth0/angular2-jwt."
-                    },
-                    {
-                      "name": "fortawesome/fontawesome-free",
-                      "description": "Una librería de iconos gratuitos para utilizar con el conjunto de iconos de FontAwesome."
-                    },
-                    {
-                      "name": "ngrx/effects",
-                      "description": "Una librería para manejar efectos secundarios y acciones asíncronas en NgRx."
-                    },
-                    {
-                      "name": "ngrx/router-store",
-                      "description": "Una librería para integrar el enrutador de Angular con NgRx."
-                    },
-                    {
-                      "name": "ngrx/store-devtools",
-                      "description": "Un conjunto de herramientas de desarrollo para depurar e inspeccionar el almacén de NgRx."
-                    },
-                    {
-                      "name": "ngrx/store",
-                      "description": "Una librería de gestión de estado para aplicaciones de Angular basada en Redux."
-                    },
-                    {
-                      "name": "ngx-translate/core",
-                      "description": "Una librería para implementar internacionalización (i18n) en aplicaciones de Angular."
-                    },
-                    {
-                      "name": "ngx-translate/http-loader",
-                      "description": "Un cargador Http para ngx-translate para cargar traducciones desde un servidor."
-                    },
-                    {
-                      "name": "Bootstrap",
-                      "description": "Un popular framework CSS para construir páginas web responsivas y diseñadas para dispositivos móviles."
-                    },
-                    {
-                      "name": "Iconos de Bootstrap",
-                      "description": "Un conjunto de iconos gratuitos y de código abierto diseñados para funcionar con Bootstrap."
-                    },
-                    {
-                      "name": "ng-zorro-antd",
-                      "description": "Una biblioteca de componentes de interfaz de usuario para Angular basada en Ant Design"
-                    }
-                  ]
-                  
-            }
-        }
-    },
-    "express": {
-        "title": "Express",
-        "description": "Express es un potente framework de Node.js utilizado en nuestro sistema de gestión para construir aplicaciones web robustas y escalables. Proporciona una variedad de características y capacidades que mejoran el proceso de desarrollo y permiten un manejo eficiente de las solicitudes y respuestas.",
-        "section": {
-          "structure":{
-            "title": "Estructura del proyecto",
-            "description": "En el árbol de vista se pueden encontrar los archivos de la aplicación del backend. Por su parte, la 'ventana' muestra el código correspondiente al archivo seleccionado en el árbol de vista, permitiendo una fácil visualización y comprensión de su estructura y funcionalidad."
+    "search": "Buscar..."
+  },
+  "home": {
+    "title": "Sistema de Gestión",
+    "description": "Este sistema te permitirá administrar y hacer un seguimiento de tus tareas de manera efectiva y eficiente, ademas de otras funcionalidades.",
+    "button_repositoty": "REPOSITORIO",
+    "information": {
+      "express": "Utilize Express como framework de backend para crear y gestionar las rutas utilizando un API RESTful.",
+      "angular": "Angular se empleó para desarrollar la interfaz de usuario, con componentes reutilizables y un enrutador para una navegación fluida.",
+      "mongodb": "MongoDB como base de datos NoSQL para almacenar los datos de las tareas y usuarios."
+    }
+  },
+  "tasks": {
+    "title": "Lista de Tareas",
+    "add": "Agregar Tarea",
+    "edit": "Editar Tarea",
+    "delete": "Eliminar Tarea",
+    "completed": "Tarea completada",
+    "not_completed": "Tarea no completada",
+    "no_tasks": "No hay tareas agregadas todavía.",
+    "form": {
+      "name": "Nombre",
+      "description": "Descripción",
+      "due_date": "Fecha de Vencimiento",
+      "completed": "Completada"
+    }
+  },
+  "angular": {
+    "title": "Angular",
+    "description": "En este proyecto de gestión de tareas, se eligió Angular por sus ventajas para el desarrollo de aplicaciones complejas y porque ofrece una amplia gama de herramientas y funcionalidades que permiten una mejor gestión de los datos y una interfaz de usuario más amigable junto con NG-ZORRO.",
+    "section": {
+      "structure": {
+        "title": "Estructura del proyecto",
+        "description": "En el árbol de vista se pueden encontrar los archivos de la aplicación de frontend. Por su parte, la 'ventana' muestra el código correspondiente al archivo seleccionado en el árbol de vista, permitiendo una fácil visualización y comprensión de su estructura y funcionalidad."
+      },
+      "Internationalization": {
+        "title": "Internacionalización",
+        "description": "Administra la localización de idioma y las traducciones en tu aplicación.",
+        "language": {
+          "es": "Español",
+          "en": "Ingles"
+        },
+        "button": "English"
+      },
+      "libraries": {
+        "title": "Librerías utilizadas",
+        "description": "La sección de librerías enumera las librerías o frameworks utilizados en la aplicación de frontend. Estas librerías proporcionan funcionalidades adicionales, utilidades o herramientas que mejoran el proceso de desarrollo y permiten una implementación de código eficiente.",
+        "components": [
+          {
+            "name": "auth0/angular-jwt",
+            "description": "Wrapper de Angular para la utilidad de decodificación de JWT en https://github.com/auth0/angular2-jwt."
           },
-            "libraries": {
-                "title":"Librerías utilizadas",
-                "components":[
-                        {
-                          "name": "bcrypt",
-                          "description": "bcrypt es una biblioteca utilizada para el hash seguro de contraseñas. Proporciona una implementación robusta del algoritmo de hash bcrypt."
-                        },
-                        {
-                          "name": "bcryptjs",
-                          "description": "bcryptjs es una implementación de JavaScript del algoritmo de hash bcrypt. Ofrece una forma simple y directa de hacer hash a las contraseñas."
-                        },
-                        {
-                          "name": "body-parser",
-                          "description": "body-parser es un middleware que analiza los cuerpos de las solicitudes entrantes en un formato compatible con los middlewares. Simplifica el manejo de los datos de las solicitudes HTTP."
-                        },
-                        {
-                          "name": "cookie-parser",
-                          "description": "cookie-parser es un middleware utilizado para analizar cookies en Node.js. Facilita la lectura y manipulación de cookies en las solicitudes y respuestas HTTP."
-                        },
-                        {
-                          "name": "cors",
-                          "description": "cors es un middleware que permite el intercambio de recursos de origen cruzado (CORS) en aplicaciones Express. Permite el acceso controlado a recursos desde diferentes orígenes."
-                        },
-                        {
-                          "name": "dotenv",
-                          "description": "dotenv es un módulo sin dependencias que carga variables de entorno desde un archivo .env en el objeto process.env. Simplifica la gestión de los valores de configuración."
-                        },
-                        {
-                          "name": "express",
-                          "description": "express es un framework rápido, sin opiniones y minimalista para aplicaciones web en Node.js. Proporciona un conjunto robusto de características para construir aplicaciones web y APIs."
-                        },
-                        {
-                          "name": "express-rate-limit",
-                          "description": "express-rate-limit es un middleware que permite establecer límites de velocidad en aplicaciones Express. Ayuda a proteger contra solicitudes abusivas o maliciosas limitando el número de solicitudes por IP o usuario."
-                        },
-                        {
-                          "name": "i18n",
-                          "description": "i18n es una biblioteca que facilita la internacionalización (i18n) y localización (l10n) en aplicaciones Node.js. Proporciona herramientas para gestionar traducciones y admitir múltiples idiomas."
-                        },
-                        {
-                          "name": "jsonwebtoken",
-                          "description": "jsonwebtoken es una biblioteca para generar y verificar JSON Web Tokens (JWT) en Node.js. Permite una comunicación y autenticación seguras entre partes mediante el uso de tokens firmados digitalmente."
-                        },
-                        {
-                          "name": "mongoose",
-                          "description": "mongoose es una herramienta de modelado de objetos para Node.js y MongoDB. Proporciona una forma sencilla de interactuar con bases de datos MongoDB y definir esquemas de datos."
-                        },
-                        {
-                          "name": "morgan",
-                          "description": "morgan es un middleware de registro para aplicaciones Express. Registra las solicitudes HTTP y proporciona información detallada sobre cada solicitud, como el método HTTP, la URL y el estado de respuesta."
-                        },
-                        {
-                          "name": "nodemon",
-                          "description": "nodemon es una utilidad que reinicia automáticamente la aplicación de Node.js cuando se detectan cambios en los archivos. Mejora el flujo de desarrollo al eliminar la necesidad de reinicios manuales."
-                        },{
-                            "name": "passport",
-                            "description": "passport es un middleware de autenticación para Node.js. Proporciona una forma flexible y modular de implementar estrategias de autenticación, como nombre de usuario/contraseña, OAuth y JWT."
-        
-                        },{
-                            "name": "passport-jwt",
-                            "description": "passport-jwt es una estrategia de Passport para autenticarse con JSON Web Tokens (JWT). Permite autenticar y autorizar solicitudes validando el JWT presente en los encabezados o cookies de la solicitud."
-        
-                        },{
-                            "name": "passport-local",
-                            "description": "passport-local es una estrategia de Passport para autenticarse con un nombre de usuario y contraseña. Proporciona una forma sencilla y personalizable de autenticar usuarios contra una base de datos local u cualquier otra fuente de datos."
-        
-                        }
-                      
-                ]
-            },
-            "routes":{
-              "title":"Rutas de Express",
-              "description":"A continuación se muestra una lista de todas las rutas disponibles en el backend de Express y sus métodos correspondientes:",
-              "table":{
-                "method":"Metodo",
-                "router":"Ruta",
-                "description":"Descripción"
-              }
-            },
-            "authentication": {
-              "title": "Autenticación",
-              "description": "Esta sección explica el proceso de autenticación en el sistema.",
-              "jwt": {
-                "title": "JSON Web Token (JWT)",
-                "description": "JWT es un estándar abierto para la creación de tokens de acceso seguro. Permite autenticar y autorizar solicitudes en el sistema.",
-                "howItWorks": "Cómo funciona JWT:",
-                "step1": "El cliente inicia sesión y envía sus credenciales al servidor.",
-                "step2": "El servidor verifica las credenciales y genera un JWT único que contiene la información de autenticación.",
-                "step3": "El servidor envía el JWT al cliente, quien lo almacenará y lo enviará en cada solicitud protegida.",
-                "protectedRoutes": "Rutas protegidas con JWT:",
-                "unprotectedRoutes": "Rutas no protegidas con JWT:"
-              },
-              "passport": {
-                "title": "Passport",
-                "description": "Passport es un middleware de autenticación flexible para Node.js. Proporciona una forma sencilla de autenticar las solicitudes en el sistema.",
-                "strategies": "Estrategias de autenticación disponibles:",
-                "strategy1": "passport-local: autenticación basada en nombre de usuario y contraseña.",
-                "strategy2": "passport-jwt: autenticación basada en JSON Web Tokens (JWT).",
-                "strategy3": "passport: autenticación basada en otras estrategias personalizadas.",
-                "howToUse": "Cómo usar Passport en el sistema:"
-              },
-              "buttons": {
-                "title":"Código de autenticación JWT y Passport",
-                "jwtCreation": "Creación de JWT",
-                "jwtValidation": "Validación de JWT",
-                "localStrategy": "LocalStrategy",
-                "loginRoute": "Ruta de Logín"
-              }
-            }
+          {
+            "name": "fortawesome/fontawesome-free",
+            "description": "Una librería de iconos gratuitos para utilizar con el conjunto de iconos de FontAwesome."
+          },
+          {
+            "name": "ngrx/effects",
+            "description": "Una librería para manejar efectos secundarios y acciones asíncronas en NgRx."
+          },
+          {
+            "name": "ngrx/router-store",
+            "description": "Una librería para integrar el enrutador de Angular con NgRx."
+          },
+          {
+            "name": "ngrx/store-devtools",
+            "description": "Un conjunto de herramientas de desarrollo para depurar e inspeccionar el almacén de NgRx."
+          },
+          {
+            "name": "ngrx/store",
+            "description": "Una librería de gestión de estado para aplicaciones de Angular basada en Redux."
+          },
+          {
+            "name": "ngx-translate/core",
+            "description": "Una librería para implementar internacionalización (i18n) en aplicaciones de Angular."
+          },
+          {
+            "name": "ngx-translate/http-loader",
+            "description": "Un cargador Http para ngx-translate para cargar traducciones desde un servidor."
+          },
+          {
+            "name": "Bootstrap",
+            "description": "Un popular framework CSS para construir páginas web responsivas y diseñadas para dispositivos móviles."
+          },
+          {
+            "name": "Iconos de Bootstrap",
+            "description": "Un conjunto de iconos gratuitos y de código abierto diseñados para funcionar con Bootstrap."
+          },
+          {
+            "name": "ng-zorro-antd",
+            "description": "Una biblioteca de componentes de interfaz de usuario para Angular basada en Ant Design"
+          }
+        ]
+      }
+    }
+  },
+  "express": {
+    "title": "Express",
+    "description": "Express es un potente framework de Node.js utilizado en nuestro sistema de gestión para construir aplicaciones web robustas y escalables. Proporciona una variedad de características y capacidades que mejoran el proceso de desarrollo y permiten un manejo eficiente de las solicitudes y respuestas.",
+    "section": {
+      "structure": {
+        "title": "Estructura del proyecto",
+        "description": "En el árbol de vista se pueden encontrar los archivos de la aplicación del backend. Por su parte, la 'ventana' muestra el código correspondiente al archivo seleccionado en el árbol de vista, permitiendo una fácil visualización y comprensión de su estructura y funcionalidad."
+      },
+      "libraries": {
+        "title": "Librerías utilizadas",
+        "components": [
+          {
+            "name": "bcrypt",
+            "description": "bcrypt es una biblioteca utilizada para el hash seguro de contraseñas. Proporciona una implementación robusta del algoritmo de hash bcrypt."
+          },
+          {
+            "name": "bcryptjs",
+            "description": "bcryptjs es una implementación de JavaScript del algoritmo de hash bcrypt. Ofrece una forma simple y directa de hacer hash a las contraseñas."
+          },
+          {
+            "name": "body-parser",
+            "description": "body-parser es un middleware que analiza los cuerpos de las solicitudes entrantes en un formato compatible con los middlewares. Simplifica el manejo de los datos de las solicitudes HTTP."
+          },
+          {
+            "name": "cookie-parser",
+            "description": "cookie-parser es un middleware utilizado para analizar cookies en Node.js. Facilita la lectura y manipulación de cookies en las solicitudes y respuestas HTTP."
+          },
+          {
+            "name": "cors",
+            "description": "cors es un middleware que permite el intercambio de recursos de origen cruzado (CORS) en aplicaciones Express. Permite el acceso controlado a recursos desde diferentes orígenes."
+          },
+          {
+            "name": "dotenv",
+            "description": "dotenv es un módulo sin dependencias que carga variables de entorno desde un archivo .env en el objeto process.env. Simplifica la gestión de los valores de configuración."
+          },
+          {
+            "name": "express",
+            "description": "express es un framework rápido, sin opiniones y minimalista para aplicaciones web en Node.js. Proporciona un conjunto robusto de características para construir aplicaciones web y APIs."
+          },
+          {
+            "name": "express-rate-limit",
+            "description": "express-rate-limit es un middleware que permite establecer límites de velocidad en aplicaciones Express. Ayuda a proteger contra solicitudes abusivas o maliciosas limitando el número de solicitudes por IP o usuario."
+          },
+          {
+            "name": "i18n",
+            "description": "i18n es una biblioteca que facilita la internacionalización (i18n) y localización (l10n) en aplicaciones Node.js. Proporciona herramientas para gestionar traducciones y admitir múltiples idiomas."
+          },
+          {
+            "name": "jsonwebtoken",
+            "description": "jsonwebtoken es una biblioteca para generar y verificar JSON Web Tokens (JWT) en Node.js. Permite una comunicación y autenticación seguras entre partes mediante el uso de tokens firmados digitalmente."
+          },
+          {
+            "name": "mongoose",
+            "description": "mongoose es una herramienta de modelado de objetos para Node.js y MongoDB. Proporciona una forma sencilla de interactuar con bases de datos MongoDB y definir esquemas de datos."
+          },
+          {
+            "name": "morgan",
+            "description": "morgan es un middleware de registro para aplicaciones Express. Registra las solicitudes HTTP y proporciona información detallada sobre cada solicitud, como el método HTTP, la URL y el estado de respuesta."
+          },
+          {
+            "name": "nodemon",
+            "description": "nodemon es una utilidad que reinicia automáticamente la aplicación de Node.js cuando se detectan cambios en los archivos. Mejora el flujo de desarrollo al eliminar la necesidad de reinicios manuales."
+          },
+          {
+            "name": "passport",
+            "description": "passport es un middleware de autenticación para Node.js. Proporciona una forma flexible y modular de implementar estrategias de autenticación, como nombre de usuario/contraseña, OAuth y JWT."
+          },
+          {
+            "name": "passport-jwt",
+            "description": "passport-jwt es una estrategia de Passport para autenticarse con JSON Web Tokens (JWT). Permite autenticar y autorizar solicitudes validando el JWT presente en los encabezados o cookies de la solicitud."
+          },
+          {
+            "name": "passport-local",
+            "description": "passport-local es una estrategia de Passport para autenticarse con un nombre de usuario y contraseña. Proporciona una forma sencilla y personalizable de autenticar usuarios contra una base de datos local u cualquier otra fuente de datos."
+          }
+        ]
+      },
+      "routes": {
+        "title": "Rutas de Express",
+        "description": "A continuación se muestra una lista de todas las rutas disponibles en el backend de Express y sus métodos correspondientes:",
+        "table": {
+          "method": "Metodo",
+          "router": "Ruta",
+          "description": "Descripción"
         }
-    },  
+      },
+      "authentication": {
+        "title": "Autenticación",
+        "description": "Esta sección explica el proceso de autenticación en el sistema.",
+        "jwt": {
+          "title": "JSON Web Token (JWT)",
+          "description": "JWT es un estándar abierto para la creación de tokens de acceso seguro. Permite autenticar y autorizar solicitudes en el sistema.",
+          "howItWorks": "Cómo funciona JWT:",
+          "step1": "El cliente inicia sesión y envía sus credenciales al servidor.",
+          "step2": "El servidor verifica las credenciales y genera un JWT único que contiene la información de autenticación.",
+          "step3": "El servidor envía el JWT al cliente, quien lo almacenará y lo enviará en cada solicitud protegida.",
+          "protectedRoutes": "Rutas protegidas con JWT:",
+          "unprotectedRoutes": "Rutas no protegidas con JWT:"
+        },
+        "passport": {
+          "title": "Passport",
+          "description": "Passport es un middleware de autenticación flexible para Node.js. Proporciona una forma sencilla de autenticar las solicitudes en el sistema.",
+          "strategies": "Estrategias de autenticación disponibles:",
+          "strategy1": "passport-local: autenticación basada en nombre de usuario y contraseña.",
+          "strategy2": "passport-jwt: autenticación basada en JSON Web Tokens (JWT).",
+          "strategy3": "passport: autenticación basada en otras estrategias personalizadas.",
+          "howToUse": "Cómo usar Passport en el sistema:"
+        },
+        "buttons": {
+          "title": "Código de autenticación JWT y Passport",
+          "jwtCreation": "Creación de JWT",
+          "jwtValidation": "Validación de JWT",
+          "localStrategy": "LocalStrategy",
+          "loginRoute": "Ruta de Logín"
+        }
+      }
+    }
+  },
   "mongodb": {
     "title": "MongoDB",
     "description": " Este proyecto utiliza MongoDB como una base de datos NoSQL para el almacenamiento y gestión eficiente de datos.",
@@ -255,12 +253,12 @@
       "dataModeling": {
         "title": "Modelado de datos",
         "description": "El modelado de datos en MongoDB implica el diseño de la estructura de los documentos y las relaciones entre ellos.",
-          "items": [
-            "Para almacenar las tareas, se creó una colección llamada 'tasks' en MongoDB",
-            "Cada tarea se representó como un documento JSON en la colección 'tasks'.",
-            "Los campos del documento incluyen 'title' (título de la tarea), 'description' (descripción de la tarea), 'assignee' (responsable de la tarea) y 'comments' (comentarios asociados a la tarea)."
-          ],
-          "example": "Ejemplo de modelado de datos en MongoDB para las tareas:"
+        "items": [
+          "Para almacenar las tareas, se creó una colección llamada 'tasks' en MongoDB",
+          "Cada tarea se representó como un documento JSON en la colección 'tasks'.",
+          "Los campos del documento incluyen 'title' (título de la tarea), 'description' (descripción de la tarea), 'assignee' (responsable de la tarea) y 'comments' (comentarios asociados a la tarea)."
+        ],
+        "example": "Ejemplo de modelado de datos en MongoDB para las tareas:"
       },
       "basicOperations": {
         "title": "Operaciones básicas",
@@ -268,92 +266,130 @@
       }
     }
   },
-    "login": {
-        "title": "Iniciar sesión",
-        "username": "Nombre de usuario",
-        "password": "Contraseña",
-        "forgot_password": "¿Olvidaste tu contraseña?",
-        "button_login": "Ingresar",
-        "form_errors": {
-            "required": "Por favor, complete este campo.",
-            "minlength": "Este campo requiere un mínimo de {{minlength}} caracteres."
-        }
+  "login": {
+    "title": "Iniciar sesión",
+    "username": "Nombre de usuario",
+    "password": "Contraseña",
+    "forgot_password": "¿Olvidaste tu contraseña?",
+    "button_login": "Ingresar",
+    "form_errors": {
+      "required": "Por favor, complete este campo.",
+      "minlength": "Este campo requiere un mínimo de {{minlength}} caracteres."
+    }
+  },
+  "settings": {
+    "title": "Configuración",
+    "language": "Idioma",
+    "theme": {
+      "dark": "Modo Oscuro",
+      "default": "Modo Claro"
     },
-    "settings": {
-        "title": "Configuración",
-        "language": "Idioma",
-        "theme": {
-            "dark": "Modo Oscuro",
-            "default": "Modo Claro"
-        },
-        "save": "Guardar"
+    "save": "Guardar"
+  },
+  "components": {
+    "empty": {
+      "no_data": "No hay datos",
+      "error_found": "Error al cargar los datos"
     },
-    "components": {
-        "empty": {
-            "no_data": "No hay datos",
-            "error_found": "Error al cargar los datos"
-        },
-        "spin": {
-            "normal": "Cargando Datos...",
-            "markdown": "Esperando..."
-        },
-        "notification": {
-            "changeLanguage": {
-                "title": "Language Changed",
-                "description": "The language has been successfully changed"
-            }
-        },
-        "upload":{
-          "drag":"Arrastra y suelta los archivos aquí",
-          "clickOrDrag":"Haz clic o arrastra los archivos a esta área para subirlos",
-          "prohibitUpload":"Prohibido subir archivos no relacionados con el proyecto"
-        }
+    "spin": {
+      "normal": "Cargando Datos...",
+      "markdown": "Esperando..."
     },
-
-    "project": {
-      "title": "Proyectos",
-      "description": "En esta sección podrás ver y administrar tus proyectos. Explora la lista de proyectos y accede a su información detallada para realizar un seguimiento de su progreso y tareas asociadas.",
-      "add": "Agregar Proyecto",
-      "edit": "Editar Proyecto",
-      "delete": "Eliminar Proyecto",
-      "no_projects": "No hay proyectos agregados todavía.",
-      "project_details": {
-          "title": "Detalles del Proyecto",
-          "name": "Nombre",
-          "description": "Descripción",
-          "start_date": "Fecha de Inicio",
-          "create_button": "Crear Proyecto",
-          "no_projects": "Aún no has creado ningún proyecto.",      
-          "end_date": "Fecha de Finalización",
-          "status": "Estado",
-          "tasks": "Tareas",
-          "team_members": "Miembros del Equipo",
-          "progress": "Progreso",
-          "completed": "Completado",
-          "in_progress": "En Progreso",
-          "not_started": "No Iniciado"
+    "notification": {
+      "changeLanguage": {
+        "title": "Language Changed",
+        "description": "The language has been successfully changed"
       },
-      "form": {
-        "name": "Nombre",
-        "description": "Descripción",
-        "startDate": "Fecha de Inicio",
-        "endDate": "Fecha de Finalización",
-        "manager": "Responsable",
-        "members": "Miembros del Equipo",
-        "tags": "Etiquetas",
-        "status": "Estado",
-        "statusInProgress": "En Progreso",
-        "statusCompleted": "Completado",
-        "statusPending": "Pendiente",
-        "create": "Crear Proyecto",
-        "nameError": "Por favor ingresa un nombre válido (mínimo 3 caracteres y máximo 50 caracteres).",
-        "descriptionError": "Por favor ingresa una descripción válida (mínimo 10 caracteres y máximo 500 caracteres).",
-        "startDateError": "Por favor ingresa una fecha de inicio válida.",
-        "endDateError": "Por favor ingresa una fecha de finalización válida.",
-        "managerError": "Por favor ingresa un responsable válido.",
-        "tagError": "Por favor ingresa por lo menos un tag.",
-        "statusError": "Por favor ingresa un estado del proyecto."
+      "fileUpload": {
+        "start": "Iniciando carga de archivos...",
+        "uploading": "Cargando archivos...",
+        "success": "Carga de archivos exitosa.",
+        "error": "Se produjo un error durante la carga de archivos."
+      },
+      "dataLoadingForm": {
+        "start_project": "Ingresando nuevo proyecto.",
+        "loading": "Cargando...",
+        "submitSuccess": "Proyecto ingresado exitosamente.",
+        "submitError": "Se produjo un error al cargar los datos del proyecto."
       }
+    },
+    "upload": {
+      "drag": "Arrastra y suelta los archivos aquí",
+      "clickOrDrag": "Haz clic o arrastra los archivos a esta área para subirlos",
+      "prohibitUpload": "Prohibido subir archivos no relacionados con el proyecto"
+    },
+    "input":{
+      "find_by_project_name":"Buscar proyectos por nombre"
+    }
+  },
+"project": {
+  "catalogs_projects": "Catálogo de Proyectos",
+  "update_projects": "Proyectos Actualizados Recientemente",  
+  "completed_projects": "Proyectos Completados",
+  "in_progress_projects": "Proyectos en Proceso",
+  "pending_projects": "Proyectos Pendientes",
+  "title": "Proyectos",
+  "description": "En esta sección podrás ver y administrar tus proyectos. Explora la lista de proyectos y accede a su información detallada para realizar un seguimiento de su progreso y tareas asociadas.",
+  "add": "Agregar Proyecto",
+  "view": "Ver",
+  "edit": "Editar",
+  "delete": "Eliminar",
+  "archive": "Archivar",
+  "copy_link": "Copiar Link del Proyecto",
+  "no_projects": "No hay proyectos agregados todavía.",
+  "project_details": {
+    "title": "Detalles del Proyecto",
+    "details":"Detalles",
+    "errors":"Errores",
+    "name": "Nombre",
+    "description": "Descripción",
+    "start_date": "Fecha de Inicio",
+    "create_button": "Crear Proyecto",
+    "no_projects": "Aún no has creado ningún proyecto.",
+    "end_date": "Fecha de Finalización",
+    "status": "Estado",
+    "tasks": "Tareas",
+    "team_members": "Miembros del Equipo",
+    "completed": "Completado",
+    "in_progress": "En Progreso",
+    "pending": "Pendiente",
+    "on_hold": "En Espera",
+    "cancelled": "Cancelado",
+    "delayed": "Retrasado",
+    "archived": "Archivado",
+    "open":"Abierto",
+    "paused": "Pausado",
+    "under_review": "Bajo Revisión",
+    "notes":"Notas",
+    "jobs":"Tareas",
+    "high":"Alta",
+    "medium":"Media",
+    "low":"Baja",
+    "priority":"prioridad"
+  },
+  "members":{
+    "active":"Activo"
+  },
+    "form": {
+      "name": "Nombre",
+      "description": "Descripción",
+      "startDate": "Fecha de Inicio",
+      "endDate": "Fecha de Finalización",
+      "manager": "Responsable",
+      "members": "Miembros del Equipo",
+      "tags": "Etiquetas",
+      "status": "Estado",
+      "statusInProgress": "En Progreso",
+      "statusCompleted": "Completado",
+      "statusPending": "Pendiente",
+      "create": "Crear Proyecto",
+      "nameError": "Por favor ingresa un nombre válido (mínimo 3 caracteres y máximo 50 caracteres).",
+      "descriptionError": "Por favor ingresa una descripción válida (mínimo 10 caracteres y máximo 500 caracteres).",
+      "startDateError": "Por favor ingresa una fecha de inicio válida.",
+      "endDateError": "Por favor ingresa una fecha de finalización válida.",
+      "managerError": "Por favor ingresa un responsable válido.",
+      "tagError": "Por favor ingresa por lo menos un tag.",
+      "statusError": "Por favor ingresa un estado del proyecto."
+    }
   }
-  
 }

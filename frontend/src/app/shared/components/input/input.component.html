@@ -1,7 +1,8 @@
-<nz-input-group [nzSuffix]="cleaner? inputClearTpl : ''" [nzPrefix]="icon?prefixTemplateSearch: ''"   [ngClass]="{'ant-input-borderless': borderless}">
-  <input nz-input [type]="type" [(ngModel)]="inputValue" [nzStatus]="status ?? ''" [placeholder]="placeholder" *ngIf="autoComplete" [nzAutocomplete]="autoComplete"/>
-  <input nz-input [type]="type" [(ngModel)]="inputValue" [nzStatus]="status ?? ''" [placeholder]="placeholder" *ngIf="!autoComplete"/>
-    </nz-input-group>
+<nz-input-group [nzSuffix]="cleaner ? inputClearTpl : ''" [nzPrefix]="icon ? prefixTemplateSearch : ''" [ngClass]="{'ant-input-borderless': borderless}">
+  <input nz-input [type]="type" [ngModel]="inputValue" [nzStatus]="status ?? ''" [placeholder]="placeholder" *ngIf="autoComplete" [nzAutocomplete]="autoComplete" (ngModelChange)="onInputChange($event)" />
+  <input nz-input [type]="type" [ngModel]="inputValue" [nzStatus]="status ?? ''" [placeholder]="placeholder" *ngIf="!autoComplete" (ngModelChange)="onInputChange($event)" />
+</nz-input-group>
+
   <ng-template  #prefixTemplateSearch><span nz-icon [nzType]="icon || ''"></span></ng-template>
   <ng-template #inputClearTpl>
     <span
@@ -10,7 +11,8 @@
       nzTheme="fill"
       nzType="close-circle"
       *ngIf="inputValue"
-      (click)="inputValue = null"
+      (click)="clearSearch()"
+
     ></span>
   </ng-template>
   <ng-content></ng-content>

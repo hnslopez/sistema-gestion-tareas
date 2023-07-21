@@ -2,76 +2,302 @@
   <h4 class="display-6 fw-bold text-uppercase">{{"project.title" | translate}}</h4>
   <p class="fs-4">{{"project.description" | translate}}</p>
 </page-title>
-<app-empty>
-  <button nz-button nzType="primary" (click)="open()">{{"project.project_details.create_button" | translate}}</button>
-  <app-drawer [title]="'project.add' | translate" size="large">
-    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+<nz-skeleton [nzLoading]="loadingSkeleton">
 
-      <nz-form-item>
-        <nz-form-control [nzSm]="24" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.nameError' | translate }}">
-          <input nz-input formControlName="projectName" id="projectName"
-            [placeholder]="'project.form.name' | translate " />
-        </nz-form-control>
-      </nz-form-item>
+  <ng-container *ngIf="dataFull.length == 0; else Content">
+    <app-empty contentText="project.no_projects">
+      <button nz-button nzType="primary" (click)="open()">{{ 'project.project_details.create_button' | translate
+        }}</button>
+    </app-empty>
+  </ng-container>
 
-      <nz-form-item>
-        <nz-form-control [nzSm]="24" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.descriptionError' | translate }}">
-          <nz-textarea-count [nzMaxCharacterCount]="500">
-            <textarea rows="4" nz-input formControlName="projectDescription" id="projectDescription"
+  <ng-template #Content>
+    <page-section [collapse]="false" icon="fas fa-briefcase" title="{{ 'project.catalogs_projects' | translate }}">
+      <ng-container extra>
+        <nz-space nz-row>
+          <div *nzSpaceItem nz-col [nzXs]="24">
+            <app-input [borderless]="true" [(inputValue)]="searchText" [cleaner]='true' icon='search'
+              [placeholder]=" 'components.input.find_by_project_name' | translate"></app-input>
+          </div>
+          <div *nzSpaceItem nz-col [nzXs]="24">
+            <app-select [size]="150" [(ngModel)]="searchStatus" [isAsync]="false" placeholder="Ordenar por "
+              [valueFor]="projectStatusOptions"></app-select>
+
+          </div>
+          <div *nzSpaceItem nz-col [nzXs]="24">
+            <button nz-button nzType="primary" (click)="open()">{{ 'project.project_details.create_button' |
+              translate}}</button>
+
+          </div>
+        </nz-space>
+      </ng-container>
+      <div nz-row [nzGutter]="[16,16]">
+        <ng-container *ngFor="let value of data | search: searchText : searchStatus">
+          <div nz-col [nzSpan]="12" [nzXs]="24" [nzSm]="24" [nzMd]="12" [nzLg]="8" [nzXl]="6">
+            <!--TODO: NOMBRE DE CARD DEFORMAN EN MODO MOVILE-->
+            <img-card [title]="value.projectName" [footer]="true" [extra]="true">
+
+              <ng-container description>
+                <p nz-typography nzEllipsis nzEllipsisRows="3" nzType="secondary" class="text-limit">
+                  {{value.projectDescription}}
+                </p>
+              </ng-container>
+
+              <ng-container extra>
+                <nz-tag [nzColor]="getColorByStatus(value.projectStatus)">
+                  {{ 'project.project_details.'+value.projectStatus | translate}}
+                </nz-tag>
+
+              </ng-container>
+              Progreso
+              <nz-progress [nzStatus]="getStatusProgress(value.projectStatus)"
+                [nzPercent]="value.progress.percentageComplete" nzSize="small"></nz-progress>
+
+              <ng-container task>
+                <button nz-button nz-dropdown nzTrigger="click" nzPlacement="topLeft" [nzDropdownMenu]="menuList"
+                  nzType="text">
+                  <span nz-icon nzType="ordered-list"></span>
+                </button>
+                <nz-dropdown-menu #menuList="nzDropdownMenu">
+                  <img-card class="description-overflow" [size]="350"
+                    [title]="'project.project_details.notes' | translate">
+                    <div class="description-overflow">
+                      <nz-comment   *ngFor="let note of value.notes" [nzAuthor]="note.author" [nzDatetime]="(note.createdDate | date: 'dd/MM/yyyy' ) ?? ''" >
+                        <nz-comment-content>
+                          <p>{{ note.content }}</p>
+                        </nz-comment-content>
+                      </nz-comment>
+                    </div>
+                  </img-card>
+                </nz-dropdown-menu>
+              </ng-container>
+              <ng-container details>
+                <button nz-button nz-dropdown nzTrigger="click" nzPlacement="topCenter" [nzDropdownMenu]="menuDetails"
+                  nzType="text">
+                  <span nz-icon nzType="info-circle" nzTheme="outline"></span>
+                </button>
+                <nz-dropdown-menu #menuDetails="nzDropdownMenu">
+                  <img-card class="description-overflow" [size]="350" [title]="value.projectName">
+                    <ng-container description>
+                      <div class="d-flex align-items-center">
+                        <span nz-icon nzType="calendar" nzTheme="outline"></span>
+                        <nz-divider nzType="vertical"></nz-divider>
+                        {{ value.rangePickerStart | date: 'dd/MM/yyyy' }}
+                      </div>
+                      <p nz-typography nzType="secondary">
+                        {{ value.projectDescription }}
+                      </p>
+                    </ng-container>
+                    <nz-tabset nzCentered>
+                      <nz-tab [nzTitle]="'project.project_details.details' | translate ">
+                        <nz-descriptions [nzTitle]="'project.project_details.title' | translate" nzColon="false"
+                          nzLayout="vertical" [nzColumn]="1">
+                          <nz-descriptions-item nzTitle="Fecha de finalización">
+                            <div class="d-flex align-items-center">
+                              <span nz-icon nzType="calendar" nzTheme="outline"></span>
+                              <nz-divider nzType="vertical"></nz-divider>
+
+                              {{ value.rangePickerEnd | date: 'dd/MM/yyyy' }}
+                            </div>
+                          </nz-descriptions-item>
+
+                          <nz-descriptions-item nzTitle="Encargado del proyecto">
+                            <div class="d-flex flex-wrap">
+                              <a class="ps-0" nz-button nzType="link">@{{ value.projectManager }}</a>
+
+                            </div>
+                          </nz-descriptions-item>
+                          <nz-descriptions-item nzTitle="Miembros del equipo">
+                            <div class="d-flex flex-wrap">
+                              <a class="ps-0" *ngFor="let members of value.projectMembers" nz-button nzType="link">@{{
+                                members }}</a>
+                            </div>
+                          </nz-descriptions-item>
+                          <nz-descriptions-item nzTitle="Etiquetas del proyecto" class="d-flex">
+                            <div class="d-flex flex-wrap">
+                              <nz-tag class="mb-2" nzMode="default" nzColor="#00000000"
+                                *ngFor="let tag of value.projectTag">
+                                {{ tag }}
+                              </nz-tag>
+                            </div>
+                          </nz-descriptions-item>
+                          <nz-descriptions-item nzTitle="Presupuesto">
+                            <div class="d-flex flex-column">
+                              <div class="d-flex align-items-center">
+                                <span nz-typography nzType="success" class="me-2">$ {{ value.budget.totalAmount
+                                  }}</span>
+                                <span nz-typography nzType="secondary">Presupuesto total</span>
+                              </div>
+                              <div class="d-flex align-items-center">
+                                <span nz-typography nzType="danger" class="me-2">$ {{ value.budget.spentAmount }}</span>
+                                <span nz-typography nzType="secondary">Presupuesto gastado</span>
+                              </div>
+                            </div>
+                          </nz-descriptions-item>
+                        </nz-descriptions>
+                      </nz-tab>
+                      <nz-tab [nzTitle]="'project.project_details.jobs' | translate">
+                        <!-- Contenido de la pestaña "Tareas" -->
+                        <div class="description-overflow pt-2">
+                          <nz-timeline>
+                          <nz-timeline-item  *ngFor="let task of value.progress.milestones">
+                            <nz-tag  nzColor="success" *ngIf="task.completed">
+                              {{ 'project.project_details.completed' | translate }}</nz-tag>
+
+                            <nz-tag  nzColor="blue"  *ngIf="!task.completed">
+                              <div class="d-flex align-items-center">
+                                <span nz-icon nzType="calendar" nzTheme="outline"></span>
+                                <nz-divider nzType="vertical"></nz-divider>
+                                {{ task.expectedCompletionDate | date: 'dd/MM/yyyy' }}
+                              </div>                              
+                              </nz-tag>
+
+                            <nz-tag  nzColor="blue"  *ngIf="!task.completed"> {{ 'project.project_details.in_progress' | translate }}</nz-tag>
+                              <br>
+                            {{ task.name }}
+                          </nz-timeline-item>
+                        </nz-timeline>
+
+                        </div>
+
+                      </nz-tab>
+                      <nz-tab [nzTitle]="'project.project_details.errors' | translate ">
+                        <!-- Contenido de la pestaña "Historial" -->
+                        <div class="description-overflow pt-2">
+                          <nz-timeline>
+                            <nz-timeline-item *ngFor="let item of value.issues">
+                              <nz-tag  [nzColor]="getColorByStatus(item.status)">{{ 'project.project_details.'+item.status | translate }}</nz-tag>
+                              <nz-tag  [nzColor]="getColorByPriority(item.priority)">
+                                {{ 'project.project_details.priority' | translate }} {{ 'project.project_details.'+item.priority | translate }}</nz-tag>
+                                <br>
+                              {{ item.description }}</nz-timeline-item>
+                          </nz-timeline>
+                        </div>
+                      </nz-tab>
+                    </nz-tabset>
+
+                  </img-card>
+
+                </nz-dropdown-menu>
+              </ng-container>
+
+              <ng-container options>
+                <button nz-button nz-dropdown nzTrigger="click" nzPlacement="topLeft" [nzDropdownMenu]="menu"
+                  nzType="text">
+                  <span nz-icon nzType="ellipsis"></span>
+                </button>
+                <nz-dropdown-menu #menu="nzDropdownMenu">
+                  <ul nz-menu>
+                    <li nz-menu-item>
+                      <i nz-icon nzType="eye"></i>
+                      <span class="action-text">{{'project.view' | translate }}</span>
+                    </li>
+                    <li nz-menu-item>
+                      <i nz-icon nzType="edit"></i>
+                      <span class="action-text">{{'project.edit' | translate }}</span>
+                    </li>
+                    <li nz-menu-item>
+                      <i class="fa fa-archive" aria-hidden="true"></i>
+                      <span class="action-text">{{'project.archive' | translate }}</span>
+                    </li>
+
+                    <li nz-menu-item>
+                      <i nz-icon nzType="link"></i>
+                      <span class="action-text">{{'project.copy_link' | translate }}</span>
+                    </li>
+
+                    <li nz-menu-divider></li>
+
+                    <li nz-menu-item>
+                      <i nz-icon nzType="delete"></i>
+                      <span class="action-text">{{'project.delete' | translate }}</span>
+                    </li>
+
+                  </ul>
+                </nz-dropdown-menu>
+              </ng-container>
+            </img-card>
+          </div>
+        </ng-container>
+      </div>
+    </page-section>
+    <nz-pagination [nzPageIndex]="pageIndex" [nzTotal]="totalItems"></nz-pagination>
+  </ng-template>
+</nz-skeleton>
+<app-drawer [title]="'project.add' | translate" size="large">
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
+    <nz-form-item>
+      <nz-form-control [nzSm]="24" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.nameError' | translate }}">
+        <input nz-input formControlName="projectName" id="projectName"
+          [placeholder]="'project.form.name' | translate " />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control [nzSm]="24" [nzXs]="24" nzRequired
+        nzErrorTip="{{ 'project.form.descriptionError' | translate }}">
+        <nz-textarea-count [nzMaxCharacterCount]="500">
+          <textarea rows="4" nz-input formControlName="projectDescription" id="projectDescription"
             [placeholder]="'project.form.description' | translate ">
-        </textarea>
-          </nz-textarea-count>
-        </nz-form-control>
-      </nz-form-item>
+      </textarea>
+        </nz-textarea-count>
+      </nz-form-control>
+    </nz-form-item>
 
-      <nz-form-item nz-row [nzGutter]="16">
-        <nz-form-control   [nzSm]="12" [nzXs]="24"nzRequired nzErrorTip="{{ 'project.form.startDateError' | translate }}">
-          <nz-date-picker style="width: 100%" formControlName="rangePickerStart" [(ngModel)]="startValue" formControlName="rangePickerStart"  id="rangePickerStart"  [nzDisabledDate]="disabledStartDate" nzFormat="yyyy-MM-dd"
-             nzPlaceHolder="{{'project.form.startDate' | translate }}"></nz-date-picker>
-        </nz-form-control>
-        <nz-form-control  [nzSm]="12" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.endDateError' | translate }}">
-          <nz-date-picker style="width: 100%" formControlName="rangePickerEnd" [(ngModel)]="endValue" formControlName="rangePickerEnd"  id="rangePickerEnd" #endDatePicker [nzDisabledDate]="disabledEndDate"
-          nzFormat="yyyy-MM-dd" 
-          nzPlaceHolder="{{'project.form.endDate' | translate }}"></nz-date-picker>
-        </nz-form-control>
-      </nz-form-item>
+    <nz-form-item nz-row [nzGutter]="16">
+      <nz-form-control [nzSm]="12" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.startDateError' | translate }}">
+        <nz-date-picker style="width: 100%" formControlName="rangePickerStart" [(ngModel)]="startValue"
+          formControlName="rangePickerStart" id="rangePickerStart" [nzDisabledDate]="disabledStartDate"
+          nzFormat="yyyy-MM-dd" nzPlaceHolder="{{'project.form.startDate' | translate }}"></nz-date-picker>
+      </nz-form-control>
+      <nz-form-control [nzSm]="12" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.endDateError' | translate }}">
+        <nz-date-picker style="width: 100%" formControlName="rangePickerEnd" [(ngModel)]="endValue"
+          formControlName="rangePickerEnd" id="rangePickerEnd" #endDatePicker [nzDisabledDate]="disabledEndDate"
+          nzFormat="yyyy-MM-dd" nzPlaceHolder="{{'project.form.endDate' | translate }}"></nz-date-picker>
+      </nz-form-control>
+    </nz-form-item>
 
-      <nz-form-item>
-        <nz-form-control [nzSm]="24" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.managerError' | translate }}">
-        <app-select placeholder="{{ 'project.form.manager' | translate }}" formControlName="projectManager"  id="projectManager"></app-select>
-        </nz-form-control>
-      </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzSm]="24" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.managerError' | translate }}">
+        <app-select placeholder="{{ 'project.form.manager' | translate }}" formControlName="projectManager"
+          id="projectManager"></app-select>
+      </nz-form-control>
+    </nz-form-item>
 
-      <nz-form-item>
-        <nz-form-control [nzSm]="24" [nzXs]="24">
-          <app-select placeholder="{{ 'project.form.members' | translate }}" formControlName="projectMembers"  id="projectMembers"></app-select>
-        </nz-form-control>
-      </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzSm]="24" [nzXs]="24">
+        <app-select placeholder="{{ 'project.form.members' | translate }}" formControlName="projectMembers"
+          id="projectMembers"></app-select>
+      </nz-form-control>
+    </nz-form-item>
 
-      <nz-form-item>
-        <nz-form-control [nzSm]="24" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.tagError' | translate }}">
-          <app-select placeholder="{{ 'project.form.tags' | translate }}" formControlName="projectTag"  id="projectTag"></app-select>
-        </nz-form-control>
-      </nz-form-item>
-      
-      <nz-form-item>
-        <nz-form-control [nzSm]="24" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.statusError' | translate }}">
-          <app-select placeholder="{{ 'project.form.status' | translate }}" [isAsync]='false' formControlName="projectStatus"  id="projectStatus">
-          </app-select>
-        </nz-form-control>
-      </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzSm]="24" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.tagError' | translate }}">
+        <app-select placeholder="{{ 'project.form.tags' | translate }}" formControlName="projectTag"
+          id="projectTag"></app-select>
+      </nz-form-control>
+    </nz-form-item>
 
-      <nz-form-item>
-        <nz-form-control>
-          <app-drag-and-drop></app-drag-and-drop>
-        </nz-form-control>
-      </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzSm]="24" [nzXs]="24" nzRequired nzErrorTip="{{ 'project.form.statusError' | translate }}">
+        <app-select placeholder="{{ 'project.form.status' | translate }}" [isAsync]='false'
+          formControlName="projectStatus" id="projectStatus">
+        </app-select>
+      </nz-form-control>
+    </nz-form-item>
 
-      <nz-form-item nz-row>
-        <nz-form-control [nzSpan]="24">
-          <button nz-button nzType="primary" nzBlock>{{ 'project.form.create' | translate }}</button>
-        </nz-form-control>
-      </nz-form-item>
-    </form>
-  </app-drawer>
-</app-empty>
+    <nz-form-item>
+      <nz-form-control>
+        <app-drag-and-drop></app-drag-and-drop>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item nz-row>
+      <nz-form-control [nzSpan]="24">
+        <button nz-button nzType="primary" nzBlock [nzLoading]="isLoading" [disabled]="!validateForm.valid">{{
+          'project.form.create' | translate }}</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</app-drawer>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit,Output, EventEmitter } from '@angular/core';
 import { NzAutocompleteComponent } from 'ng-zorro-antd/auto-complete';
 
 @Component({
@@ -7,7 +7,7 @@ import { NzAutocompleteComponent } from 'ng-zorro-antd/auto-complete';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
-  @Input() inputValue!:string | null;
+  @Input() inputValue!:string;
   @Input() cleaner?:boolean = false;
   @Input() icon?:string;
   @Input() placeholder?:string='';
@@ -16,9 +16,20 @@ export class InputComponent implements OnInit {
   @Input() borderless?:boolean = false;
   @Input() type?:string = 'text';
 
+  @Output() inputValueChange = new EventEmitter<string>();
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onInputChange(value: string): void {
+    this.inputValueChange.emit(value);
+  }
+
+  clearSearch(): void {
+    this.inputValue = ''; // Limpiar el campo de búsqueda
+    this.inputValueChange.emit('');
+  }
 }

@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 import { catchError, debounceTime, map, switchMap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { SelectOption } from '../../types/app-select.type';
 
 @Component({
   selector: 'app-select',
@@ -21,11 +22,11 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
   @Input() dataType!: "tag" | "member";
   @Input() placeholder!: string;
   @Input() isAsync?: boolean = true;
-  @Input() valueFor: { value: string; label: string }[] = [
-    { value: '1', label: '1' },
-    { value: '1', label: '2' },
+  @Input() size?: number;
 
-  ];
+  @Input() valueFor: SelectOption[] = [];
+
+
 
   isLoading = false;
   randomUserUrl = 'https://api.randomuser.me/?results=5';
@@ -67,7 +68,6 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
   }
 
   onChangeValue(): void {
-    console.log(this.selectedValue)
     this.onChange(this.selectedValue);
     this.onTouched();
   }
@@ -75,7 +75,6 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
   // Métodos de ControlValueAccessor
 
   writeValue(value: any): void {
-    console.log(value)
     this.selectedValue = value;
   }
 

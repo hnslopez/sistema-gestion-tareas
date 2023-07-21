@@ -93,7 +93,8 @@ export const submenuItems: MenuSection[] = [
             },
             {
               icon: 'bi bi-folder2-open',
-              name: 'Ver Proyectos'
+              name: 'Ver Proyectos',
+              routerLink:['projects']
             },
             {
               icon: 'bi bi-archive',

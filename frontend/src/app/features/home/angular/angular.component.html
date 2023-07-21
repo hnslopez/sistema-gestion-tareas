@@ -80,8 +80,13 @@
 <page-section title="{{'angular.section.libraries.title' | translate}}" icon="fa fa-puzzle-piece" [divider]="true">
     <div nz-row [nzGutter]="[16,16]">
         <div nz-col [nzSpan]="24" [nzXs]="24" [nzSm]="12" [nzMd]="8" [nzLg]="8" *ngFor="let module of modules">
-            <img-card [title]="module.name | translate"
-                [description]="module.description | translate"></img-card>
+            <img-card [title]="module.name | translate">
+                <ng-container description>
+                    <p nz-typography nzEllipsis nzEllipsisRows="3" nzType="secondary" class="text-limit">
+                        {{module.description  | translate}}
+                      </p>
+                </ng-container>
+            </img-card>
         </div>
     </div>
 </page-section>

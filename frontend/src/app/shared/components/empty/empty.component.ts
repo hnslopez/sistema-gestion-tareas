@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EmptyComponent implements OnInit {
 
-  @Input() contentText: string = 'project.no_projects';
+  @Input() contentText!: string;
 
   constructor() { }
 

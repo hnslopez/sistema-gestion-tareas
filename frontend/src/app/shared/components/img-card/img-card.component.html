@@ -1,6 +1,26 @@
-<nz-card nzHoverable class="mb-3 g-0 h-100" [nzCover]="coverTemplate" [routerLink]="route">
-    <nz-card-meta [nzTitle]="title" [nzDescription]="description"></nz-card-meta>
+<nz-card nzHoverable class="h-100" [nzTitle]="extra?title: undefined" [style.width.px]="size ? size : null" [nzExtra]="extra?extraTemplate : undefined"
+[nzCover]="coverTemplate" [routerLink]="route" [nzActions]="footer?[actionTask, actionDetails, actionEllipsis]: []">
+    <nz-card-meta [nzTitle]="!extra? title:null" [nzDescription]="descriptionTemplate"></nz-card-meta>
+    <ng-content></ng-content>
     <ng-template #coverTemplate>
       <img nz-image alt="{{ alt }}" [src]="imageUrl" />
     </ng-template>
   </nz-card>
+
+  <ng-template #descriptionTemplate>
+    <ng-content select="[description]"></ng-content>
+  </ng-template>
+
+  <ng-template #extraTemplate>
+    <ng-content select="[extra]"></ng-content>
+  </ng-template>
+
+  <ng-template #actionTask>
+    <ng-content select="[task]"></ng-content>
+  </ng-template>
+  <ng-template #actionDetails>
+    <ng-content select="[details]"></ng-content>
+  </ng-template>
+  <ng-template #actionEllipsis>
+      <ng-content select="[options]"></ng-content>
+  </ng-template>

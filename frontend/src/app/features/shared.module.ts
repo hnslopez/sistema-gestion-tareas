@@ -28,6 +28,7 @@ import { LoginFormComponent } from '../shared/components/exclusive/login-form/lo
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { SectionComponent } from '../shared/components/section/section.component';
 import { NzTreeViewModule } from 'ng-zorro-antd/tree-view';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 
 import { TreeViewComponent } from '../shared/components/tree-view/tree-view.component';
 import { MarkdownComponent } from '../shared/components/markdown/markdown.component';
@@ -63,7 +64,12 @@ import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { SelectComponent } from '../shared/components/select/select.component';
 import { NzTagModule } from 'ng-zorro-antd/tag';
-
+import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { NzTimelineModule } from 'ng-zorro-antd/timeline';
+import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzCommentModule } from 'ng-zorro-antd/comment';
 
 
 @NgModule({
@@ -135,7 +141,14 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
     NzOverlayModule,
     NzTimePickerModule,
     NzDatePickerModule,
-    NzTagModule
+    NzTagModule,
+    NzMessageModule,
+    NzSkeletonModule,
+    NzProgressModule,
+    NzTimelineModule,
+    NzDescriptionsModule,
+    NzPaginationModule,
+    NzCommentModule
   ],
   exports: [
     MainTitleComponent,
@@ -191,7 +204,15 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
     NzTimePickerModule,
     NzDatePickerModule,
     SelectComponent,
-    NzTagModule
+    NzTagModule,
+    NzMessageModule,
+    NzSkeletonModule,
+    ImgCardComponent,
+    NzProgressModule,
+    NzTimelineModule,
+    NzDescriptionsModule,
+    NzPaginationModule,
+    NzCommentModule
   ]
 })
 export class SharedModule { }

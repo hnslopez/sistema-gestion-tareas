@@ -13,33 +13,45 @@
             <div class="col">
                 <img-card
                 title="FRONTEND"
-                [description]="'home.information.angular' | translate"
                 [imageUrl]="'/assets/image/angular.png'"
                 route="/angular"
                 alt="angular"
                 [loading]="loading"
-              ></img-card> 
+              >
+            <ng-container description>
+              <p nz-typography nzEllipsis nzEllipsisRows="3" nzType="secondary" class="text-limit">
+                {{'home.information.angular'  | translate}}
+              </p>
+            </ng-container>
+            </img-card> 
             </div>
             <div class="col">
                 <img-card
                 title="BACKEND"
-                [description]="'home.information.express' | translate"
                 [imageUrl]="'/assets/image/express.png'"
                 route="/express"
                 alt="express"
-                [loading]="loading"
-
-              ></img-card> 
+                [loading]="loading">
+                <ng-container description>
+                  <p nz-typography nzEllipsis nzEllipsisRows="3" nzType="secondary" class="text-limit">
+                    {{'home.information.express'  | translate}}
+                  </p>
+                </ng-container>
+            </img-card> 
             </div>
             <div class="col">
                 <img-card
                 title="DATABASE"
-                [description]="'home.information.mongodb' | translate"
                 [imageUrl]="'/assets/image/mongodb.png'"
                 route="/mongodb"
                 alt="mongodb"
-                [loading]="loading"
-              ></img-card> 
+                [loading]="loading">
+                <ng-container description>
+                  <p nz-typography nzEllipsis nzEllipsisRows="3" nzType="secondary" class="text-limit">
+                    {{'home.information.mongodb'  | translate}}
+                  </p>
+                </ng-container>
+            </img-card> 
             </div>
         </div>
     </div>
