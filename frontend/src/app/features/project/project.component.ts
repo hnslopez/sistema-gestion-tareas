@@ -30,7 +30,7 @@ export class ProjectComponent implements OnInit {
   data:any;
   dataFull:any;
   searchText:string ='';
-  searchStatus:string = '';
+  searchStatus:string[] = [];
   projectStatusOptions: SelectOption[] = [
     { value: ProjectStatus.Completed, label: 'Completado' },
     { value: ProjectStatus.InProgress, label: 'En Progreso' },

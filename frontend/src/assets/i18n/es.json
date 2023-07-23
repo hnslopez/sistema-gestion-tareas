@@ -319,7 +319,8 @@
       "prohibitUpload": "Prohibido subir archivos no relacionados con el proyecto"
     },
     "input":{
-      "find_by_project_name":"Buscar proyectos por nombre"
+      "find_by_project_name":"Buscar proyectos por nombre",
+      "order_by":"Ordenar Por..."
     }
   },
 "project": {
@@ -338,6 +339,7 @@
   "copy_link": "Copiar Link del Proyecto",
   "no_projects": "No hay proyectos agregados todavía.",
   "project_details": {
+    "progress":"Progreso",
     "title": "Detalles del Proyecto",
     "details":"Detalles",
     "errors":"Errores",

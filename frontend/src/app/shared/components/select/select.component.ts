@@ -23,6 +23,7 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
   @Input() placeholder!: string;
   @Input() isAsync?: boolean = true;
   @Input() size?: number;
+  @Input() multiple?: boolean = false;
 
   @Input() valueFor: SelectOption[] = [];
 
@@ -39,6 +40,11 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
   onTouched: any = (_:any) => {};
 
   constructor(private http: HttpClient) {}
+
+  isNotSelected(value: string): boolean {
+    return this.optionList.indexOf(value) === -1;
+  }
+
 
   ngOnInit(): void {
     const getRandomNameList = (name: string): Observable<any> =>

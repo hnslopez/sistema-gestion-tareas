@@ -1,6 +1,10 @@
 <page-title [dividerTop]='true'>
   <h4 class="display-6 fw-bold text-uppercase">{{"project.title" | translate}}</h4>
   <p class="fs-4">{{"project.description" | translate}}</p>
+  <div >
+    <button nz-button nzType="primary" (click)="open()">{{ 'project.project_details.create_button' |
+      translate}}</button>
+  </div>
 </page-title>
 <nz-skeleton [nzLoading]="loadingSkeleton">
 
@@ -13,29 +17,27 @@
 
   <ng-template #Content>
     <page-section [collapse]="false" icon="fas fa-briefcase" title="{{ 'project.catalogs_projects' | translate }}">
-      <ng-container extra>
-        <nz-space nz-row>
-          <div *nzSpaceItem nz-col [nzXs]="24">
-            <app-input [borderless]="true" [(inputValue)]="searchText" [cleaner]='true' icon='search'
+
+      <div extra nz-row [nzGutter]="[16,16]">
+        <div nz-col [nzSpan]="0" [nzXs]="0" [nzSm]="0" [nzMd]="0" [nzLg]="0"  [nzXl]="6">
+          
+        </div>
+          <div nz-col [nzSpan]="12" [nzXs]="24" [nzSm]="24" [nzMd]="12" [nzLg]="6" [nzXl]="6">
+            <app-input  style="width: 100%;" [borderless]="true" [(inputValue)]="searchText" [cleaner]='true' icon='search'
               [placeholder]=" 'components.input.find_by_project_name' | translate"></app-input>
           </div>
-          <div *nzSpaceItem nz-col [nzXs]="24">
-            <app-select [size]="150" [(ngModel)]="searchStatus" [isAsync]="false" placeholder="Ordenar por "
+          <div nz-col [nzSpan]="12" [nzXs]="24" [nzSm]="24" [nzMd]="12" [nzLg]="12" [nzXl]="12">
+            <app-select [multiple]="true"  style="width: 100%;" [size]="150" [(ngModel)]="searchStatus" [isAsync]="false" [placeholder]=" 'components.input.order_by' | translate "
               [valueFor]="projectStatusOptions"></app-select>
 
           </div>
-          <div *nzSpaceItem nz-col [nzXs]="24">
-            <button nz-button nzType="primary" (click)="open()">{{ 'project.project_details.create_button' |
-              translate}}</button>
 
-          </div>
-        </nz-space>
-      </ng-container>
+      </div> 
       <div nz-row [nzGutter]="[16,16]">
         <ng-container *ngFor="let value of data | search: searchText : searchStatus">
           <div nz-col [nzSpan]="12" [nzXs]="24" [nzSm]="24" [nzMd]="12" [nzLg]="8" [nzXl]="6">
             <!--TODO: NOMBRE DE CARD DEFORMAN EN MODO MOVILE-->
-            <img-card [title]="value.projectName" [footer]="true" [extra]="true">
+            <img-card [title]="value.projectName" [footer]="true" [extra]="true" nz-col  >
 
               <ng-container description>
                 <p nz-typography nzEllipsis nzEllipsisRows="3" nzType="secondary" class="text-limit">
@@ -49,7 +51,7 @@
                 </nz-tag>
 
               </ng-container>
-              Progreso
+              {{ 'project.project_details.progress' | translate}}
               <nz-progress [nzStatus]="getStatusProgress(value.projectStatus)"
                 [nzPercent]="value.progress.percentageComplete" nzSize="small"></nz-progress>
 
@@ -62,7 +64,8 @@
                   <img-card class="description-overflow" [size]="350"
                     [title]="'project.project_details.notes' | translate">
                     <div class="description-overflow">
-                      <nz-comment   *ngFor="let note of value.notes" [nzAuthor]="note.author" [nzDatetime]="(note.createdDate | date: 'dd/MM/yyyy' ) ?? ''" >
+                      <nz-comment *ngFor="let note of value.notes" [nzAuthor]="note.author"
+                        [nzDatetime]="(note.createdDate | date: 'dd/MM/yyyy' ) ?? ''">
                         <nz-comment-content>
                           <p>{{ note.content }}</p>
                         </nz-comment-content>
@@ -140,23 +143,24 @@
                         <!-- Contenido de la pestaña "Tareas" -->
                         <div class="description-overflow pt-2">
                           <nz-timeline>
-                          <nz-timeline-item  *ngFor="let task of value.progress.milestones">
-                            <nz-tag  nzColor="success" *ngIf="task.completed">
-                              {{ 'project.project_details.completed' | translate }}</nz-tag>
+                            <nz-timeline-item *ngFor="let task of value.progress.milestones">
+                              <nz-tag nzColor="success" *ngIf="task.completed">
+                                {{ 'project.project_details.completed' | translate }}</nz-tag>
 
-                            <nz-tag  nzColor="blue"  *ngIf="!task.completed">
-                              <div class="d-flex align-items-center">
-                                <span nz-icon nzType="calendar" nzTheme="outline"></span>
-                                <nz-divider nzType="vertical"></nz-divider>
-                                {{ task.expectedCompletionDate | date: 'dd/MM/yyyy' }}
-                              </div>                              
+                              <nz-tag nzColor="blue" *ngIf="!task.completed">
+                                <div class="d-flex align-items-center">
+                                  <span nz-icon nzType="calendar" nzTheme="outline"></span>
+                                  <nz-divider nzType="vertical"></nz-divider>
+                                  {{ task.expectedCompletionDate | date: 'dd/MM/yyyy' }}
+                                </div>
                               </nz-tag>
 
-                            <nz-tag  nzColor="blue"  *ngIf="!task.completed"> {{ 'project.project_details.in_progress' | translate }}</nz-tag>
+                              <nz-tag nzColor="blue" *ngIf="!task.completed"> {{ 'project.project_details.in_progress' |
+                                translate }}</nz-tag>
                               <br>
-                            {{ task.name }}
-                          </nz-timeline-item>
-                        </nz-timeline>
+                              {{ task.name }}
+                            </nz-timeline-item>
+                          </nz-timeline>
 
                         </div>
 
@@ -166,11 +170,19 @@
                         <div class="description-overflow pt-2">
                           <nz-timeline>
                             <nz-timeline-item *ngFor="let item of value.issues">
-                              <nz-tag  [nzColor]="getColorByStatus(item.status)">{{ 'project.project_details.'+item.status | translate }}</nz-tag>
-                              <nz-tag  [nzColor]="getColorByPriority(item.priority)">
-                                {{ 'project.project_details.priority' | translate }} {{ 'project.project_details.'+item.priority | translate }}</nz-tag>
-                                <br>
-                              {{ item.description }}</nz-timeline-item>
+                              <nz-tag [nzColor]="getColorByStatus(item.status)">{{
+                                'project.project_details.'+item.status | translate }}</nz-tag>
+                              <nz-tag [nzColor]="getColorByPriority(item.priority)">
+                                {{ 'project.project_details.priority' | translate }} {{
+                                'project.project_details.'+item.priority | translate }}</nz-tag>
+                              <br>
+                              {{ item.description }}
+                              <br>
+                              <div class="d-flex flex-wrap">
+                                <a class="ps-0" nz-button nzType="link">@{{ item.assignedTo }}</a>
+                              </div>
+                            </nz-timeline-item>
+
                           </nz-timeline>
                         </div>
                       </nz-tab>

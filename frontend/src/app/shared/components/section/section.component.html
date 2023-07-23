@@ -23,14 +23,14 @@
       </nz-collapse>
   </div>
   <div class="pb-5" *ngIf="!collapse">
-      <div style="padding: 12px 16px;" class="wrap d-md-flex justify-content-center" >
-          <span nz-typography class="icon-text">
+      <div style="padding: 12px 16px;" class="wrap d-flex justify-content-between" >
+          <span nz-typography class="icon-text col-6">
               <span nz-icon *ngIf="icon"><i class="{{icon}}"></i></span>
               <nz-divider nzType="vertical"></nz-divider>
               <h4 nz-typography class="mb-2">{{title}}</h4>
               <ng-content select="description"></ng-content>
           </span>
-          <div class="content-wrapper">
+          <div class="content-wrapper col-6">
             <ng-container *ngTemplateOutlet="extraContent"></ng-container>
           </div>
       </div>

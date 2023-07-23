@@ -36,3 +36,9 @@ app-select {
 nz-descriptions{
   height: 250px;overflow: auto;
 }
+
+:host ::ng-deep .ant-card-head-title{
+  max-width: 185px;
+}
+
+

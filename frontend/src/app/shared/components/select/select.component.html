@@ -11,7 +11,7 @@
   </nz-select>
 </ng-container>
 
-<ng-container *ngIf="!isAsync">
-  <nz-select [nzPlaceHolder]="placeholder" [style.width.px]="size ? size : null"  [(ngModel)]="selectedValue" nzAllowClear  (ngModelChange)="onChangeValue()" [nzOptions]="valueFor">
+<ng-container *ngIf="!isAsync" >
+  <nz-select class="w-100"  [nzMode]="multiple?'multiple':'default'"  [nzPlaceHolder]="placeholder" [style.width.px]="size ? size : null"  [(ngModel)]="selectedValue" nzAllowClear  (ngModelChange)="onChangeValue()" [nzOptions]="valueFor">
     </nz-select>
 </ng-container>
