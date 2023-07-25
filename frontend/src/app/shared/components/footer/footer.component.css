@@ -1,8 +1,6 @@
 #icon {
     font-size: 20px;
     cursor: pointer;
-    transition: all .3s, padding 0s;
-    display: inline-flex;
 }
 
 

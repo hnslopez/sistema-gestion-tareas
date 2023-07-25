@@ -9,19 +9,49 @@ const routes: Routes = [
   {
     path: '',
     component: ProjectComponent
+  }, {
+    path: 'archived',
+    component: ProjectComponent,
+    data: { 
+      filter: 'archived' 
+    }
+  },
+  {
+    path:'create',
+    component:ProjectComponent,
+  },
+  {
+    path:'completed',
+    component:ProjectComponent,
+    data: { 
+      filter: 'completed' 
+    }
+  },  
+  {
+    path:'cancelled',
+    component:ProjectComponent,
+    data: { 
+      filter: 'cancelled' 
+    }
+  },  {
+    path:'pending',
+    component:ProjectComponent,
+    data: { 
+      filter: 'pending' 
+    }
   }
 ];
 
 @NgModule({
   declarations: [
     ProjectComponent,
-    
+
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     SharedModule,
-    
+
   ]
 })
 export class ProjectModule { }

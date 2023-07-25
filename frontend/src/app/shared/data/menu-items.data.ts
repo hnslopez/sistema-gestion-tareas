@@ -88,17 +88,9 @@ export const submenuItems: MenuSection[] = [
           title: 'Acciones',
           children: [
             {
-              icon: 'bi bi-folder-plus',
-              name: 'Nuevo Proyecto'
-            },
-            {
               icon: 'bi bi-folder2-open',
               name: 'Ver Proyectos',
               routerLink:['projects']
-            },
-            {
-              icon: 'bi bi-archive',
-              name: 'Archivar Proyecto'
             }
           ]
         },
@@ -106,19 +98,29 @@ export const submenuItems: MenuSection[] = [
           title: 'Filtrar',
           children: [
             {
-              icon: 'fas fa-calendar-day',
-              name: 'Por Fecha'
-            },
-            {
-              icon: 'fas fa-check-circle',
-              name: 'Completados'
+              icon: 'fas fa-check-circle', 
+              name: 'Completados',
+              routerLink: ['projects', 'completed']
             },
             {
               icon: 'fas fa-exclamation-circle',
-              name: 'Pendientes'
-            }
+              name: 'Pendientes',
+              routerLink: ['projects', 'pending']
+            },
+            {
+              icon: 'bi bi-archive', 
+              name: 'Archivados',
+              routerLink: ['projects', 'archived']
+            },
+            {
+              icon: 'bi bi-x-circle',
+              name: 'Cancelados',
+              routerLink: ['projects', 'cancelled']
+            },
           ]
+          
         },
+        /*
         {
           title: 'Avanzado',
           children: [
@@ -132,6 +134,7 @@ export const submenuItems: MenuSection[] = [
             }
           ]
         }
+        */
       ]
     },
     {

@@ -10,6 +10,7 @@ import { NzProgressStatusType } from 'ng-zorro-antd/progress';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { SelectOption } from 'src/app/shared/types/app-select.type';
 import { ProjectStatus } from 'src/app/shared/enum/status-type.enum';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-project',
@@ -32,15 +33,16 @@ export class ProjectComponent implements OnInit {
   searchText:string ='';
   searchStatus:string[] = [];
   projectStatusOptions: SelectOption[] = [
-    { value: ProjectStatus.Completed, label: 'Completado' },
-    { value: ProjectStatus.InProgress, label: 'En Progreso' },
-    { value: ProjectStatus.Pending, label: 'Pendiente' },
-    { value: ProjectStatus.OnHold, label: 'En Espera' },
-    { value: ProjectStatus.Cancelled, label: 'Cancelado' },
-    { value: ProjectStatus.Delayed, label: 'Retrasado' },
-    { value: ProjectStatus.Archived, label: 'Archivado' },
-    { value: ProjectStatus.Paused, label: 'Pausado' },
+    { value: ProjectStatus.Completed, label: this.translateService.instant('project.project_details.'+ProjectStatus.Completed) },
+    { value: ProjectStatus.InProgress, label: this.translateService.instant('project.project_details.'+ProjectStatus.InProgress)  },
+    { value: ProjectStatus.Pending, label: this.translateService.instant('project.project_details.'+ProjectStatus.Pending)  },
+    { value: ProjectStatus.OnHold, label: this.translateService.instant('project.project_details.'+ProjectStatus.OnHold)  },
+    { value: ProjectStatus.Cancelled, label: this.translateService.instant('project.project_details.'+ProjectStatus.Cancelled)  },
+    { value: ProjectStatus.Delayed, label: this.translateService.instant('project.project_details.'+ProjectStatus.Delayed)  },
+    { value: ProjectStatus.Archived, label: this.translateService.instant('project.project_details.'+ProjectStatus.Archived)  },
+    { value: ProjectStatus.Paused, label: this.translateService.instant('project.project_details.'+ProjectStatus.Paused)  },
   ];
+  filterPage:string = '';
   
   totalItems:number = 0;
   pageSize:number = 8;
@@ -126,10 +128,17 @@ export class ProjectComponent implements OnInit {
     return endValue.getTime() <= this.startValue.getTime();
   };
 
-  constructor(private fb: FormBuilder, private message: NzMessageService, private translateService: TranslateService) {}
+  constructor(private fb: FormBuilder, private message: NzMessageService, private translateService: TranslateService, 
+    private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.loadDataFromUrl();
+    let filter = this.route.snapshot.data['filter']
+
+    if(filter){
+      this.searchStatus = filter;
+      this.filterPage = filter;
+    }
 
     this.validateForm = this.fb.group({
       projectName: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
@@ -142,6 +151,19 @@ export class ProjectComponent implements OnInit {
       projectStatus: [null, [Validators.required]]
     });
   }
+
+  ngAfterViewInit() {
+    this.route.url.subscribe(urlSegments => {
+      // Verificar si la ruta actual es '/create'
+      const currentUrl = '/' + urlSegments.join('/');
+      if (currentUrl === '/create') {
+        // Ejecutar el código después de que todos los componentes estén cargados
+        this.drawerComponent.open();
+      }
+    });
+  }
+
+
   getColorByStatus(status: string): string {
     switch (status) {
       case 'in_progress':
@@ -204,17 +226,17 @@ onPageIndexChange(newPageIndex: number) {
 }
 
   async loadDataFromUrl(){
-    //await this.sleep(1000)
+    //await this.sleep(3000)
     if(projects_examples.length == 0) this.isEmpty = true;
     this.loadingSkeleton = false;
     this.data = projects_examples
     this.totalItems = projects_examples.length;
-    // Devolver 'this.data' para asignar los datos mapeados a la variable 'data'
+
     this.dataFull = this.data;
     return this.data;
 
     /**
-     * TODO: GENERAR LOGICA TRAER INFO DEL PROYECTO
+     * TODO: GENERAR LOGICA TRAER DESDE EL BACKEND
      */
   }
 }

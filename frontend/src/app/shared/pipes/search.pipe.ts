@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SearchPipe implements PipeTransform {
   transform(items: any[], searchText: string, searchStatus: string[]): any[] {
     if (!items) return [];
-    if (searchStatus === null) searchStatus = [''];
+    if (searchStatus === null) return searchStatus = [''];
     if ((!searchText && searchStatus.length === 0) || (searchText === '' && searchStatus.length === 0)) return items;
     searchText = searchText.toLowerCase();
   
