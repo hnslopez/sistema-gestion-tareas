@@ -88,6 +88,12 @@ export const submenuItems: MenuSection[] = [
           title: 'Acciones',
           children: [
             {
+              icon: 'bi bi-folder-plus',
+              name: 'Nuevo Proyecto',
+              routerLink:['projects','create']
+
+            },
+            {
               icon: 'bi bi-folder2-open',
               name: 'Ver Proyectos',
               routerLink:['projects']

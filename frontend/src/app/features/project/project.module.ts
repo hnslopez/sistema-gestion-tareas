@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProjectComponent } from './project.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared.module';
+import { CreateProjectComponent } from './create-project/create-project.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,7 @@ const routes: Routes = [
   },
   {
     path:'create',
-    component:ProjectComponent,
+    component:CreateProjectComponent,
   },
   {
     path:'completed',
@@ -45,6 +46,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProjectComponent,
+    CreateProjectComponent,
 
   ],
   imports: [
